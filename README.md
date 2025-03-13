@@ -7,29 +7,29 @@ ParachuteEncoder is a **Qt-based application** designed for encoding messages an
 
 # Professor
 
-- **Anthony Roger**: karim-eric.ziad-forest@ensicaen.fr
+- **karim-eric ziad**: karim-eric.ziad-forest@ensicaen.fr
 
 ## Project Structure
 The project is organized into multiple directories to maintain a **clean and modular structure**.
-
+```
 PARACHUTE/
 ├── vscode/ 
 ├── resources/ 
 ├── src/
-│ ├── model/ # Model components
+│ ├── model/ 
 │ │ ├── MessageEncoder.cpp
 │ │ ├── MessageEncoder.h
 │ │ ├── ParachuteModel.cpp
 │ │ └── ParachuteModel.h
-│ ├── presenter/ # Presenter components
+│ ├── presenter/
 │ │ ├── ParachutePresenter.cpp
 │ │ └── ParachutePresenter.h
-│ └── view/ # View components
+│ └── view/
 │ ├── MainWindow.cpp
 │ ├── MainWindow.h
 │ ├── ParachuteView.cpp
 │ └── ParachuteView.h
-├── CMakeLists.txt # CMake build configuration
-├── main.cpp # Main application entry point
-└── README.md # Project documentation
-
+├── CMakeLists.txt 
+├── main.cpp 
+└── README.md 
+```
