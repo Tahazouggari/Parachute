@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ParachuteEncoder/
 │── src/
 │   ├── model/
@@ -20,3 +21,6 @@ ParachuteEncoder/
 │── CMakeLists.txt
 │── main.cpp
 │── README.md
+=======
+# Parachute
+>>>>>>> main
