@@ -1,4 +1,4 @@
-#  ParachuteEncoder
+#  Qt-ParachuteEncoder Using MVP 
 
 ##  Project Overview
 ParachuteEncoder is a **Qt-based application** designed for encoding messages and simulating a parachute model. The project follows the **Model-View-Presenter (MVP)** architectural pattern for better separation of concerns.
