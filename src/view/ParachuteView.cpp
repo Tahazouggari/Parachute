@@ -7,7 +7,7 @@
 
 ParachuteView::ParachuteView(QWidget *parent) 
     : QWidget(parent), sectors(7), tracks(5), 
-      backgroundColor(Qt::white), parachuteColor(Qt::black) {}
+      backgroundColor(Qt::white), parachuteColor(Qt::red) {}
 
 void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<int>& encodedMessage) {
     this->sectors = sectors;

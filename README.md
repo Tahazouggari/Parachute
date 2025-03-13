@@ -39,3 +39,11 @@ PARACHUTE/
 ├── main.cpp 
 └── README.md 
 ```
+
+## To run project 
+
+``` 
+mkdir build && cd build
+cmake ..
+make
+```
