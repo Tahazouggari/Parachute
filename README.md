@@ -9,6 +9,12 @@ ParachuteEncoder is a **Qt-based application** designed for encoding messages an
 
 - **karim-eric ziad**: karim-eric.ziad-forest@ensicaen.fr
 
+  
+# Student 
+
+- **ZOUGGARI Taha**: taha.zouggari@ensicaen.fr
+- **KHALI Omar**: omar.khali@ensicaen.fr
+
 ## Project Structure
 The project is organized into multiple directories to maintain a **clean and modular structure**.
 ```
