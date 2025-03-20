@@ -1,0 +1,5 @@
+/home/taha-zouggari/Downloads/Parachute-master/build/CMakeFiles/ParachuteEncoder.dir
+/home/taha-zouggari/Downloads/Parachute-master/build/CMakeFiles/edit_cache.dir
+/home/taha-zouggari/Downloads/Parachute-master/build/CMakeFiles/rebuild_cache.dir
+/home/taha-zouggari/Downloads/Parachute-master/build/CMakeFiles/ParachuteEncoder_autogen_timestamp_deps.dir
+/home/taha-zouggari/Downloads/Parachute-master/build/CMakeFiles/ParachuteEncoder_autogen.dir
