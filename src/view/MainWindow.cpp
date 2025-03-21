@@ -1,13 +1,15 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QFileDialog>
+#include <QDebug> // Add this header for qDebug()
 #include "../model/MessageEncoder.h"
 #include "../view/ParachuteView.h"
 #include "../view/BinaryWidget.h"
 #include <QColorDialog>
+#include "../utils/LanguageManager.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)) {
     ui->setupUi(this); // Set up the UI
 
     // Initialize parachuteView
@@ -53,6 +55,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spinSectors->setValue(7);
     ui->sliderTracks->setValue(3);
     ui->spinTracks->setValue(3);
+
+    // Connect language menu actions
+    connect(ui->actionEnglish, &QAction::triggered, this, &MainWindow::onLanguageEnglish);
+    connect(ui->actionfrensh, &QAction::triggered, this, &MainWindow::onLanguageFrench);
+    connect(ui->actionArabic, &QAction::triggered, this, &MainWindow::onLanguageArabic);
+
+    // Connect language manager signal
+    connect(languageManager, &LanguageManager::languageChanged, this, &MainWindow::retranslateUi);
 }
 
 MainWindow::~MainWindow() {
@@ -117,3 +127,21 @@ void MainWindow::onSectorsOrTracksChanged() {
     // Update the parachute view with the current sectors, tracks, and encoded message
     parachuteView->setParachuteData(ui->spinSectors->value(), ui->spinTracks->value(), encodedMessage);
 }
+
+void MainWindow::onLanguageEnglish() {
+    languageManager->switchLanguage("en");
+}
+
+void MainWindow::onLanguageFrench() {
+    languageManager->switchLanguage("fr");
+}
+
+void MainWindow::onLanguageArabic() {
+    languageManager->switchLanguage("ar");
+}
+
+void MainWindow::retranslateUi() {
+    ui->retranslateUi(this); // Retranslate the UI
+    qDebug() << "UI retranslated to language:" << languageManager->getCurrentLanguage();
+}
+

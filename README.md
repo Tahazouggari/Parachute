@@ -40,6 +40,23 @@ PARACHUTE/
 └── README.md 
 ```
 
+## generate translation files :
+
+
+
+```
+lrelease resources/translations/en.ts resources/translations/fr.ts resources/translations/ar.ts
+lupdate . -ts resources/translations/en.ts resources/translations/fr.ts resources/translations/ar.ts
+```
+open ui and modifie translation 
+```
+linguist resources/translations/en.ts
+linguist resources/translations/fr.ts
+linguist resources/translations/ar.ts
+```
+
+
+
 ## To run project 
 
 ```

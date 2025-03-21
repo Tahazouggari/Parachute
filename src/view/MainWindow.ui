@@ -21,7 +21,7 @@
        <string>font-size: 18px; font-weight: bold;</string>
       </property>
       <property name="text">
-       <string>Parachute Encoder TAHA </string>
+       <string>Parachute Encoder</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -49,11 +49,14 @@
     </item>
     <item>
      <widget class="QTabWidget" name="viewTabs">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="parachuteViewTab">
        <attribute name="title">
@@ -144,6 +147,15 @@
     <addaction name="openAction"/>
     <addaction name="exitAction"/>
    </widget>
+   <widget class="QMenu" name="languageMenu">
+    <property name="title">
+     <string>Change Language</string>
+    </property>
+    <addaction name="actionEnglish"/>
+    <addaction name="actionfrensh"/>
+    <addaction name="actionArabic"/>
+   </widget>
+   <addaction name="languageMenu"/>
    <addaction name="fileMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -160,6 +172,21 @@
   <action name="exitAction">
    <property name="text">
     <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionfrensh">
+   <property name="text">
+    <string>French</string>
+   </property>
+  </action>
+  <action name="actionArabic">
+   <property name="text">
+    <string>Arabic</string>
    </property>
   </action>
  </widget>

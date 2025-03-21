@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ar_MA">
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="14"/>
+        <location filename="../../src/view/MainWindow.ui" line="24"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="212"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="220"/>
+        <source>Parachute Encoder</source>
+        <translation>مشفر المظلة</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="21"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="219"/>
+        <source>font-size: 18px; font-weight: bold;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="34"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="221"/>
+        <source>Message</source>
+        <translation>رسالة</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="40"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="222"/>
+        <source>Your message:</source>
+        <translation>رسالتك:</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="63"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="223"/>
+        <source>Parachute View</source>
+        <translation>عرض المظلة</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="68"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="224"/>
+        <source>Binary View</source>
+        <translation>عرض رقم ثنائي</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="77"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="225"/>
+        <source>Controls</source>
+        <translation>الضوابط</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="83"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="226"/>
+        <source>Sectors:</source>
+        <translation>القطاعات:</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="100"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="227"/>
+        <source>Tracks:</source>
+        <translation>المسارات:</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="117"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="228"/>
+        <source>Choose Background Color</source>
+        <translation>اختر لون الخلفية</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="124"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="229"/>
+        <source>Export Parachute Image</source>
+        <translation>تصدير صورة المظلة</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="144"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="230"/>
+        <source>&amp;File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="184"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="217"/>
+        <source>French</source>
+        <translation>Français</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/ui_MainWindow.h" line="231"/>
+        <source>Menu</source>
+        <translation>قائمة </translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="152"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="232"/>
+        <source>Change Language</source>
+        <translation>تغيير اللغة</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="164"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="213"/>
+        <source>&amp;Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="169"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="214"/>
+        <source>&amp;Open</source>
+        <translation>فتح</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="174"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="215"/>
+        <source>E&amp;xit</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="179"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="216"/>
+        <source>English</source>
+        <translation>Anglais</translation>
+    </message>
+    <message>
+        <source>frensh</source>
+        <translation type="vanished">français</translation>
+    </message>
+    <message>
+        <location filename="../../src/view/MainWindow.ui" line="189"/>
+        <location filename="../../src/view/ui_MainWindow.h" line="218"/>
+        <source>Arabic</source>
+        <translation>عربي</translation>
+    </message>
+</context>
+</TS>

@@ -4,8 +4,7 @@
 #include <QMainWindow>
 #include "ParachuteView.h"
 #include "BinaryWidget.h"
-#include "../presenter/ParachutePresenter.h"
-#include "../model/MessageEncoder.h"
+#include "../utils/LanguageManager.h" // Include LanguageManager
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +17,7 @@ private:
     Ui::MainWindow *ui; // Pointer to the generated UI class
     ParachuteView *parachuteView; // Parachute visualization widget
     BinaryWidget *binaryWidget;   // Binary visualization widget
+    LanguageManager *languageManager; // Language manager
 
 private slots:
     void onMessageChanged();
@@ -27,6 +27,10 @@ private slots:
     void onOpenFile();
     void onExit();
     void onSectorsOrTracksChanged();
+    void onLanguageEnglish();
+    void onLanguageFrench();
+    void onLanguageArabic();
+    void retranslateUi() ;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

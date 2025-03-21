@@ -34,6 +34,9 @@ public:
     QAction *saveAction;
     QAction *openAction;
     QAction *exitAction;
+    QAction *actionEnglish;
+    QAction *actionfrensh;
+    QAction *actionArabic;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *titleLabel;
@@ -57,6 +60,8 @@ public:
     QPushButton *exportButton;
     QMenuBar *menubar;
     QMenu *fileMenu;
+    QMenu *menuMenu;
+    QMenu *menuChange_Language;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -70,6 +75,12 @@ public:
         openAction->setObjectName(QString::fromUtf8("openAction"));
         exitAction = new QAction(MainWindow);
         exitAction->setObjectName(QString::fromUtf8("exitAction"));
+        actionEnglish = new QAction(MainWindow);
+        actionEnglish->setObjectName(QString::fromUtf8("actionEnglish"));
+        actionfrensh = new QAction(MainWindow);
+        actionfrensh->setObjectName(QString::fromUtf8("actionfrensh"));
+        actionArabic = new QAction(MainWindow);
+        actionArabic->setObjectName(QString::fromUtf8("actionArabic"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -99,6 +110,7 @@ public:
 
         viewTabs = new QTabWidget(centralwidget);
         viewTabs->setObjectName(QString::fromUtf8("viewTabs"));
+        viewTabs->setEnabled(true);
         viewTabs->setTabPosition(QTabWidget::North);
         parachuteViewTab = new QWidget();
         parachuteViewTab->setObjectName(QString::fromUtf8("parachuteViewTab"));
@@ -166,19 +178,30 @@ public:
         menubar->setGeometry(QRect(0, 0, 800, 24));
         fileMenu = new QMenu(menubar);
         fileMenu->setObjectName(QString::fromUtf8("fileMenu"));
+        menuMenu = new QMenu(menubar);
+        menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
+        menuChange_Language = new QMenu(menuMenu);
+        menuChange_Language->setObjectName(QString::fromUtf8("menuChange_Language"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
+        menubar->addAction(menuMenu->menuAction());
         menubar->addAction(fileMenu->menuAction());
         fileMenu->addAction(saveAction);
         fileMenu->addAction(openAction);
         fileMenu->addAction(exitAction);
+        menuMenu->addAction(menuChange_Language->menuAction());
+        menuChange_Language->addSeparator();
+        menuChange_Language->addSeparator();
+        menuChange_Language->addAction(actionEnglish);
+        menuChange_Language->addAction(actionfrensh);
+        menuChange_Language->addAction(actionArabic);
 
         retranslateUi(MainWindow);
 
-        viewTabs->setCurrentIndex(0);
+        viewTabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -190,8 +213,11 @@ public:
         saveAction->setText(QCoreApplication::translate("MainWindow", "&Save", nullptr));
         openAction->setText(QCoreApplication::translate("MainWindow", "&Open", nullptr));
         exitAction->setText(QCoreApplication::translate("MainWindow", "E&xit", nullptr));
+        actionEnglish->setText(QCoreApplication::translate("MainWindow", "English", nullptr));
+        actionfrensh->setText(QCoreApplication::translate("MainWindow", "French", nullptr));
+        actionArabic->setText(QCoreApplication::translate("MainWindow", "Arabic", nullptr));
         titleLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "font-size: 18px; font-weight: bold;", nullptr));
-        titleLabel->setText(QCoreApplication::translate("MainWindow", "Parachute Encoder TAHA ", nullptr));
+        titleLabel->setText(QCoreApplication::translate("MainWindow", "Parachute Encoder", nullptr));
         messageBox->setTitle(QCoreApplication::translate("MainWindow", "Message", nullptr));
         labelMessage->setText(QCoreApplication::translate("MainWindow", "Your message:", nullptr));
         viewTabs->setTabText(viewTabs->indexOf(parachuteViewTab), QCoreApplication::translate("MainWindow", "Parachute View", nullptr));
@@ -202,6 +228,8 @@ public:
         colorButton->setText(QCoreApplication::translate("MainWindow", "Choose Background Color", nullptr));
         exportButton->setText(QCoreApplication::translate("MainWindow", "Export Parachute Image", nullptr));
         fileMenu->setTitle(QCoreApplication::translate("MainWindow", "&File", nullptr));
+        menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
+        menuChange_Language->setTitle(QCoreApplication::translate("MainWindow", "Change Language", nullptr));
     } // retranslateUi
 
 };
