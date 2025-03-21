@@ -15,7 +15,7 @@ void BinaryWidget::paintEvent(QPaintEvent *) {
     // Draw the binary grid
     for (int i = 0; i < numberLetterDraw; ++i) {
         for (int j = 0; j < bitByLetter; ++j) {
-            int index = i * bitByLetter + j;
+            int index = i * 7 + j;
             if (index < static_cast<int>(bitSet.size()) && bitSet.at(index)) {
                 painter.setBrush(painterBrush); // Red for 1
             } else {

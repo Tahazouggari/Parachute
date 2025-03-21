@@ -4,6 +4,7 @@ std::vector<int> MessageEncoder::encodeMessage(const QString &message) {
     std::vector<int> encodedMessage;
     for (QChar c : message) {
         int asciiValue = c.unicode();
+        asciiValue= asciiValue-64;
         for (int i = 6; i >= 0; --i) {
             encodedMessage.push_back((asciiValue >> i) & 1);
         }
