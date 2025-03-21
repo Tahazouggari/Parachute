@@ -20,6 +20,7 @@ add_executable(ParachuteEncoder
     src/view/MainWindow.cpp
     src/view/ParachuteView.cpp
     src/presenter/ParachutePresenter.cpp
+    src/view/BinaryWidget.cpp
 )
 
 # Link Qt5 Libraries

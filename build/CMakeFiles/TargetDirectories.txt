@@ -1,0 +1,5 @@
+/home/zouggari-taha/Documents/interface graphique/Parachute/build/CMakeFiles/ParachuteEncoder.dir
+/home/zouggari-taha/Documents/interface graphique/Parachute/build/CMakeFiles/edit_cache.dir
+/home/zouggari-taha/Documents/interface graphique/Parachute/build/CMakeFiles/rebuild_cache.dir
+/home/zouggari-taha/Documents/interface graphique/Parachute/build/CMakeFiles/ParachuteEncoder_autogen_timestamp_deps.dir
+/home/zouggari-taha/Documents/interface graphique/Parachute/build/CMakeFiles/ParachuteEncoder_autogen.dir

@@ -42,8 +42,12 @@ PARACHUTE/
 
 ## To run project 
 
-``` 
+```
+uic src/view/MainWindow.ui -o src/view/ui_MainWindow.h // for the ui  
+
+rm -rf build
 mkdir build && cd build
 cmake ..
 make
+./ParachuteEncoder
 ```

@@ -1,120 +1,71 @@
 #include "MainWindow.h"
-#include <QVBoxLayout>
-#include <QLabel>
 #include <QFileDialog>
-#include <QGroupBox>
-#include <QTabWidget>
-#include <QHBoxLayout>
-#include <QTextEdit>
-#include <QMessageBox>
+#include "../model/MessageEncoder.h"
+#include "../view/ParachuteView.h"
+#include "../view/BinaryWidget.h"
 #include <QColorDialog>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QAction>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), presenter(new ParachutePresenter(this)) {
+    : QMainWindow(parent) {
+    ui.setupUi(this); // Set up the UI
 
-    // Menu Bar
-    fileMenu = menuBar()->addMenu(tr("&File")); // Use menuBar() directly
-    saveAction = fileMenu->addAction(tr("&Save"), this, &MainWindow::onSaveFile, QKeySequence::Save);
-    openAction = fileMenu->addAction(tr("&Open"), this, &MainWindow::onOpenFile, QKeySequence::Open);
-    exitAction = fileMenu->addAction(tr("E&xit"), this, &MainWindow::onExit, QKeySequence::Quit);
-
-    // Status Bar
-    statusBar()->showMessage("Ready"); // Use statusBar() directly
-
-    QWidget *centralWidget = new QWidget(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
-
-    // Top Section: Title and Message Box
-    QLabel *titleLabel = new QLabel("Parachute Encoder");
-    titleLabel->setAlignment(Qt::AlignCenter);
-    titleLabel->setStyleSheet("font-size: 18px; font-weight: bold;");
-    mainLayout->addWidget(titleLabel);
-
-    QGroupBox *messageBox = new QGroupBox("Message");
-    QVBoxLayout *messageLayout = new QVBoxLayout(messageBox);
-
-    QLabel *labelMessage = new QLabel("Your message:");
-    messageInput = new QLineEdit();
-    connect(messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
-
-    messageLayout->addWidget(labelMessage);
-    messageLayout->addWidget(messageInput);
-
-    QHBoxLayout *topLayout = new QHBoxLayout();
-    topLayout->addStretch(); // Push the message box to the right
-    topLayout->addWidget(messageBox);
-    mainLayout->addLayout(topLayout);
-
-    // Middle Section: Tabs for Views
-    viewTabs = new QTabWidget(); // Initialize viewTabs
-
-    // Parachute View
+    // Initialize parachuteView
     parachuteView = new ParachuteView(this);
-    viewTabs->addTab(parachuteView, tr("Parachute View"));
 
-    // Binary View
-    binaryView = new QWidget(); // Initialize binaryView
-    QVBoxLayout *binaryLayout = new QVBoxLayout(binaryView);
-    QTextEdit *binaryText = new QTextEdit();
-    binaryText->setReadOnly(true);
-    binaryLayout->addWidget(binaryText);
-    viewTabs->addTab(binaryView, tr("Binary View"));
+    // Add parachuteView to the parachuteViewTab
+    QVBoxLayout *parachuteLayout = new QVBoxLayout(ui.parachuteViewTab);
+    parachuteLayout->addWidget(parachuteView);
 
-    mainLayout->addWidget(viewTabs);
+    // Initialize binaryWidget
+    binaryWidget = new BinaryWidget(this);
+    QVBoxLayout *binaryLayout = new QVBoxLayout(ui.binaryViewTab); // Use placeholder
+    binaryLayout->addWidget(binaryWidget);
 
-    // Bottom Section: Controls
-    QGroupBox *controlsBox = new QGroupBox("Controls");
-    QVBoxLayout *controlsLayout = new QVBoxLayout(controlsBox);
+    // Connect signals and slots
+    connect(ui.messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
+    connect(ui.colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
+    connect(ui.exportButton, &QPushButton::clicked, this, &MainWindow::onSaveParachute);
+    connect(ui.saveAction, &QAction::triggered, this, &MainWindow::onSaveFile);
+    connect(ui.openAction, &QAction::triggered, this, &MainWindow::onOpenFile);
+    connect(ui.exitAction, &QAction::triggered, this, &MainWindow::onExit);
 
-    QLabel *labelSectors = new QLabel("Sectors:");
-    sliderSectors = new QSlider(Qt::Horizontal);
-    sliderSectors->setRange(7, 28);
-    spinSectors = new QSpinBox();
-    spinSectors->setRange(7, 28);
-    connect(sliderSectors, &QSlider::valueChanged, spinSectors, &QSpinBox::setValue);
-    connect(spinSectors, QOverload<int>::of(&QSpinBox::valueChanged), sliderSectors, &QSlider::setValue);
-    connect(spinSectors, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::onSectorsOrTracksChanged);
+    // Connect sliders to update parachute view live
+    connect(ui.sliderSectors, &QSlider::valueChanged, ui.spinSectors, &QSpinBox::setValue);
+    connect(ui.spinSectors, QOverload<int>::of(&QSpinBox::valueChanged), ui.sliderSectors, &QSlider::setValue);
+    connect(ui.sliderSectors, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
 
-    QLabel *labelTracks = new QLabel("Tracks:");
-    sliderTracks = new QSlider(Qt::Horizontal);
-    sliderTracks->setRange(3, 10);
-    spinTracks = new QSpinBox();
-    spinTracks->setRange(3, 10);
-    connect(sliderTracks, &QSlider::valueChanged, spinTracks, &QSpinBox::setValue);
-    connect(spinTracks, QOverload<int>::of(&QSpinBox::valueChanged), sliderTracks, &QSlider::setValue);
-    connect(spinTracks, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::onSectorsOrTracksChanged);
+    connect(ui.sliderTracks, &QSlider::valueChanged, ui.spinTracks, &QSpinBox::setValue);
+    connect(ui.spinTracks, QOverload<int>::of(&QSpinBox::valueChanged), ui.sliderTracks, &QSlider::setValue);
+    connect(ui.sliderTracks, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
 
-    controlsLayout->addWidget(labelSectors);
-    controlsLayout->addWidget(sliderSectors);
-    controlsLayout->addWidget(spinSectors);
-    controlsLayout->addWidget(labelTracks);
-    controlsLayout->addWidget(sliderTracks);
-    controlsLayout->addWidget(spinTracks);
+    // Initialize sliders and spin boxes
+    ui.sliderSectors->setRange(7, 28);
+    ui.spinSectors->setRange(7, 28);
+    ui.sliderTracks->setRange(3, 10);
+    ui.spinTracks->setRange(3, 10);
 
-    QPushButton *colorButton = new QPushButton("Choose Background Color");
-    connect(colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
-    controlsLayout->addWidget(colorButton);
+    ui.sliderSectors->setValue(7);
+    ui.spinSectors->setValue(7);
+    ui.sliderTracks->setValue(3);
+    ui.spinTracks->setValue(3);
+}
 
-    QPushButton *exportButton = new QPushButton("Export Parachute Image");
-    connect(exportButton, &QPushButton::clicked, this, &MainWindow::onSaveParachute);
-    controlsLayout->addWidget(exportButton);
+MainWindow::~MainWindow() {}
 
-    mainLayout->addWidget(controlsBox);
+void MainWindow::onMessageChanged() {
+    QString message = ui.messageInput->text();
 
-    setCentralWidget(centralWidget);
+    // Encode the message into binary
+    std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message);
 
-    // Initialize sliders and spin boxes with default values
-    sliderSectors->setValue(7);
-    spinSectors->setValue(7);
+    // Convert to bool vector for BinaryWidget
+    std::vector<bool> binaryBits(encodedMessage.begin(), encodedMessage.end());
 
-    sliderTracks->setValue(3);
-    spinTracks->setValue(3);
+    // Update binaryWidget
+    binaryWidget->updateBitSet(binaryBits);
 
-    // Ensure the parachute view is updated with initial values
-    onSectorsOrTracksChanged();
+    // Update the parachute view
+    parachuteView->setParachuteData(ui.spinSectors->value(), ui.spinTracks->value(), encodedMessage);
 }
 
 void MainWindow::onBackgroundColorChanged() {
@@ -122,17 +73,6 @@ void MainWindow::onBackgroundColorChanged() {
     if (color.isValid()) {
         parachuteView->setBackgroundColor(color);
     }
-}
-
-void MainWindow::onMessageChanged() {
-    QString message = messageInput->text();
-    std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message);
-    parachuteView->setParachuteData(spinSectors->value(), spinTracks->value(), encodedMessage);
-}
-
-void MainWindow::onSectorsOrTracksChanged() {
-    std::vector<int> encodedMessage = MessageEncoder::encodeMessage(messageInput->text());
-    parachuteView->setParachuteData(spinSectors->value(), spinTracks->value(), encodedMessage);
 }
 
 void MainWindow::onSaveParachute() {
@@ -145,16 +85,14 @@ void MainWindow::onSaveParachute() {
 void MainWindow::onSaveFile() {
     QString filename = QFileDialog::getSaveFileName(this, "Save File", "", "Parachute Files (*.parachute)");
     if (!filename.isEmpty()) {
-        // Save message and parameters to file
-        statusBar()->showMessage("File saved successfully", 3000);
+        // Save message and parameters
     }
 }
 
 void MainWindow::onOpenFile() {
     QString filename = QFileDialog::getOpenFileName(this, "Open File", "", "Parachute Files (*.parachute)");
     if (!filename.isEmpty()) {
-        // Load message and parameters from file
-        statusBar()->showMessage("File loaded successfully", 3000);
+        // Load message and parameters
     }
 }
 
@@ -162,6 +100,13 @@ void MainWindow::onExit() {
     close();
 }
 
-MainWindow::~MainWindow() {
-    delete presenter;
+void MainWindow::onSectorsOrTracksChanged() {
+    // Get the current message
+    QString message = ui.messageInput->text();
+
+    // Encode the message into binary
+    std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message);
+
+    // Update the parachute view with the current sectors, tracks, and encoded message
+    parachuteView->setParachuteData(ui.spinSectors->value(), ui.spinTracks->value(), encodedMessage);
 }

@@ -2,41 +2,23 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSlider>
-#include <QSpinBox>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QTabWidget>
+#include "ui_MainWindow.h" // Include the generated header file
 #include "ParachuteView.h"
-#include "presenter/ParachutePresenter.h"
-#include "model/MessageEncoder.h"
+#include "BinaryWidget.h" // Include BinaryWidget
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 private:
-    ParachutePresenter *presenter;
-    QSlider *sliderSectors;
-    QSlider *sliderTracks;
-    QSpinBox *spinSectors;
-    QSpinBox *spinTracks;
-    QLineEdit *messageInput;
-    QPushButton *colorButton;
-    QPushButton *exportButton;
-    QTabWidget *viewTabs;
-    ParachuteView *parachuteView;
-    QWidget *binaryView;
-
-    QMenu *fileMenu; // Keep this declaration
-    QAction *saveAction;
-    QAction *openAction;
-    QAction *exitAction;
+    Ui::MainWindow ui; // Use the generated UI class
+    ParachuteView *parachuteView; // Declare parachuteView as a private member
+    BinaryWidget *binaryWidget; // Declare binaryWidget as a private member
 
 private slots:
     void onMessageChanged();
     void onBackgroundColorChanged();
     void onSaveParachute();
-    void onSectorsOrTracksChanged();
+    void onSectorsOrTracksChanged(); // Ensure this is declared
     void onSaveFile();
     void onOpenFile();
     void onExit();
