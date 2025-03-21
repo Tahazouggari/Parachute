@@ -6,7 +6,7 @@
 #include <QSpinBox>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QColorDialog>
+#include <QTabWidget>
 #include "ParachuteView.h"
 #include "presenter/ParachutePresenter.h"
 #include "model/MessageEncoder.h"
@@ -23,12 +23,23 @@ private:
     QLineEdit *messageInput;
     QPushButton *colorButton;
     QPushButton *exportButton;
+    QTabWidget *viewTabs;
     ParachuteView *parachuteView;
+    QWidget *binaryView;
+
+    QMenu *fileMenu; // Keep this declaration
+    QAction *saveAction;
+    QAction *openAction;
+    QAction *exitAction;
 
 private slots:
     void onMessageChanged();
     void onBackgroundColorChanged();
     void onSaveParachute();
+    void onSectorsOrTracksChanged();
+    void onSaveFile();
+    void onOpenFile();
+    void onExit();
 
 public:
     MainWindow(QWidget *parent = nullptr);

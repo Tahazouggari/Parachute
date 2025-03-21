@@ -6,8 +6,7 @@
 #include <cmath>
 
 ParachuteView::ParachuteView(QWidget *parent) 
-    : QWidget(parent), sectors(7), tracks(5), 
-      backgroundColor(Qt::white), parachuteColor(Qt::red) {}
+    : QWidget(parent), sectors(7), tracks(5), backgroundColor(Qt::white) {}
 
 void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<int>& encodedMessage) {
     this->sectors = sectors;
@@ -18,11 +17,6 @@ void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<
 
 void ParachuteView::setBackgroundColor(QColor color) {
     backgroundColor = color;
-    update();
-}
-
-void ParachuteView::setParachuteColor(QColor color) {
-    parachuteColor = color;
     update();
 }
 
@@ -40,7 +34,7 @@ void ParachuteView::paintEvent(QPaintEvent *event) {
     double angleStep = 2 * M_PI / sectors;
 
     QBrush whiteBrush(Qt::white);
-    QBrush fillBrush(parachuteColor);
+    QBrush fillBrush(Qt::red);
     QPen borderPen(Qt::black);
     borderPen.setWidth(1);
 

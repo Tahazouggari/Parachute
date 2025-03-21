@@ -1,13 +1,12 @@
 #include "MessageEncoder.h"
 
 std::vector<int> MessageEncoder::encodeMessage(const QString &message) {
-    std::vector<int> binaryMessage;
-    
+    std::vector<int> encodedMessage;
     for (QChar c : message) {
-        int asciiValue = c.unicode() - 64; // Décalage pour que '@' soit 0
+        int asciiValue = c.unicode();
         for (int i = 6; i >= 0; --i) {
-            binaryMessage.push_back((asciiValue >> i) & 1);
+            encodedMessage.push_back((asciiValue >> i) & 1);
         }
     }
-    return binaryMessage;
+    return encodedMessage;
 }
