@@ -69,6 +69,11 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3"/>
       </widget>
+      <widget class="QWidget" name="hexViewTab">
+       <attribute name="title">
+        <string>Hexadecimal View</string>
+       </attribute>
+      </widget>
      </widget>
     </item>
     <item>

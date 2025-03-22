@@ -11,6 +11,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QPainter>
+#include "HexView.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)) {
@@ -25,6 +26,10 @@ MainWindow::MainWindow(QWidget *parent)
     if (binaryLayout) {
         binaryLayout->addWidget(binaryWidget);
     }
+
+    hexView = new HexView(this);
+    QVBoxLayout *hexLayout = new QVBoxLayout(ui->hexViewTab);
+    hexLayout->addWidget(hexView);
 
     connect(ui->messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
     connect(ui->colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
@@ -66,8 +71,21 @@ void MainWindow::onMessageChanged() {
     QString message = ui->messageInput->text();
     std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message);
     std::vector<bool> binaryBits(encodedMessage.begin(), encodedMessage.end());
+
+  
+
     binaryWidget->updateBitSet(binaryBits);
     parachuteView->setParachuteData(ui->spinSectors->value(), ui->spinTracks->value(), encodedMessage);
+
+    QString hexData;
+    for (int i = 0; i < encodedMessage.size(); i += 8) {
+        int byte = 0;
+        for (int j = 0; j < 8 && i + j < encodedMessage.size(); ++j) {
+            byte = (byte << 1) | encodedMessage[i + j];
+        }
+        hexData += QString("%1").arg(byte, 2, 16, QChar('0')).toUpper();
+    }
+    hexView->setHexData(hexData);
 }
 
 void MainWindow::onBackgroundColorChanged() {
@@ -75,6 +93,7 @@ void MainWindow::onBackgroundColorChanged() {
     if (color.isValid()) {
         parachuteView->setBackgroundColor(color);
         binaryWidget->setBackgroundColor(color);
+        hexView->setBackgroundColor(color);
     }
 }
 

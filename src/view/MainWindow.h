@@ -5,6 +5,8 @@
 #include "ParachuteView.h"
 #include "BinaryWidget.h"
 #include "../utils/LanguageManager.h" // Include LanguageManager
+#include "HexView.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -18,7 +20,8 @@ private:
     ParachuteView *parachuteView; // Parachute visualization widget
     BinaryWidget *binaryWidget;   // Binary visualization widget
     LanguageManager *languageManager; // Language manager
-
+    HexView *hexView; // Hexadecimal visualization widget
+    
 private slots:
     void onMessageChanged();
     void onBackgroundColorChanged();

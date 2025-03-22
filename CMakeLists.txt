@@ -21,7 +21,8 @@ add_executable(ParachuteEncoder
     src/view/ParachuteView.cpp
     src/presenter/ParachutePresenter.cpp
     src/view/BinaryWidget.cpp
-    src/utils/LanguageManager.cpp # Add LanguageManager.cpp here
+    src/utils/LanguageManager.cpp
+    src/view/HexView.cpp
 )
 
 # Add translations

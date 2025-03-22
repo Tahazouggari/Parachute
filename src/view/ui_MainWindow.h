@@ -48,6 +48,7 @@ public:
     QWidget *parachuteViewTab;
     QWidget *binaryViewTab;
     QVBoxLayout *verticalLayout_3;
+    QWidget *hexViewTab;
     QGroupBox *controlsBox;
     QVBoxLayout *verticalLayout_4;
     QLabel *labelSectors;
@@ -119,6 +120,9 @@ public:
         verticalLayout_3 = new QVBoxLayout(binaryViewTab);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         viewTabs->addTab(binaryViewTab, QString());
+        hexViewTab = new QWidget();
+        hexViewTab->setObjectName(QString::fromUtf8("hexViewTab"));
+        viewTabs->addTab(hexViewTab, QString());
 
         verticalLayout->addWidget(viewTabs);
 
@@ -216,6 +220,7 @@ public:
         labelMessage->setText(QCoreApplication::translate("MainWindow", "Your message:", nullptr));
         viewTabs->setTabText(viewTabs->indexOf(parachuteViewTab), QCoreApplication::translate("MainWindow", "Parachute View", nullptr));
         viewTabs->setTabText(viewTabs->indexOf(binaryViewTab), QCoreApplication::translate("MainWindow", "Binary View", nullptr));
+        viewTabs->setTabText(viewTabs->indexOf(hexViewTab), QCoreApplication::translate("MainWindow", "Hexadecimal View", nullptr));
         controlsBox->setTitle(QCoreApplication::translate("MainWindow", "Controls", nullptr));
         labelSectors->setText(QCoreApplication::translate("MainWindow", "Sectors:", nullptr));
         labelTracks->setText(QCoreApplication::translate("MainWindow", "Tracks:", nullptr));
