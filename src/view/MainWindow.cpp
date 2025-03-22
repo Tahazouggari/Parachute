@@ -15,6 +15,9 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QAction>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QHBoxLayout>
 
 // Chemins relatifs depuis le répertoire du projet
 #include "../presenter/ParachutePresenter.h"
@@ -42,6 +45,50 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *hexLayout = new QVBoxLayout(ui->hexViewTab);
     hexLayout->addWidget(hexView);
 
+    // Ajouter des boutons et contrôles pour les nouvelles fonctionnalités de couleur
+    QGroupBox *colorGroupBox = new QGroupBox(tr("Personnalisation des couleurs"), ui->centralwidget);
+    QVBoxLayout *colorLayout = new QVBoxLayout(colorGroupBox);
+    
+    // Couleur d'arrière-plan
+    QHBoxLayout *bgColorLayout = new QHBoxLayout();
+    QLabel *bgColorLabel = new QLabel(tr("Couleur d'arrière-plan:"), colorGroupBox);
+    QPushButton *bgColorButton = ui->colorButton; // Utiliser le bouton existant
+    bgColorLayout->addWidget(bgColorLabel);
+    bgColorLayout->addWidget(bgColorButton);
+    colorLayout->addLayout(bgColorLayout);
+    
+    // Couleur des bits à 1 (parachute)
+    QHBoxLayout *parachuteColorLayout = new QHBoxLayout();
+    QLabel *parachuteColorLabel = new QLabel(tr("Couleur des bits à 1:"), colorGroupBox);
+    QPushButton *parachuteColorButton = new QPushButton(tr("Choisir"), colorGroupBox);
+    parachuteColorLayout->addWidget(parachuteColorLabel);
+    parachuteColorLayout->addWidget(parachuteColorButton);
+    colorLayout->addLayout(parachuteColorLayout);
+    
+    // Couleur des bits à 0 (secteurs)
+    QHBoxLayout *sectorColorLayout = new QHBoxLayout();
+    QLabel *sectorColorLabel = new QLabel(tr("Couleur des bits à 0:"), colorGroupBox);
+    QPushButton *sectorColorButton = new QPushButton(tr("Choisir"), colorGroupBox);
+    sectorColorLayout->addWidget(sectorColorLabel);
+    sectorColorLayout->addWidget(sectorColorButton);
+    colorLayout->addLayout(sectorColorLayout);
+    
+    // Mode couleurs aléatoires
+    QCheckBox *randomColorCheckBox = new QCheckBox(tr("Mode couleurs aléatoires"), colorGroupBox);
+    colorLayout->addWidget(randomColorCheckBox);
+    
+    // Ajouter les contrôles de couleur au layout principal
+    QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(ui->centralwidget->layout());
+    if (mainLayout) {
+        mainLayout->insertWidget(mainLayout->indexOf(ui->exportButton), colorGroupBox);
+    }
+    
+    // Connecter les signaux des nouveaux contrôles
+    connect(parachuteColorButton, &QPushButton::clicked, this, &MainWindow::onParachuteColorChanged);
+    connect(sectorColorButton, &QPushButton::clicked, this, &MainWindow::onSectorColorChanged);
+    connect(randomColorCheckBox, &QCheckBox::toggled, this, &MainWindow::onRandomColorModeToggled);
+    
+    // Autres connexions existantes
     connect(ui->messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
     connect(ui->colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
     connect(ui->exportButton, &QPushButton::clicked, this, &MainWindow::onSaveParachute);
@@ -83,8 +130,6 @@ void MainWindow::onMessageChanged() {
     std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message);
     std::vector<bool> binaryBits(encodedMessage.begin(), encodedMessage.end());
 
-  
-
     binaryWidget->updateBitSet(binaryBits);
     parachuteView->setParachuteData(ui->spinSectors->value(), ui->spinTracks->value(), encodedMessage);
 
@@ -106,6 +151,27 @@ void MainWindow::onBackgroundColorChanged() {
         binaryWidget->setBackgroundColor(color);
         hexView->setBackgroundColor(color);
     }
+}
+
+void MainWindow::onParachuteColorChanged() {
+    QColor color = QColorDialog::getColor(Qt::red, this, "Choisir la couleur des bits à 1");
+    if (color.isValid()) {
+        parachuteView->setParachuteColor(color);
+        binaryWidget->setBitOnColor(color);
+    }
+}
+
+void MainWindow::onSectorColorChanged() {
+    QColor color = QColorDialog::getColor(Qt::white, this, "Choisir la couleur des bits à 0");
+    if (color.isValid()) {
+        parachuteView->setSectorColor(color);
+        binaryWidget->setBitOffColor(color);
+    }
+}
+
+void MainWindow::onRandomColorModeToggled(bool checked) {
+    parachuteView->setRandomColorMode(checked);
+    binaryWidget->setRandomColorMode(checked);
 }
 
 void MainWindow::onSaveParachute() {

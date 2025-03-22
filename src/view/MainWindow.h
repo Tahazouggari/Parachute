@@ -25,6 +25,9 @@ private:
 private slots:
     void onMessageChanged();
     void onBackgroundColorChanged();
+    void onParachuteColorChanged();
+    void onSectorColorChanged();
+    void onRandomColorModeToggled(bool checked);
     void onSaveParachute();
     void onSaveFile();
     void onOpenFile();

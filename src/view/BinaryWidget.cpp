@@ -1,10 +1,14 @@
 #include "BinaryWidget.h"
 #include <QPainter>
 #include <QDebug>
+#include <QRandomGenerator>
 
 BinaryWidget::BinaryWidget(QWidget *parent)
-    : QWidget(parent), backgroundColor(Qt::white), painterColor(Qt::red) {
+    : QWidget(parent), backgroundColor(Qt::white), painterColor(Qt::red), 
+      bitOffColor(Qt::gray), randomColorMode(false) {
     bitSet = std::vector<bool>();
+    // Set initial size
+    setMinimumSize(100, 100);
 }
 
 void BinaryWidget::setBackgroundColor(const QColor &color) {
@@ -14,14 +18,51 @@ void BinaryWidget::setBackgroundColor(const QColor &color) {
 
 void BinaryWidget::updateBitSet(const std::vector<bool> &b) {
     bitSet = b;
+    
+    if (randomColorMode) {
+        generateRandomColors();
+    }
+    
     update();
+}
+
+void BinaryWidget::setBitOnColor(const QColor &color) {
+    painterColor = color;
+    update();
+}
+
+void BinaryWidget::setBitOffColor(const QColor &color) {
+    bitOffColor = color;
+    update();
+}
+
+void BinaryWidget::setRandomColorMode(bool enabled) {
+    randomColorMode = enabled;
+    if (randomColorMode) {
+        generateRandomColors();
+    }
+    update();
+}
+
+void BinaryWidget::generateRandomColors() {
+    randomColors.clear();
+    QRandomGenerator *rng = QRandomGenerator::global();
+    
+    for (size_t i = 0; i < bitSet.size(); i++) {
+        if (bitSet[i]) {
+            // Couleur aléatoire avec une bonne saturation et luminosité
+            int hue = rng->bounded(360);
+            QColor randomColor = QColor::fromHsv(hue, 200 + rng->bounded(55), 200 + rng->bounded(55));
+            randomColors[i] = randomColor;
+        }
+    }
 }
 
 void BinaryWidget::paintEvent(QPaintEvent *) {
     QPainter painter(this);
     painter.fillRect(rect(), backgroundColor);
 
-    QBrush painterBrush(painterColor);
+    if (bitSet.empty()) return;
 
     // Calculate the number of letters and bits dynamically
     int totalBits = static_cast<int>(bitSet.size());
@@ -46,9 +87,13 @@ void BinaryWidget::paintEvent(QPaintEvent *) {
             int index = i * bitByLetter + j;
             if (index < totalBits) {
                 if (bitSet.at(index)) {
-                    painter.setBrush(painterBrush); // Red for 1
+                    if (randomColorMode && randomColors.contains(index)) {
+                        painter.setBrush(QBrush(randomColors[index]));
+                    } else {
+                        painter.setBrush(QBrush(painterColor)); // Couleur pour bits à 1
+                    }
                 } else {
-                    painter.setBrush(backgroundColor); // Use background color for 0
+                    painter.setBrush(QBrush(bitOffColor)); // Couleur pour bits à 0
                 }
                 int x = startX + i * cellSize + (cellSize - circleSize) / 2;
                 int y = startY + j * cellSize + (cellSize - circleSize) / 2;
