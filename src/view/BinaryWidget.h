@@ -21,7 +21,7 @@ public:
     void updateBitSet(const std::vector<bool> &b); // Update the binary data
     void setNumberLetterDraw(int number);         // Set the number of letters to draw
     void setBitByLetter(int bit);                 // Set the number of bits per letter
-    void setBackgroundColor(QColor b);            // Set the background color
+    void setBackgroundColor(const QColor &color);            // Set the background color
     void setPainterColor(QColor p);               // Set the color for bits set to 1
 
 protected:

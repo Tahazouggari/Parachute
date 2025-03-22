@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QPainter> // Include QPainter to fix the incomplete type error
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)) {
@@ -91,14 +92,38 @@ void MainWindow::onMessageChanged() {
 void MainWindow::onBackgroundColorChanged() {
     QColor color = QColorDialog::getColor(Qt::white, this, "Choose Background Color");
     if (color.isValid()) {
-        parachuteView->setBackgroundColor(color);
+        parachuteView->setBackgroundColor(color); // Update Parachute View background color
+        binaryWidget->setBackgroundColor(color);  // Update Binary View background color
     }
 }
 
 void MainWindow::onSaveParachute() {
     QString filename = QFileDialog::getSaveFileName(this, "Save Image", "", "PNG Image (*.png)");
     if (!filename.isEmpty()) {
-        parachuteView->saveParachuteImage(filename);
+        if (!filename.endsWith(".png")) {
+            filename += ".png"; // Ensure the file has the correct extension
+        }
+
+        // Get the size of the Parachute View
+        QSize parachuteSize = parachuteView->size();
+
+        // Create a QPixmap to hold the Parachute View
+        QPixmap parachutePixmap(parachuteSize);
+        parachutePixmap.fill(Qt::white); // Fill with a white background
+
+        QPainter painter(&parachutePixmap);
+
+        // Render the Parachute View
+        parachuteView->render(&painter);
+
+        painter.end();
+
+        // Save the image
+        if (parachutePixmap.save(filename)) {
+            QMessageBox::information(this, "Export Image", "Parachute image saved successfully.");
+        } else {
+            QMessageBox::warning(this, "Export Image", "Failed to save the parachute image.");
+        }
     }
 }
 
