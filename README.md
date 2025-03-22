@@ -178,7 +178,7 @@ linguist resources/translations/ar.ts
 ### Professor
 - **Karim-Eric Ziad**: karim-eric.ziad-forest@ensicaen.fr
 
-##Contributors
+## Contributors
 
 
 ### Students
