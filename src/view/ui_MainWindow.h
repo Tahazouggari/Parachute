@@ -184,8 +184,8 @@ public:
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
-        menubar->addAction(languageMenu->menuAction());
         menubar->addAction(fileMenu->menuAction());
+        menubar->addAction(languageMenu->menuAction());
         fileMenu->addAction(saveAction);
         fileMenu->addAction(openAction);
         fileMenu->addAction(exitAction);
