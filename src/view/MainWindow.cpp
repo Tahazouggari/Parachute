@@ -7,6 +7,9 @@
 #include "../view/BinaryWidget.h"
 #include <QColorDialog>
 #include "../utils/LanguageManager.h"
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)) {
@@ -100,16 +103,77 @@ void MainWindow::onSaveParachute() {
 }
 
 void MainWindow::onSaveFile() {
-    QString filename = QFileDialog::getSaveFileName(this, "Save File", "", "Parachute Files (*.parachute)");
+    QString filename = QFileDialog::getSaveFileName(this, "Save File", "", "Parachute Files (*.ep)");
     if (!filename.isEmpty()) {
-        // Save message and parameters
+        if (!filename.endsWith(".ep")) {
+            filename += ".ep"; // Ensure the file has the correct extension
+        }
+
+        QFile file(filename);
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream out(&file);
+
+            // Save the message
+            QString message = ui->messageInput->text();
+            out << "[Message]\n" << message << "\n";
+
+            // Save the parachute parameters
+            int sectors = ui->spinSectors->value();
+            int tracks = ui->spinTracks->value();
+            out << "[Parameters]\n";
+            out << "Sectors=" << sectors << "\n";
+            out << "Tracks=" << tracks << "\n";
+
+            file.close();
+            QMessageBox::information(this, "Save File", "File saved successfully.");
+        } else {
+            QMessageBox::warning(this, "Save File", "Unable to open file for writing.");
+        }
     }
 }
 
 void MainWindow::onOpenFile() {
-    QString filename = QFileDialog::getOpenFileName(this, "Open File", "", "Parachute Files (*.parachute)");
+    QString filename = QFileDialog::getOpenFileName(this, "Open File", "", "Parachute Files (*.ep)");
     if (!filename.isEmpty()) {
-        // Load message and parameters
+        QFile file(filename);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+
+            QString line;
+            QString message;
+            int sectors = 0;
+            int tracks = 0;
+
+            while (!in.atEnd()) {
+                line = in.readLine().trimmed(); // Trim whitespace
+
+                if (line == "[Message]") {
+                    message = in.readLine().trimmed(); // Read the next line as the message
+                } else if (line == "[Parameters]") {
+                    while (!in.atEnd()) {
+                        line = in.readLine().trimmed();
+                        if (line.startsWith("Sectors=")) {
+                            sectors = line.mid(QString("Sectors=").length()).toInt();
+                        } else if (line.startsWith("Tracks=")) {
+                            tracks = line.mid(QString("Tracks=").length()).toInt();
+                        }
+                    }
+                }
+            }
+
+            // Update the UI with the loaded data
+            ui->messageInput->setText(message);
+            ui->spinSectors->setValue(sectors);
+            ui->spinTracks->setValue(tracks);
+
+            // Trigger updates for the parachute view
+            onSectorsOrTracksChanged();
+
+            file.close();
+            QMessageBox::information(this, "Open File", "File loaded successfully.");
+        } else {
+            QMessageBox::warning(this, "Open File", "Unable to open file for reading.");
+        }
     }
 }
 
@@ -144,4 +208,3 @@ void MainWindow::retranslateUi() {
     ui->retranslateUi(this); // Retranslate the UI
     qDebug() << "UI retranslated to language:" << languageManager->getCurrentLanguage();
 }
-

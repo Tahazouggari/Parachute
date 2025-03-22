@@ -60,8 +60,7 @@ public:
     QPushButton *exportButton;
     QMenuBar *menubar;
     QMenu *fileMenu;
-    QMenu *menuMenu;
-    QMenu *menuChange_Language;
+    QMenu *languageMenu;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -178,26 +177,21 @@ public:
         menubar->setGeometry(QRect(0, 0, 800, 24));
         fileMenu = new QMenu(menubar);
         fileMenu->setObjectName(QString::fromUtf8("fileMenu"));
-        menuMenu = new QMenu(menubar);
-        menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
-        menuChange_Language = new QMenu(menuMenu);
-        menuChange_Language->setObjectName(QString::fromUtf8("menuChange_Language"));
+        languageMenu = new QMenu(menubar);
+        languageMenu->setObjectName(QString::fromUtf8("languageMenu"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
-        menubar->addAction(menuMenu->menuAction());
+        menubar->addAction(languageMenu->menuAction());
         menubar->addAction(fileMenu->menuAction());
         fileMenu->addAction(saveAction);
         fileMenu->addAction(openAction);
         fileMenu->addAction(exitAction);
-        menuMenu->addAction(menuChange_Language->menuAction());
-        menuChange_Language->addSeparator();
-        menuChange_Language->addSeparator();
-        menuChange_Language->addAction(actionEnglish);
-        menuChange_Language->addAction(actionfrensh);
-        menuChange_Language->addAction(actionArabic);
+        languageMenu->addAction(actionEnglish);
+        languageMenu->addAction(actionfrensh);
+        languageMenu->addAction(actionArabic);
 
         retranslateUi(MainWindow);
 
@@ -228,8 +222,7 @@ public:
         colorButton->setText(QCoreApplication::translate("MainWindow", "Choose Background Color", nullptr));
         exportButton->setText(QCoreApplication::translate("MainWindow", "Export Parachute Image", nullptr));
         fileMenu->setTitle(QCoreApplication::translate("MainWindow", "&File", nullptr));
-        menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
-        menuChange_Language->setTitle(QCoreApplication::translate("MainWindow", "Change Language", nullptr));
+        languageMenu->setTitle(QCoreApplication::translate("MainWindow", "Change Language", nullptr));
     } // retranslateUi
 
 };
