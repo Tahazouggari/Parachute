@@ -2,6 +2,18 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QFileDialog>
+#include <QMainWindow>
+#include <QLineEdit>
+#include <QSlider>
+#include <QSpinBox>
+#include <QPushButton>
+#include <QColorDialog>
+#include <QWidget>
+
+// Chemins relatifs depuis le répertoire du projet
+#include "../presenter/ParachutePresenter.h"
+#include "ParachuteView.h"
+#include "../model/MessageEncoder.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), presenter(new ParachutePresenter(this)) {

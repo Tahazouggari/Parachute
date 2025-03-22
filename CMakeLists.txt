@@ -2,17 +2,20 @@ cmake_minimum_required(VERSION 3.10)
 project(ParachuteEncoder)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)   # ← Important pour les fichiers .ui (si tu en as)
+set(CMAKE_AUTORCC ON)   # ← Important si tu utilises des ressources Qt (.qrc)
 
-# Find Qt5
+# Indiquer explicitement le dossier d'installation de Qt5
+set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/qt@5/5.15.16_1")
+
+# Chercher Qt5 Widgets
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-# Enable automatic MOC for Qt's Meta-Object System
-set(CMAKE_AUTOMOC ON)
+# Ajouter explicitement les chemins d'entête de Qt5
+include_directories(${CMAKE_SOURCE_DIR}/src ${Qt5Widgets_INCLUDE_DIRS})
 
-# Add include directories
-include_directories(${CMAKE_SOURCE_DIR}/src)
-
-# Add executable
+# Déclarer explicitement tes sources
 add_executable(ParachuteEncoder 
     main.cpp
     src/model/MessageEncoder.cpp
@@ -22,5 +25,5 @@ add_executable(ParachuteEncoder
     src/presenter/ParachutePresenter.cpp
 )
 
-# Link Qt5 Libraries
+# Lier explicitement ton exécutable avec Qt5::Widgets
 target_link_libraries(ParachuteEncoder Qt5::Widgets)
