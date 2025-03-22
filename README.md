@@ -1,8 +1,17 @@
 # Qt-ParachuteEncoder
 
+
+
+---
+
 ## Project Overview
 
 ParachuteEncoder is a **Qt-based application** designed to encode messages into a visual representation inspired by the parachute used during the landing of the Perseverance rover on Mars. The parachute's design contained a hidden binary message, and this project replicates that concept by allowing users to encode their own messages into a parachute-like visualization.
+
+
+<div align="center">
+    <img src="resources/Gif/parachute.gif" alt="Parachute Encoder Demo" width="600">
+</div>
 
 The project follows the **Model-View-Presenter (MVP)** architectural pattern, ensuring a clear separation of concerns between the data (Model), user interface (View), and logic (Presenter).
 
@@ -30,14 +39,19 @@ The application is multilingual, supporting English, French, and Arabic, and pro
    - Visualizes the binary message as a parachute design with customizable sectors and tracks.
    - Allows users to change the background color of the parachute.
 
-3. **Export Functionality**:
+3. **Hexadecimal View**:
+   - Displays the hexadecimal representation of the encoded message.
+   - Dynamically updates as the message changes.
+   - Provides a clean and readable format for users who prefer hexadecimal over binary.
+
+4. **Export Functionality**:
    - Exports the parachute visualization as a PNG image.
 
-4. **Save and Load**:
+5. **Save and Load**:
    - Saves the message and parachute parameters to a custom `.ep` file format.
    - Loads previously saved `.ep` files to restore the message and visualization.
 
-5. **Multilingual Support**:
+6. **Multilingual Support**:
    - Supports English, French, and Arabic languages.
    - Users can switch languages dynamically through the menu.
 
@@ -58,6 +72,8 @@ PARACHUTE/
 │   │   ├── en.qm
 │   │   ├── fr.qm
 │   │   └── ar.qm
+│   ├── Gif/
+│   │   └── parachute.gif
 │   └── resources.qrc
 ├── src/
 │   ├── model/ 
@@ -74,7 +90,9 @@ PARACHUTE/
 │       ├── ParachuteView.cpp
 │       ├── ParachuteView.h
 │       ├── BinaryWidget.cpp
-│       └── BinaryWidget.h
+│       ├── BinaryWidget.h
+│       ├── HexView.cpp
+│       └── HexView.h
 ├── CMakeLists.txt 
 ├── main.cpp 
 └── README.md 
@@ -93,6 +111,12 @@ PARACHUTE/
 1. The binary message is mapped onto a parachute design.
 2. Users can customize the number of sectors and tracks in the parachute.
 3. The parachute visualization updates dynamically as the message or parameters change.
+
+### Hexadecimal View
+1. The encoded message is converted into a hexadecimal format.
+2. The hexadecimal representation is displayed in the **Hexadecimal View**.
+3. The view dynamically updates as the message changes.
+4. The hexadecimal format provides a compact and readable representation of the encoded message.
 
 ### Exporting and Saving
 1. Users can export the parachute visualization as a PNG image.
