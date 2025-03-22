@@ -175,11 +175,11 @@ linguist resources/translations/ar.ts
    ```
 
 ---
-
-## Contributors
-
 ### Professor
 - **Karim-Eric Ziad**: karim-eric.ziad-forest@ensicaen.fr
+
+##Contributors
+
 
 ### Students
 - **ZOUGGARI Taha**: taha.zouggari@ensicaen.fr
