@@ -994,6 +994,49 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qicon.h \
+  /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
+  /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.h \
+  /Users/omar/Desktop/conception/Parachute/src/view/../utils/LanguageManager.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QTranslator \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qtranslator.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QApplication \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qcoreapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qcoreevent.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qeventloop.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qguiapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qinputmethod.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
+  /Users/omar/Desktop/conception/Parachute/src/view/HexView.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
+  /Users/omar/Desktop/conception/Parachute/src/view/ui_MainWindow.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QVariant \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QAction \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qaction.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qactiongroup.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QGroupBox \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qgroupbox.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qframe.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QLabel \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlabel.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QLineEdit \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlineedit.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextcursor.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextformat.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpen.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextoption.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMenu \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmenu.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMenuBar \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmenubar.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QPushButton \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qpushbutton.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractbutton.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QSlider \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qslider.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractslider.h \
@@ -1002,36 +1045,14 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qvalidator.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qregularexpression.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QLineEdit \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlineedit.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qframe.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextcursor.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextformat.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpen.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextoption.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QPushButton \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qpushbutton.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractbutton.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QColorDialog \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qcolordialog.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qdialog.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../model/ParachuteModel.h \
-  /Users/omar/Desktop/conception/Parachute/src/model/MessageEncoder.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QStatusBar \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qstatusbar.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QTabWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QVBoxLayout \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qboxlayout.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlayout.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlayoutitem.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qgridlayout.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QLabel \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlabel.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QFileDialog \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qfiledialog.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qdir.h \
@@ -1039,5 +1060,19 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qfile.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qfiledevice.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qurl.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qdialog.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QColorDialog \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qcolordialog.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QPainter \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpainter.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMessageBox \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmessagebox.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QTextStream \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qtextstream.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QDebug \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qdebug.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qset.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qcontiguouscache.h \
   /Users/omar/Desktop/conception/Parachute/src/view/../presenter/ParachutePresenter.h \
+  /Users/omar/Desktop/conception/Parachute/src/view/../presenter/../model/ParachuteModel.h \
   /Users/omar/Desktop/conception/Parachute/src/view/../model/MessageEncoder.h

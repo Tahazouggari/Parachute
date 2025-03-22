@@ -2,36 +2,41 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSlider>
-#include <QSpinBox>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QColorDialog>
 #include "ParachuteView.h"
-#include "presenter/ParachutePresenter.h"
-#include "model/MessageEncoder.h"
+#include "BinaryWidget.h"
+#include "../utils/LanguageManager.h" // Include LanguageManager
+#include "HexView.h"
+
+
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 private:
-    ParachutePresenter *presenter;
-    QSlider *sliderSectors;
-    QSlider *sliderTracks;
-    QSpinBox *spinSectors;
-    QSpinBox *spinTracks;
-    QLineEdit *messageInput;
-    QPushButton *colorButton;
-    QPushButton *exportButton;
-    ParachuteView *parachuteView;
-
+    Ui::MainWindow *ui; // Pointer to the generated UI class
+    ParachuteView *parachuteView; // Parachute visualization widget
+    BinaryWidget *binaryWidget;   // Binary visualization widget
+    LanguageManager *languageManager; // Language manager
+    HexView *hexView; // Hexadecimal visualization widget
+    
 private slots:
     void onMessageChanged();
     void onBackgroundColorChanged();
     void onSaveParachute();
+    void onSaveFile();
+    void onOpenFile();
+    void onExit();
+    void onSectorsOrTracksChanged();
+    void onLanguageEnglish();
+    void onLanguageFrench();
+    void onLanguageArabic();
+    void retranslateUi() ;
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 };
 

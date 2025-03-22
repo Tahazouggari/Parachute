@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/mocs_compilation.cpp \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_MainWindow.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/VSCBVMNR7M/moc_LanguageManager.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config \
@@ -483,11 +483,11 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/sortable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/wrap_iter.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/MainWindow.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMainWindow \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmainwindow.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtguiglobal.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/VSCBVMNR7M/../../../src/utils/LanguageManager.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobject.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobjectdefs.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qnamespace.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qglobal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/assert.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qconfig.h \
@@ -819,14 +819,7 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qnumeric.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qversiontagging.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtgui-config.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qwidget.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qwindowdefs.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobjectdefs.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qnamespace.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobjectdefs_impl.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobject.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qstring.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qchar.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qbytearray.h \
@@ -963,11 +956,35 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__tree \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobject_impl.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QTranslator \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qtranslator.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QApplication \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtguiglobal.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtgui-config.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qcoreapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qcoreevent.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qeventloop.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qwindowdefs.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qpoint.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qsize.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmargins.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qcursor.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qguiapplication.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qinputmethod.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qhash.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qshareddata.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_BinaryWidget.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/BinaryWidget.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpaintdevice.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qrect.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qsize.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qpoint.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpalette.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qcolor.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qrgb.h \
@@ -984,46 +1001,22 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpixelformat.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpixmap.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qsharedpointer.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qshareddata.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qhash.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qsharedpointer_impl.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qfont.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qfontmetrics.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qfontinfo.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qsizepolicy.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qcursor.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qkeysequence.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_HexView.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/HexView.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_MainWindow.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/MainWindow.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMainWindow \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qicon.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QSlider \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qslider.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractslider.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QSpinBox \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qspinbox.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qvalidator.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qregularexpression.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QLineEdit \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qlineedit.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qframe.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextcursor.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextformat.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpen.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextoption.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QPushButton \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qpushbutton.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractbutton.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QColorDialog \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qcolordialog.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qdialog.h \
   /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/ParachuteView.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../model/ParachuteModel.h \
-  /Users/omar/Desktop/conception/Parachute/src/model/MessageEncoder.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/../utils/LanguageManager.h \
   /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_ParachuteView.cpp

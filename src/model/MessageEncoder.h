@@ -1,8 +1,8 @@
 #ifndef MESSAGEENCODER_H
 #define MESSAGEENCODER_H
 
-#include <QString>
 #include <vector>
+#include <QString>
 
 class MessageEncoder {
 public:

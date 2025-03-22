@@ -69,10 +69,18 @@ include CMakeFiles/ParachuteEncoder.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ParachuteEncoder.dir/flags.make
 
+qrc_resources.cpp: /Users/omar/Desktop/conception/Parachute/resources/resources.qrc
+qrc_resources.cpp: /Users/omar/Desktop/conception/Parachute/resources/translations/en.qm
+qrc_resources.cpp: /Users/omar/Desktop/conception/Parachute/resources/translations/fr.qm
+qrc_resources.cpp: /Users/omar/Desktop/conception/Parachute/resources/translations/ar.qm
+qrc_resources.cpp: resources/resources.qrc.depends
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_resources.cpp"
+	/opt/homebrew/Cellar/qt@5/5.15.16_1/bin/rcc --name resources --output /Users/omar/Desktop/conception/Parachute/build/qrc_resources.cpp /Users/omar/Desktop/conception/Parachute/resources/resources.qrc
+
 ParachuteEncoder_autogen/timestamp: /opt/homebrew/Cellar/qt@5/5.15.16_1/bin/moc
 ParachuteEncoder_autogen/timestamp: /opt/homebrew/Cellar/qt@5/5.15.16_1/bin/uic
 ParachuteEncoder_autogen/timestamp: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target ParachuteEncoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic MOC and UIC for target ParachuteEncoder"
 	/opt/homebrew/bin/cmake -E cmake_autogen /Users/omar/Desktop/conception/Parachute/build/CMakeFiles/ParachuteEncoder_autogen.dir/AutogenInfo.json ""
 	/opt/homebrew/bin/cmake -E touch /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/timestamp
 
@@ -82,7 +90,7 @@ CMakeFiles/ParachuteEncoder.dir/codegen:
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o: ParachuteEncoder_autogen/mocs_compilation.cpp
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o -c /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/mocs_compilation.cpp
 
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.i: cmake_force
@@ -96,7 +104,7 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.s:
 CMakeFiles/ParachuteEncoder.dir/main.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/main.cpp.o: /Users/omar/Desktop/conception/Parachute/main.cpp
 CMakeFiles/ParachuteEncoder.dir/main.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ParachuteEncoder.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ParachuteEncoder.dir/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/main.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/main.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/main.cpp.o -c /Users/omar/Desktop/conception/Parachute/main.cpp
 
 CMakeFiles/ParachuteEncoder.dir/main.cpp.i: cmake_force
@@ -110,7 +118,7 @@ CMakeFiles/ParachuteEncoder.dir/main.cpp.s: cmake_force
 CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o: /Users/omar/Desktop/conception/Parachute/src/model/MessageEncoder.cpp
 CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/model/MessageEncoder.cpp
 
 CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.i: cmake_force
@@ -124,7 +132,7 @@ CMakeFiles/ParachuteEncoder.dir/src/model/MessageEncoder.cpp.s: cmake_force
 CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o: /Users/omar/Desktop/conception/Parachute/src/model/ParachuteModel.cpp
 CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/model/ParachuteModel.cpp
 
 CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.i: cmake_force
@@ -138,7 +146,7 @@ CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.s: cmake_force
 CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: /Users/omar/Desktop/conception/Parachute/src/view/MainWindow.cpp
 CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/view/MainWindow.cpp
 
 CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.i: cmake_force
@@ -152,7 +160,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.s: cmake_force
 CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o: /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.cpp
 CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.cpp
 
 CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.i: cmake_force
@@ -166,7 +174,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.s: cmake_force
 CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
 CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.cpp
 CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.cpp
 
 CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.i: cmake_force
@@ -177,6 +185,62 @@ CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.cpp -o CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.s
 
+CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
+CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o: /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.cpp
+CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.cpp
+
+CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.cpp > CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.i
+
+CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.cpp -o CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.s
+
+CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
+CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o: /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.cpp
+CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.cpp
+
+CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.cpp > CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.i
+
+CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.cpp -o CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.s
+
+CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
+CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o: /Users/omar/Desktop/conception/Parachute/src/view/HexView.cpp
+CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o -c /Users/omar/Desktop/conception/Parachute/src/view/HexView.cpp
+
+CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omar/Desktop/conception/Parachute/src/view/HexView.cpp > CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.i
+
+CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omar/Desktop/conception/Parachute/src/view/HexView.cpp -o CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.s
+
+CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o: CMakeFiles/ParachuteEncoder.dir/flags.make
+CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o: qrc_resources.cpp
+CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o: CMakeFiles/ParachuteEncoder.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o -MF CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o.d -o CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o -c /Users/omar/Desktop/conception/Parachute/build/qrc_resources.cpp
+
+CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omar/Desktop/conception/Parachute/build/qrc_resources.cpp > CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.i
+
+CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omar/Desktop/conception/Parachute/build/qrc_resources.cpp -o CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.s
+
 # Object files for target ParachuteEncoder
 ParachuteEncoder_OBJECTS = \
 "CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o" \
@@ -185,7 +249,11 @@ ParachuteEncoder_OBJECTS = \
 "CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o" \
 "CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o" \
 "CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o" \
-"CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o"
+"CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o" \
+"CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o" \
+"CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o" \
+"CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o" \
+"CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o"
 
 # External object files for target ParachuteEncoder
 ParachuteEncoder_EXTERNAL_OBJECTS =
@@ -197,12 +265,16 @@ ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/model/ParachuteModel.cpp.o
 ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o
 ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o
 ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o
+ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o
+ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o
+ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o
+ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o
 ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/build.make
 ParachuteEncoder: /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/QtWidgets
 ParachuteEncoder: /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/QtGui
 ParachuteEncoder: /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/QtCore
 ParachuteEncoder: CMakeFiles/ParachuteEncoder.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ParachuteEncoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable ParachuteEncoder"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ParachuteEncoder.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +286,7 @@ CMakeFiles/ParachuteEncoder.dir/clean:
 .PHONY : CMakeFiles/ParachuteEncoder.dir/clean
 
 CMakeFiles/ParachuteEncoder.dir/depend: ParachuteEncoder_autogen/timestamp
+CMakeFiles/ParachuteEncoder.dir/depend: qrc_resources.cpp
 	cd /Users/omar/Desktop/conception/Parachute/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/omar/Desktop/conception/Parachute /Users/omar/Desktop/conception/Parachute /Users/omar/Desktop/conception/Parachute/build /Users/omar/Desktop/conception/Parachute/build /Users/omar/Desktop/conception/Parachute/build/CMakeFiles/ParachuteEncoder.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ParachuteEncoder.dir/depend
 

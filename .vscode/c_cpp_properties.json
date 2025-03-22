@@ -11,31 +11,14 @@
                 "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
                 "/usr/include/x86_64-linux-gnu/qt5/QtCore",
                 "/usr/include/x86_64-linux-gnu/qt5/QtGui"
+                
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
-        },
-        {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/src/model",
-                "${workspaceFolder}/src/view",
-                "${workspaceFolder}/src/presenter",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers",
-                "/opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang++",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "macos-clang-arm64"
         }
+        
     ],
     "version": 4
 }

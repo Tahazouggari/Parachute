@@ -130,6 +130,19 @@ ParachuteEncoder/fast:
 .PHONY : ParachuteEncoder/fast
 
 #=============================================================================
+# Target rules for targets named translations
+
+# Build rule for target.
+translations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 translations
+.PHONY : translations
+
+# fast build rule for target.
+translations/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/translations.dir/build.make CMakeFiles/translations.dir/build
+.PHONY : translations/fast
+
+#=============================================================================
 # Target rules for targets named ParachuteEncoder_autogen_timestamp_deps
 
 # Build rule for target.
@@ -203,6 +216,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+qrc_resources.o: qrc_resources.cpp.o
+.PHONY : qrc_resources.o
+
+# target to build an object file
+qrc_resources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.o
+.PHONY : qrc_resources.cpp.o
+
+qrc_resources.i: qrc_resources.cpp.i
+.PHONY : qrc_resources.i
+
+# target to preprocess a source file
+qrc_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.i
+.PHONY : qrc_resources.cpp.i
+
+qrc_resources.s: qrc_resources.cpp.s
+.PHONY : qrc_resources.s
+
+# target to generate assembly for a file
+qrc_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/qrc_resources.cpp.s
+.PHONY : qrc_resources.cpp.s
+
 src/model/MessageEncoder.o: src/model/MessageEncoder.cpp.o
 .PHONY : src/model/MessageEncoder.o
 
@@ -275,6 +312,78 @@ src/presenter/ParachutePresenter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.s
 .PHONY : src/presenter/ParachutePresenter.cpp.s
 
+src/utils/LanguageManager.o: src/utils/LanguageManager.cpp.o
+.PHONY : src/utils/LanguageManager.o
+
+# target to build an object file
+src/utils/LanguageManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o
+.PHONY : src/utils/LanguageManager.cpp.o
+
+src/utils/LanguageManager.i: src/utils/LanguageManager.cpp.i
+.PHONY : src/utils/LanguageManager.i
+
+# target to preprocess a source file
+src/utils/LanguageManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.i
+.PHONY : src/utils/LanguageManager.cpp.i
+
+src/utils/LanguageManager.s: src/utils/LanguageManager.cpp.s
+.PHONY : src/utils/LanguageManager.s
+
+# target to generate assembly for a file
+src/utils/LanguageManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.s
+.PHONY : src/utils/LanguageManager.cpp.s
+
+src/view/BinaryWidget.o: src/view/BinaryWidget.cpp.o
+.PHONY : src/view/BinaryWidget.o
+
+# target to build an object file
+src/view/BinaryWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o
+.PHONY : src/view/BinaryWidget.cpp.o
+
+src/view/BinaryWidget.i: src/view/BinaryWidget.cpp.i
+.PHONY : src/view/BinaryWidget.i
+
+# target to preprocess a source file
+src/view/BinaryWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.i
+.PHONY : src/view/BinaryWidget.cpp.i
+
+src/view/BinaryWidget.s: src/view/BinaryWidget.cpp.s
+.PHONY : src/view/BinaryWidget.s
+
+# target to generate assembly for a file
+src/view/BinaryWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.s
+.PHONY : src/view/BinaryWidget.cpp.s
+
+src/view/HexView.o: src/view/HexView.cpp.o
+.PHONY : src/view/HexView.o
+
+# target to build an object file
+src/view/HexView.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.o
+.PHONY : src/view/HexView.cpp.o
+
+src/view/HexView.i: src/view/HexView.cpp.i
+.PHONY : src/view/HexView.i
+
+# target to preprocess a source file
+src/view/HexView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.i
+.PHONY : src/view/HexView.cpp.i
+
+src/view/HexView.s: src/view/HexView.cpp.s
+.PHONY : src/view/HexView.s
+
+# target to generate assembly for a file
+src/view/HexView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/src/view/HexView.cpp.s
+.PHONY : src/view/HexView.cpp.s
+
 src/view/MainWindow.o: src/view/MainWindow.cpp.o
 .PHONY : src/view/MainWindow.o
 
@@ -333,6 +442,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ParachuteEncoder_autogen"
 	@echo "... ParachuteEncoder_autogen_timestamp_deps"
+	@echo "... translations"
 	@echo "... ParachuteEncoder"
 	@echo "... ParachuteEncoder_autogen/mocs_compilation.o"
 	@echo "... ParachuteEncoder_autogen/mocs_compilation.i"
@@ -340,6 +450,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... qrc_resources.o"
+	@echo "... qrc_resources.i"
+	@echo "... qrc_resources.s"
 	@echo "... src/model/MessageEncoder.o"
 	@echo "... src/model/MessageEncoder.i"
 	@echo "... src/model/MessageEncoder.s"
@@ -349,6 +462,15 @@ help:
 	@echo "... src/presenter/ParachutePresenter.o"
 	@echo "... src/presenter/ParachutePresenter.i"
 	@echo "... src/presenter/ParachutePresenter.s"
+	@echo "... src/utils/LanguageManager.o"
+	@echo "... src/utils/LanguageManager.i"
+	@echo "... src/utils/LanguageManager.s"
+	@echo "... src/view/BinaryWidget.o"
+	@echo "... src/view/BinaryWidget.i"
+	@echo "... src/view/BinaryWidget.s"
+	@echo "... src/view/HexView.o"
+	@echo "... src/view/HexView.i"
+	@echo "... src/view/HexView.s"
 	@echo "... src/view/MainWindow.o"
 	@echo "... src/view/MainWindow.i"
 	@echo "... src/view/MainWindow.s"

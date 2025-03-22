@@ -23,7 +23,18 @@ add_executable(ParachuteEncoder
     src/view/MainWindow.cpp
     src/view/ParachuteView.cpp
     src/presenter/ParachutePresenter.cpp
+    src/view/BinaryWidget.cpp
+    src/utils/LanguageManager.cpp
+    src/view/HexView.cpp
 )
+
+# Add translations
+file(GLOB TRANSLATION_FILES resources/translations/*.qm)
+add_custom_target(translations ALL DEPENDS ${TRANSLATION_FILES})
+
+# Add resources
+qt5_add_resources(RESOURCES resources/resources.qrc)
+target_sources(ParachuteEncoder PRIVATE ${RESOURCES})
 
 # Lier explicitement ton exécutable avec Qt5::Widgets
 target_link_libraries(ParachuteEncoder Qt5::Widgets)
