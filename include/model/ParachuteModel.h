@@ -27,7 +27,6 @@ public:
     int getTracks() const;
     std::vector<int> getEncodedMessage() const;
     
-    // Nouvelles méthodes pour la gestion des couleurs
     void setBackgroundColor(const QColor &color);
     void setParachuteColor(const QColor &color);
     void setSectorColor(const QColor &color);
@@ -40,11 +39,9 @@ public:
     bool getRandomColorMode() const;
     QMap<int, QColor> getRandomColors() const;
     
-    // Méthodes pour le mode 10
     void setMode10(bool enabled);
     bool getMode10() const;
     
-    // Méthode pour ajuster le nombre de secteurs à un multiple de 10 quand mode10 est activé
     int adjustSectorsForMode10(int requestedSectors) const;
 };
 

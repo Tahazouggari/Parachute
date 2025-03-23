@@ -9,19 +9,19 @@ class HexView : public QWidget {
     Q_OBJECT
 
 private:
-    QString hexData; // Stores the hexadecimal representation
-    QColor backgroundColor; // Background color
-    QColor textColor; // Text color
+    QString hexData; 
+    QColor backgroundColor; 
+    QColor textColor;
 
 public:
     explicit HexView(QWidget *parent = nullptr);
 
-    void setHexData(const QString &data); // Update the hexadecimal data
-    void setBackgroundColor(const QColor &color); // Set the background color
-    void setTextColor(const QColor &color); // Set the text color
+    void setHexData(const QString &data); 
+    void setBackgroundColor(const QColor &color);
+    void setTextColor(const QColor &color); 
 
 protected:
-    void paintEvent(QPaintEvent *event) override; // Custom paint event
+    void paintEvent(QPaintEvent *event) override; 
 };
 
 #endif // HEXVIEW_H

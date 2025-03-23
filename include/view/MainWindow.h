@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "ParachuteView.h"
 #include "BinaryWidget.h"
-#include "../utils/LanguageManager.h" // Include LanguageManager
+#include "../utils/LanguageManager.h" 
 #include "HexView.h"
 
 class QComboBox;
@@ -21,19 +21,19 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 private:
-    Ui::MainWindow *ui; // Pointer to the generated UI class
-    ParachuteView *parachuteView; // Parachute visualization widget
-    BinaryWidget *binaryWidget;   // Binary visualization widget
-    LanguageManager *languageManager; // Language manager
-    HexView *hexView; // Hexadecimal visualization widget
-    bool mode10Enabled; // Mode 10 (10 bits par caractère)
-    QString backgroundImagePath; // Chemin vers l'image d'arrière-plan
+    Ui::MainWindow *ui; 
+    ParachuteView *parachuteView; 
+    BinaryWidget *binaryWidget;   
+    LanguageManager *languageManager;
+    HexView *hexView; 
+    bool mode10Enabled; 
+    QString backgroundImagePath; 
     
-    // Boutons de couleur qui doivent être traduits
+    
     QPushButton *parachuteColorButton;
     QPushButton *sectorColorButton;
     
-    // Contrôles de l'interface à traduire
+    
     QGroupBox *colorCustomizationGroup;
     QLabel *backgroundColorLabel;
     QLabel *colorBits1Label;
@@ -50,9 +50,9 @@ private:
     QPushButton *backgroundImageButton;
     QPushButton *clearBackgroundImageButton;
     
-    // Méthodes utilitaires
-    void updateSectorsPresets(QComboBox* comboBox, bool mode10); // Met à jour les préréglages de secteurs
-    void updateTracksPresets(QComboBox* comboBox); // Met à jour les préréglages de pistes
+    
+    void updateSectorsPresets(QComboBox* comboBox, bool mode10); 
+    void updateTracksPresets(QComboBox* comboBox); 
     
 private slots:
     void onMessageChanged();
@@ -60,9 +60,9 @@ private slots:
     void onParachuteColorChanged();
     void onSectorColorChanged();
     void onRandomColorModeToggled(bool checked);
-    void onMode10Toggled(bool checked); // Slot pour le mode 10
-    void onSectorsPresetSelected(int index); // Slot pour les préréglages de secteurs
-    void onTracksPresetSelected(int index); // Slot pour les préréglages de pistes
+    void onMode10Toggled(bool checked); 
+    void onSectorsPresetSelected(int index); 
+    void onTracksPresetSelected(int index); 
     void onExportImage();
     void onSaveFile();
     void onOpenFile();
@@ -74,8 +74,8 @@ private slots:
     void onLanguageFrench();
     void onLanguageArabic();
     void retranslateUi();
-    void onBackgroundImageSelect(); // Slot pour sélectionner une image d'arrière-plan
-    void onClearBackgroundImage(); // Slot pour supprimer l'image d'arrière-plan
+    void onBackgroundImageSelect(); 
+    void onClearBackgroundImage(); 
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

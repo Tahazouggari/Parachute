@@ -9,17 +9,17 @@ class LanguageManager : public QObject {
     Q_OBJECT
 
 private:
-    QTranslator translator; // Translator object
-    QString currentLanguage; // Current language code
+    QTranslator translator; 
+    QString currentLanguage; 
 
 signals:
-    void languageChanged(); // Signal to notify when the language changes
+    void languageChanged(); 
 
 public:
     explicit LanguageManager(QObject *parent = nullptr);
 
-    void switchLanguage(const QString &languageCode); // Switch language
-    QString getCurrentLanguage() const; // Get current language code
+    void switchLanguage(const QString &languageCode); 
+    QString getCurrentLanguage() const; 
 };
 
 #endif // LANGUAGEMANAGER_H

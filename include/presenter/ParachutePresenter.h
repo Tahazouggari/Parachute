@@ -3,7 +3,7 @@
 
 #include "../model/ParachuteModel.h"
 
-class MainWindow; // Forward declaration to prevent circular dependency
+class MainWindow; 
 
 class ParachutePresenter {
 private:

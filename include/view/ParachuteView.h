@@ -14,36 +14,36 @@ class ParachuteView : public QWidget {
 private:
     int sectors;
     int tracks;
-    int originalSectors;      // Stocke le nombre original de secteurs avant mode 10
+    int originalSectors;      
     std::vector<int> encodedMessage;
     QColor backgroundColor;
     QColor parachuteColor;
-    QColor sectorColor;      // Couleur des secteurs (bits à 0)
-    bool randomColorMode;    // Mode couleurs aléatoires pour les bits à 1
-    QMap<int, QColor> randomColors; // Stocke des couleurs aléatoires pour chaque secteur actif
-    bool mode10;             // Mode 10 bits par caractère
+    QColor sectorColor;      
+    bool randomColorMode;    
+    QMap<int, QColor> randomColors; 
+    bool mode10;             
     
-    QPixmap backgroundImage;  // Image d'arrière-plan
-    bool useBackgroundImage;  // Indique si l'image d'arrière-plan est utilisée
+    QPixmap backgroundImage; 
+    bool useBackgroundImage;  
 
 public:
     explicit ParachuteView(QWidget *parent = nullptr);
     void setParachuteData(int sectors, int tracks, const std::vector<int>& encodedMessage);
     void setBackgroundColor(QColor color);
     void setParachuteColor(QColor color);
-    void setSectorColor(QColor color);  // Nouvelle méthode pour définir la couleur des secteurs (bits à 0)
-    void setRandomColorMode(bool enabled); // Active/désactive le mode couleurs aléatoires
-    void setMode10(bool enabled);       // Active/désactive le mode 10 bits par caractère
-    void generateRandomColors(); // Génère de nouvelles couleurs aléatoires
+    void setSectorColor(QColor color);  
+    void setRandomColorMode(bool enabled); 
+    void setMode10(bool enabled);       
+    void generateRandomColors(); 
     void saveParachuteImage(const QString &filename);
     
-    // Méthodes pour l'image d'arrière-plan
+    
     void setBackgroundImage(const QString &imagePath);
     void clearBackgroundImage();
     bool hasBackgroundImage() const;
     
-    // Getters
-    int getOriginalSectors() const; // Renvoie le nombre original de secteurs
+    
+    int getOriginalSectors() const; 
 
 protected:
     void paintEvent(QPaintEvent *event) override;
