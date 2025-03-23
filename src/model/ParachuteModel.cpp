@@ -16,14 +16,14 @@ void ParachuteModel::setMessage(const std::vector<int> &message) {
 }
 
 void ParachuteModel::setSectors(int s) {
-    // Toujours stocker la valeur originale demandée
+    
     originalSectors = s;
     
-    // En mode normal (7 bits), utiliser directement la valeur fournie
+    // En mode normal (7 bits), on utilise directement la valeur fournie
     if (!mode10) {
         sectors = s;
     }
-    // En mode 10, ajuster à un multiple de 10
+    // En mode 10, on ajuste à un multiple de 10
     else {
         sectors = adjustSectorsForMode10(s);
     }
@@ -75,10 +75,10 @@ void ParachuteModel::generateRandomColors() {
     randomColors.clear();
     QRandomGenerator *rng = QRandomGenerator::global();
     
-    // Générer une couleur aléatoire pour chaque indice potentiel
+    // on génére une couleur aléatoire pour chaque indice potentiel
     for (int i = 0; i < sectors * tracks; i++) {
         if (i < encodedMessage.size() && encodedMessage[i]) {
-            // Couleur aléatoire avec une bonne saturation et luminosité
+            
             int hue = rng->bounded(360);
             QColor randomColor = QColor::fromHsv(hue, 200 + rng->bounded(55), 200 + rng->bounded(55));
             randomColors[i] = randomColor;
@@ -113,12 +113,12 @@ void ParachuteModel::setMode10(bool enabled) {
     if (oldMode != mode10) {
         // Passage au mode 10
         if (mode10) {
-            // Ajuster le nombre de secteurs à un multiple de 10
+            // ici on ajuste le nombre de secteurs à un multiple de 10
             sectors = adjustSectorsForMode10(sectors);
         }
         // Passage au mode 7
         else {
-            // Restaurer le nombre original de secteurs
+            // ici on restaure le nombre original de secteurs
             sectors = originalSectors;
         }
     }
@@ -129,7 +129,7 @@ bool ParachuteModel::getMode10() const {
 }
 
 int ParachuteModel::adjustSectorsForMode10(int requestedSectors) const {
-    // Si mode10 est actif, ajuster le nombre de secteurs au multiple de 10 supérieur ou égal
+    // Si mode10 est actif, on ajuste le nombre de secteurs au multiple de 10 supérieur ou égal
     if (mode10) {
         return (int)(std::ceil(requestedSectors / 10.0) * 10);
     }

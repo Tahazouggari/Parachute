@@ -7,13 +7,13 @@ BinaryWidget::BinaryWidget(QWidget *parent)
     : QWidget(parent), backgroundColor(Qt::white), painterColor(Qt::red), 
       bitOffColor(Qt::gray), randomColorMode(false) {
     bitSet = std::vector<bool>();
-    // Set initial size
+    // c'est la capacité initiale de la fenêtre
     setMinimumSize(100, 100);
 }
 
 void BinaryWidget::setBackgroundColor(const QColor &color) {
     backgroundColor = color;
-    update(); // Trigger a repaint
+    update(); 
 }
 
 void BinaryWidget::updateBitSet(const std::vector<bool> &b) {
@@ -50,7 +50,7 @@ void BinaryWidget::generateRandomColors() {
     
     for (size_t i = 0; i < bitSet.size(); i++) {
         if (bitSet[i]) {
-            // Couleur aléatoire avec une bonne saturation et luminosité
+            
             int hue = rng->bounded(360);
             QColor randomColor = QColor::fromHsv(hue, 200 + rng->bounded(55), 200 + rng->bounded(55));
             randomColors[i] = randomColor;
@@ -64,24 +64,23 @@ void BinaryWidget::paintEvent(QPaintEvent *) {
 
     if (bitSet.empty()) return;
 
-    // Calculate the number of letters and bits dynamically
+    
     int totalBits = static_cast<int>(bitSet.size());
     int numberLetterDraw = std::max(1, totalBits / 7 + (totalBits % 7 != 0 ? 1 : 0)); // Number of columns
-    int bitByLetter = 7; // Fixed number of bits per letter (rows)
+    int bitByLetter = 7; // nombre de bits fixé
 
-    // Calculate the size of the grid dynamically
+    
     int cellWidth = std::max(1, width() / numberLetterDraw);
     int cellHeight = std::max(1, height() / bitByLetter);
     int cellSize = std::min(cellWidth, cellHeight);
     int circleSize = cellSize * 0.8;
 
-    // Calculate the starting position to center the grid
     int gridWidth = numberLetterDraw * cellSize;
     int gridHeight = bitByLetter * cellSize;
     int startX = (width() - gridWidth) / 2;
     int startY = (height() - gridHeight) / 2;
 
-    // Draw the binary grid
+    // pour la représentation binaire
     for (int i = 0; i < numberLetterDraw; ++i) {
         for (int j = 0; j < bitByLetter; ++j) {
             int index = i * bitByLetter + j;

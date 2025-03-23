@@ -1,5 +1,5 @@
 #include "presenter/ParachutePresenter.h"
-#include "view/MainWindow.h"  // Utilise le chemin depuis include
+#include "view/MainWindow.h"  
 
 
 ParachutePresenter::ParachutePresenter(MainWindow *view) 

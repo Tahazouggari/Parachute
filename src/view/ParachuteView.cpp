@@ -11,14 +11,14 @@ ParachuteView::ParachuteView(QWidget *parent)
       randomColorMode(false), mode10(false), useBackgroundImage(false) {}
 
 void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<int>& encodedMessage) {
-    // En mode normal (7 bits), utiliser directement les valeurs fournies
+    // En mode normal (7 bits), on utilise directement les valeurs fournies
     if (!mode10) {
         this->sectors = sectors;
-        this->originalSectors = sectors; // Mémoriser le nombre original de secteurs
+        this->originalSectors = sectors; //pour memoriser le nombre original de secteurs
         this->tracks = tracks;
         this->encodedMessage = encodedMessage;
     } 
-    // En mode 10, ajuster le nombre de secteurs si nécessaire
+    // En mode 10, on doit ajuster le nombre de secteurs si nécessaire
     else {
         this->tracks = tracks;
         this->encodedMessage = encodedMessage;
@@ -28,7 +28,7 @@ void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<
             this->originalSectors = sectors;
         }
         
-        // Vérifier que le nombre de secteurs est un multiple de 10
+        // on doit impérativement vérifier que le nombre de secteurs est un multiple de 10
         if (sectors % 10 != 0) {
             this->sectors = (int)(std::ceil(sectors / 10.0) * 10);
         } else {
@@ -36,7 +36,7 @@ void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<
         }
     }
     
-    // Générer de nouvelles couleurs aléatoires si le mode est activé
+    // pour générer de nouvelles couleurs aléatoires si le mode est activé
     if (randomColorMode) {
         generateRandomColors();
     }
@@ -74,17 +74,17 @@ void ParachuteView::setMode10(bool enabled) {
     if (oldMode != mode10) {
         // Passage du mode 7 au mode 10
         if (mode10) {
-            // Sauvegarder le nombre original de secteurs avant d'ajuster
+            // pour sauvegarder le nombre original de secteurs avant d'ajuster
             originalSectors = sectors;
             
-            // Ajuster le nombre de secteurs à un multiple de 10
+            //il fuat  ajuster le nombre de secteurs à un multiple de 10
             if (sectors % 10 != 0) {
                 sectors = (int)(std::ceil(sectors / 10.0) * 10);
             }
         }
         // Passage du mode 10 au mode 7
         else {
-            // Restaurer le nombre original de secteurs
+            // pour restaurer le nombre original de secteurs
             sectors = originalSectors;
         }
     }
@@ -113,7 +113,7 @@ void ParachuteView::generateRandomColors() {
     randomColors.clear();
     QRandomGenerator *rng = QRandomGenerator::global();
     
-    // Générer une couleur aléatoire pour chaque indice potentiel
+    // pour générer une couleur aléatoire pour chaque indice potentiel
     for (int i = 0; i < sectors * tracks; i++) {
         if (i < encodedMessage.size() && encodedMessage[i]) {
             // Couleur aléatoire avec une bonne saturation et luminosité
@@ -128,22 +128,22 @@ void ParachuteView::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    // Set background
+    // l arriere plan
     if (useBackgroundImage && !backgroundImage.isNull()) {
-        // Dessiner l'image d'arrière-plan mise à l'échelle pour remplir le widget
+        // pour dessiner l'image d'arrière-plan mise à l'échelle pour remplir le widget
         painter.drawPixmap(rect(), backgroundImage.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
     } else {
-        // Utiliser la couleur d'arrière-plan standard
+        //pour  utiliser la couleur d'arrière-plan standard
         painter.fillRect(rect(), backgroundColor);
     }
 
     int centerX = width() / 2;
     int centerY = height() / 2;
     
-    // Fixed maximum radius regardless of track count
+    // pour fixe le rayon maximum indépendamment du nombre de pistes
     double maxRadius = std::min(width(), height()) / 2.2;
     
-    // Calculate track width based on the fixed maximum radius
+    // Calcul de la largeur de la piste
     double trackWidth = maxRadius / tracks;
 
     double angleStep = 2 * M_PI / sectors;
@@ -152,12 +152,10 @@ void ParachuteView::paintEvent(QPaintEvent *event) {
     QPen borderPen(Qt::black);
     borderPen.setWidth(1);
 
-    // Draw all tracks, regardless of message size
     for (int t = 0; t < tracks; t++) {
         double innerRadius = t * trackWidth;
         double outerRadius = (t + 1) * trackWidth;
         
-        // Draw all sectors in the track
         for (int s = 0; s < sectors; s++) {
             int index = t * sectors + s;
             double startAngle = s * angleStep;
@@ -172,17 +170,16 @@ void ParachuteView::paintEvent(QPaintEvent *event) {
             trapezoid << p1 << p2 << p4 << p3;
             painter.setPen(borderPen);
             
-            // Only color the sector if it exists in the encoded message
             if (index < static_cast<int>(encodedMessage.size()) && encodedMessage[index]) {
                 if (randomColorMode && randomColors.contains(index)) {
-                    // Utiliser la couleur aléatoire pour ce secteur
+                    //pour utiliser la couleur aléatoire pour ce secteur
                     painter.setBrush(QBrush(randomColors[index]));
                 } else {
-                    // Utiliser la couleur standard pour les bits à 1
+                    // pour utiliser la couleur standard pour les bits à 1
                     painter.setBrush(QBrush(parachuteColor));
                 }
             } else {
-                // Utiliser la couleur pour les bits à 0
+                // pour utiliser la couleur pour les bits à 0
                 painter.setBrush(sectorBrush);
             }
             

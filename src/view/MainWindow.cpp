@@ -23,7 +23,6 @@
 #include <QSplitter>
 #include <QScrollArea>
 
-// Inclusions depuis le dossier include
 #include "presenter/ParachutePresenter.h"
 #include "view/ParachuteView.h"
 #include "view/BinaryWidget.h"
@@ -35,21 +34,21 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)), mode10Enabled(false) {
     ui->setupUi(this);
     
-    // Set English as the default language
+    // l 'anglais est le language par defaut
     languageManager->switchLanguage("en");
 
     // Créer le splitter principal pour diviser l'écran
     QSplitter *mainSplitter = new QSplitter(Qt::Horizontal, ui->centralwidget);
     QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(ui->centralwidget->layout());
     if (mainLayout) {
-        // Supprimer tous les widgets du layout principal
+        // pour supprimer tous les widgets du layout principal
         while (QLayoutItem* item = mainLayout->takeAt(0)) {
             if (item->widget()) {
                 item->widget()->setParent(nullptr);
             }
             delete item;
         }
-        // Ajouter le splitter comme widget principal
+        // pour ajouter le splitter comme widget principal
         mainLayout->addWidget(mainSplitter);
     }
 
@@ -66,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
     QGroupBox *messageBox = new QGroupBox(tr("Message"));
     QVBoxLayout *messageLayout = new QVBoxLayout(messageBox);
     QLabel *labelMessage = new QLabel(tr("Your message:"));
-    ui->messageInput->setParent(nullptr); // Détacher du layout original
+    ui->messageInput->setParent(nullptr); // car il faut détacher du layout original
     messageLayout->addWidget(labelMessage);
     messageLayout->addWidget(ui->messageInput);
     mainPanelLayout->addWidget(messageBox);
@@ -75,21 +74,21 @@ MainWindow::MainWindow(QWidget *parent)
     QTabWidget *viewTabs = new QTabWidget();
     mainPanelLayout->addWidget(viewTabs);
     
-    // Créer et configurer la vue du parachute
+    // pour créer et configurer la vue du parachute
     QWidget *parachuteViewTab = new QWidget();
     QVBoxLayout *parachuteLayout = new QVBoxLayout(parachuteViewTab);
     parachuteView = new ParachuteView(this);
     parachuteLayout->addWidget(parachuteView);
     viewTabs->addTab(parachuteViewTab, tr("Parachute View"));
     
-    // Configurer la vue binaire
+    // Configuration  la vue binaire
     QWidget *binaryViewTab = new QWidget();
     QVBoxLayout *binaryLayout = new QVBoxLayout(binaryViewTab);
     binaryWidget = new BinaryWidget(this);
     binaryLayout->addWidget(binaryWidget);
     viewTabs->addTab(binaryViewTab, tr("Binary View"));
     
-    // Configurer la vue hexadécimale
+    // Configuration de la vue hexadécimale
     QWidget *hexViewTab = new QWidget();
     QVBoxLayout *hexLayout = new QVBoxLayout(hexViewTab);
     hexView = new HexView(this);
@@ -100,7 +99,7 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *controlPanel = new QWidget();
     QVBoxLayout *controlPanelLayout = new QVBoxLayout(controlPanel);
     
-    // Ajouter un ScrollArea pour permettre de défiler si nécessaire
+    // pour ajouter un ScrollArea pour permettre de défiler si nécessaire
     QScrollArea *scrollArea = new QScrollArea();
     scrollArea->setWidgetResizable(true);
     scrollArea->setFrameShape(QFrame::NoFrame);
@@ -272,7 +271,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Définir une taille raisonnable pour la fenêtre
     resize(1200, 800);
 
-    // Ajouter les connexions pour les boutons d'image de fond après les autres connexions
+    // utile pour ajouter les connexions pour les boutons d'image de fond après les autres connexions
     connect(backgroundImageButton, &QPushButton::clicked, this, &MainWindow::onBackgroundImageSelect);
     connect(clearBackgroundImageButton, &QPushButton::clicked, this, &MainWindow::onClearBackgroundImage);
 }
@@ -342,14 +341,14 @@ void MainWindow::onMode10Toggled(bool checked) {
     // Mettre à jour la vue parachute
     parachuteView->setMode10(checked);
     
-    // Trouver les contrôles par nom
+    // utile pour trouver les contrôles par nom
     QSlider *sliderSectors = findChild<QSlider*>("sliderSectors");
     QSpinBox *spinSectors = findChild<QSpinBox*>("spinSectors");
     
     if (sliderSectors && spinSectors) {
         int currentValue = spinSectors->value();
         
-        // Ajuster la valeur au multiple de 10 le plus proche si nécessaire
+        // il faut ajuster la valeur au multiple de 10 le plus proche si nécessaire
         if (checked) {
             int newValue = (int)(std::ceil(currentValue / 10.0) * 10);
             if (currentValue != newValue) {
@@ -385,7 +384,7 @@ void MainWindow::onExportImage() {
 void MainWindow::onSaveFile() {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Parachute"), QDir::homePath(), tr("Parachute Files (*.ep)"));
     if (!fileName.isEmpty()) {
-        // S'assurer que le fichier a l'extension .ep
+        // pour s'assurer que le fichier a l'extension .ep
         if (!fileName.endsWith(".ep", Qt::CaseInsensitive)) {
             fileName += ".ep";
         }
@@ -393,14 +392,14 @@ void MainWindow::onSaveFile() {
         QFile file(fileName);
         if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream out(&file);
-            // Écrire le message
+            // pour écrire le message
             out << ui->messageInput->text() << "\n";
-            // Écrire le nombre de secteurs et de pistes
+            // pour écrire le nombre de secteurs et de pistes
             out << ui->spinSectors->value() << "\n";
             out << ui->spinTracks->value() << "\n";
-            // Écrire l'état du mode 10
+            // pour écrire l'état du mode 10
             out << (mode10Enabled ? "1" : "0") << "\n";
-            // Écrire le chemin de l'image d'arrière-plan s'il existe
+            // pour écrire le chemin de l'image d'arrière-plan s'il existe
             out << (backgroundImagePath.isEmpty() ? "no_image" : backgroundImagePath) << "\n";
             file.close();
             QMessageBox::information(this, tr("File Saved"), tr("Parachute parameters saved successfully."));
@@ -428,19 +427,19 @@ void MainWindow::onOpenFile() {
             int tracks = in.readLine().toInt(&ok);
             if (ok) ui->spinTracks->setValue(tracks);
             
-            // Lire l'état du mode 10 s'il est présent dans le fichier
+            //pour lire l'état du mode 10 s'il est présent dans le fichier
             if (!in.atEnd()) {
                 QString mode10Str = in.readLine();
                 bool mode10 = (mode10Str == "1");
                 
-                // Mettre à jour l'état du mode 10
+                // pour mettre à jour l'état du mode 10
                 mode10Enabled = mode10;
                 findChild<QCheckBox*>("mode10CheckBox")->setChecked(mode10);
                 
-                // Mettre à jour la vue parachute avec le mode
+                // pour mettre à jour la vue parachute avec le mode
                 parachuteView->setMode10(mode10);
                 
-                // Mettre à jour les préréglages disponibles
+                // pour mettre à jour les préréglages disponibles
                 updateSectorsPresets(sectorsPresetComboBox, mode10);
             }
             
@@ -472,11 +471,11 @@ void MainWindow::onExit() {
 }
 
 void MainWindow::onSectorsOrTracksChanged() {
-    // Récupérer la valeur actuelle des secteurs et pistes
+    //pour récupérer la valeur actuelle des secteurs et pistes
     int sectors = 0;
     int tracks = 0;
     
-    // Trouver les contrôles par nom
+    // pour trouver les contrôles par nom
     QSlider *sliderSectors = findChild<QSlider*>("sliderSectors");
     QSlider *sliderTracks = findChild<QSlider*>("sliderTracks");
     QSpinBox *spinSectors = findChild<QSpinBox*>("spinSectors");
@@ -504,10 +503,10 @@ void MainWindow::onSectorsOrTracksChanged() {
         }
     }
     
-    // Mettre à jour le préréglage de secteurs sélectionné
+    //pour mettre à jour le préréglage de secteurs sélectionné
     if (sectorsPresetComboBox) {
         int index = -1;
-        // Chercher si la valeur actuelle correspond à un des préréglages
+        // pour chercher si la valeur actuelle correspond à un des préréglages
         for (int i = 0; i < sectorsPresetComboBox->count(); i++) {
             if (sectorsPresetComboBox->itemData(i).toInt() == sectors) {
                 index = i;
@@ -523,7 +522,7 @@ void MainWindow::onSectorsOrTracksChanged() {
         }
     }
     
-    // Mettre à jour le préréglage de pistes sélectionné
+    //pour mettre à jour le préréglage de pistes sélectionné
     if (tracksPresetComboBox) {
         int index = -1;
         // Chercher si la valeur actuelle correspond à un des préréglages
@@ -546,7 +545,7 @@ void MainWindow::onSectorsOrTracksChanged() {
     QString message = ui->messageInput->text();
     std::vector<int> encodedMessage = MessageEncoder::encodeMessage(message, mode10Enabled);
     
-    // Mettre à jour la vue du parachute
+    //pour mettre à jour la vue du parachute
     parachuteView->setParachuteData(sectors, tracks, encodedMessage);
 }
 
@@ -563,7 +562,7 @@ void MainWindow::onLanguageArabic() {
 }
 
 void MainWindow::retranslateUi() {
-    // Mettre à jour l'UI générée par Qt Designer
+    // pour mettre à jour l'UI générée par Qt Designer
     ui->retranslateUi(this);
     
     // Groupe de personnalisation des couleurs
@@ -588,7 +587,7 @@ void MainWindow::retranslateUi() {
     trackPresetsLabel->setText(tr("Track Presets:"));
     sectorPresetsLabel->setText(tr("Sector Presets:"));
     
-    // Mettre à jour les textes dans les ComboBox avec blocage des signaux
+    // pour mettre à jour les textes dans les ComboBox avec blocage des signaux
     int currentSectors = sectorsPresetComboBox->currentData().toInt();
     sectorsPresetComboBox->blockSignals(true);
     updateSectorsPresets(sectorsPresetComboBox, mode10Enabled);
@@ -646,7 +645,7 @@ void MainWindow::updateTracksPresets(QComboBox* comboBox) {
     
     comboBox->clear();
     
-    // Ajouter les options de pistes
+    // pour ajouter les options de pistes
     comboBox->addItem(tr("3 tracks"), 3);
     comboBox->addItem(tr("4 tracks"), 4);
     comboBox->addItem(tr("5 tracks"), 5);
@@ -662,10 +661,10 @@ void MainWindow::onSectorsPresetSelected(int index) {
     QComboBox* comboBox = qobject_cast<QComboBox*>(sender());
     if (!comboBox) return;
     
-    // Obtenir la valeur sélectionnée (le nombre de secteurs)
+    //pour  obtenir la valeur sélectionnée (le nombre de secteurs)
     int selectedSectors = comboBox->itemData(index).toInt();
     
-    // Mettre à jour le slider et le spinbox
+    // pour mettre à jour le slider et le spinbox
     ui->spinSectors->setValue(selectedSectors);
     ui->sliderSectors->setValue(selectedSectors);
     
@@ -681,11 +680,11 @@ void MainWindow::onTracksPresetSelected(int index) {
     // Obtenir la valeur sélectionnée (le nombre de pistes)
     int selectedTracks = comboBox->itemData(index).toInt();
     
-    // Mettre à jour le slider et le spinbox
+    // pour mettre à jour le slider et le spinbox
     ui->spinTracks->setValue(selectedTracks);
     ui->sliderTracks->setValue(selectedTracks);
     
-    // Mettre à jour le parachute
+    // pour mettre à jour le parachute
     onSectorsOrTracksChanged();
 }
 
@@ -707,11 +706,9 @@ void MainWindow::onClearBackgroundImage() {
 }
 
 void MainWindow::onSectorsChanged(int value) {
-    // Update the parachute view when sectors changed
     onSectorsOrTracksChanged();
 }
 
 void MainWindow::onTracksChanged(int value) {
-    // Update the parachute view when tracks changed
     onSectorsOrTracksChanged();
 }

@@ -11,7 +11,7 @@ std::vector<int> MessageEncoder::encodeMessage(const QString &message, bool mode
             binaryMessage.push_back((asciiValue >> i) & 1);
         }
         
-        // En mode 10, ajouter 3 bits blancs (0) après chaque caractère
+        // En mode 10, on doitajouter 3 bits blancs (0) après chaque caractère
         if (mode10) {
             binaryMessage.push_back(0);
             binaryMessage.push_back(0);
