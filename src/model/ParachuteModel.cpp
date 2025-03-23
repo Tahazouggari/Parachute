@@ -1,4 +1,4 @@
-#include "ParachuteModel.h"
+#include "model/ParachuteModel.h"
 #include <QRandomGenerator>
 #include <cmath>
 

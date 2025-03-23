@@ -1,5 +1,5 @@
-#include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "view/MainWindow.h"
+#include "view/ui_MainWindow.h"
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QFileDialog>
@@ -21,13 +21,13 @@
 #include <QComboBox>
 #include <QDir>
 
-// Chemins relatifs depuis le répertoire du projet
-#include "../presenter/ParachutePresenter.h"
-#include "ParachuteView.h"
-#include "BinaryWidget.h"
-#include "HexView.h"
-#include "../utils/LanguageManager.h"
-#include "../model/MessageEncoder.h"
+// Inclusions depuis le dossier include
+#include "presenter/ParachutePresenter.h"
+#include "view/ParachuteView.h"
+#include "view/BinaryWidget.h"
+#include "view/HexView.h"
+#include "utils/LanguageManager.h"
+#include "model/MessageEncoder.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), languageManager(new LanguageManager(this)), mode10Enabled(false) {

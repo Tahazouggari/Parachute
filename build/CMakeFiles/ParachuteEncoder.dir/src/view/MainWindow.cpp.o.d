@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/src/view/MainWindow.cpp \
-  /Users/omar/Desktop/conception/Parachute/src/view/MainWindow.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/MainWindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMainWindow \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -994,7 +994,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qicon.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/ParachuteView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QMap \
@@ -1035,8 +1035,8 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/../utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/BinaryWidget.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/../utils/LanguageManager.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QTranslator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qtranslator.h \
@@ -1049,9 +1049,9 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qinputmethod.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/HexView.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/HexView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
-  /Users/omar/Desktop/conception/Parachute/src/view/ui_MainWindow.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/include/view/ui_MainWindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QVariant \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QAction \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qaction.h \
@@ -1122,6 +1122,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qrubberband.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qabstractitemmodel.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QDir \
-  /Users/omar/Desktop/conception/Parachute/src/view/../presenter/ParachutePresenter.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/../presenter/../model/ParachuteModel.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/../model/MessageEncoder.h
+  /Users/omar/Desktop/conception/Parachute/include/presenter/ParachutePresenter.h \
+  /Users/omar/Desktop/conception/Parachute/include/presenter/../model/ParachuteModel.h \
+  /Users/omar/Desktop/conception/Parachute/include/utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/include/model/MessageEncoder.h

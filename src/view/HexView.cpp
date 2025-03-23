@@ -1,4 +1,4 @@
-#include "HexView.h"
+#include "view/HexView.h"
 #include <QPainter>
 #include <QFontMetrics>
 

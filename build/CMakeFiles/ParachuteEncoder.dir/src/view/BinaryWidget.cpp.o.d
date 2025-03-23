@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/src/view/BinaryWidget.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.cpp \
-  /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/BinaryWidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \

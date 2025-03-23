@@ -12,8 +12,20 @@ set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/qt@5/5.15.16_1")
 # Chercher Qt5 Widgets
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-# Ajouter explicitement les chemins d'entête de Qt5
-include_directories(${CMAKE_SOURCE_DIR}/src ${Qt5Widgets_INCLUDE_DIRS})
+# Ajouter explicitement les chemins d'entête de Qt5 et le nouveau dossier include
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src 
+    ${Qt5Widgets_INCLUDE_DIRS}
+)
+
+# Collecter les fichiers d'en-tête pour les inclure explicitement
+file(GLOB_RECURSE HEADER_FILES 
+    ${CMAKE_SOURCE_DIR}/include/model/*.h
+    ${CMAKE_SOURCE_DIR}/include/view/*.h
+    ${CMAKE_SOURCE_DIR}/include/presenter/*.h
+    ${CMAKE_SOURCE_DIR}/include/utils/*.h
+)
 
 # Déclarer explicitement tes sources
 add_executable(ParachuteEncoder 
@@ -26,6 +38,7 @@ add_executable(ParachuteEncoder
     src/view/BinaryWidget.cpp
     src/utils/LanguageManager.cpp
     src/view/HexView.cpp
+    ${HEADER_FILES}  # Inclure explicitement les fichiers d'en-tête
 )
 
 # Add translations

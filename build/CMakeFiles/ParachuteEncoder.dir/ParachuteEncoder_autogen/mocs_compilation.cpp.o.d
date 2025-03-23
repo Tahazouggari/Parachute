@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/mocs_compilation.cpp \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/VSCBVMNR7M/moc_LanguageManager.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/KLZYWGTNTX/moc_LanguageManager.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config \
@@ -483,7 +483,7 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/sortable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/wrap_iter.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/VSCBVMNR7M/../../../src/utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/KLZYWGTNTX/../../../include/utils/LanguageManager.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobject.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobjectdefs.h \
@@ -979,8 +979,8 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qhash.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qshareddata.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_BinaryWidget.cpp \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/BinaryWidget.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/moc_BinaryWidget.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/../../../include/view/BinaryWidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpaintdevice.h \
@@ -1009,16 +1009,16 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QColor \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QMap \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_HexView.cpp \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/HexView.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/moc_HexView.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/../../../include/view/HexView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_MainWindow.cpp \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/MainWindow.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/moc_MainWindow.cpp \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/../../../include/view/MainWindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMainWindow \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qicon.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/ParachuteView.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/../../../include/view/ParachuteView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QRandomGenerator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qrandom.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/random \
@@ -1055,5 +1055,5 @@ CMakeFiles/ParachuteEncoder.dir/ParachuteEncoder_autogen/mocs_compilation.cpp.o:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/../../../src/view/../utils/LanguageManager.h \
-  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_ParachuteView.cpp
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/../../../include/view/../utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/moc_ParachuteView.cpp

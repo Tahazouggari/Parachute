@@ -1,4 +1,4 @@
-#include "MessageEncoder.h"
+#include "model/MessageEncoder.h"
 
 std::vector<int> MessageEncoder::encodeMessage(const QString &message, bool mode10) {
     std::vector<int> binaryMessage;

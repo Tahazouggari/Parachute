@@ -1,4 +1,4 @@
-/Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/3JYSCEOBDA/moc_MainWindow.cpp: /Users/omar/Desktop/conception/Parachute/src/view/MainWindow.h \
+/Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/75UR3EJMK3/moc_HexView.cpp: /Users/omar/Desktop/conception/Parachute/include/view/HexView.h \
   /Users/omar/Desktop/conception/Parachute/build/ParachuteEncoder_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
@@ -477,43 +477,10 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/binomial_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/cauchy_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/chi_squared_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/clamp_to_integral.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/default_random_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/discard_block_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/discrete_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/exponential_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/extreme_value_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/fisher_f_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/gamma_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/generate_canonical.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/geometric_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/independent_bits_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_seed_sequence.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_valid.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/knuth_b.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/linear_congruential_engine.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/log2.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/lognormal_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/mersenne_twister_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/negative_binomial_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/normal_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/piecewise_constant_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/piecewise_linear_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/poisson_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/random_device.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/ranlux.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/shuffle_order_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/subtract_with_carry_engine.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_int_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/container_compatible_range.h \
@@ -752,7 +719,6 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
@@ -857,15 +823,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/_time.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
-  /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/BinaryWidget.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/HexView.h \
-  /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/QMap \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/QObject \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/QRandomGenerator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/QString \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/QTranslator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qalgorithms.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qarraydata.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qatomic.h \
@@ -877,10 +835,7 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qconfig.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qcontainerfwd.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qcontainertools_impl.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qcoreapplication.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qdatastream.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qflags.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qglobal.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qglobalstatic.h \
@@ -890,9 +845,7 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qiterator.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qline.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qlist.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qlocale.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qlogging.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qmap.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qmargins.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qmetatype.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qmutex.h \
@@ -905,7 +858,6 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qpair.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qprocessordetection.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qrandom.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qrect.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qrefcount.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qregexp.h \
@@ -923,9 +875,7 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qsysinfo.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qsystemdetection.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qtcore-config.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qtranslator.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qtypeinfo.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qvarlengtharray.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qvector.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qversiontagging.h \
@@ -936,10 +886,7 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qfont.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qfontinfo.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qfontmetrics.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qguiapplication.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qicon.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qinputmethod.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qmatrix.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qpaintdevice.h \
@@ -954,13 +901,8 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qtguiglobal.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qtransform.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qwindowdefs.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qsizepolicy.h \
-  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qtwidgets-config.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qtwidgetsglobal.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h

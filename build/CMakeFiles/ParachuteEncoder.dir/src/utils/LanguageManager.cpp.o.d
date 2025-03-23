@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/src/utils/LanguageManager.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.cpp \
-  /Users/omar/Desktop/conception/Parachute/src/utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/include/utils/LanguageManager.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobject.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qobjectdefs.h \

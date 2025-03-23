@@ -1,6 +1,6 @@
 CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.cpp \
-  /Users/omar/Desktop/conception/Parachute/src/view/ParachuteView.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/ParachuteView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \

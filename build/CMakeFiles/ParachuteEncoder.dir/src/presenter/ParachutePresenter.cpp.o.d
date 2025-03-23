@@ -1,7 +1,7 @@
 CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: \
   /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.cpp \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/ParachutePresenter.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../model/ParachuteModel.h \
+  /Users/omar/Desktop/conception/Parachute/include/presenter/ParachutePresenter.h \
+  /Users/omar/Desktop/conception/Parachute/include/presenter/../model/ParachuteModel.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__algorithm/copy.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
@@ -955,7 +955,7 @@ CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qmap.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__tree \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../view/MainWindow.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/MainWindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QMainWindow \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -999,7 +999,7 @@ CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qicon.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../view/ParachuteView.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/ParachuteView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QRandomGenerator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qrandom.h \
@@ -1037,8 +1037,8 @@ CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../view/BinaryWidget.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../view/../utils/LanguageManager.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/BinaryWidget.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/../utils/LanguageManager.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QObject \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QTranslator \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qtranslator.h \
@@ -1051,5 +1051,5 @@ CMakeFiles/ParachuteEncoder.dir/src/presenter/ParachutePresenter.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qinputmethod.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qlocale.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qvariant.h \
-  /Users/omar/Desktop/conception/Parachute/src/presenter/../view/HexView.h \
+  /Users/omar/Desktop/conception/Parachute/include/view/HexView.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QString

@@ -1,4 +1,4 @@
-#include "BinaryWidget.h"
+#include "view/BinaryWidget.h"
 #include <QPainter>
 #include <QDebug>
 #include <QRandomGenerator>

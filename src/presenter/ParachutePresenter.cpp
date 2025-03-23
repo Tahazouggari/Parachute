@@ -1,5 +1,5 @@
-#include "ParachutePresenter.h"
-#include "../view/MainWindow.h"  // Use relative path
+#include "presenter/ParachutePresenter.h"
+#include "view/MainWindow.h"  // Utilise le chemin depuis include
 
 
 ParachutePresenter::ParachutePresenter(MainWindow *view) 

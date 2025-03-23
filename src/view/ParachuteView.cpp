@@ -1,4 +1,4 @@
-#include "ParachuteView.h"
+#include "view/ParachuteView.h"
 #include <QPainter>
 #include <QPen>
 #include <QBrush>
