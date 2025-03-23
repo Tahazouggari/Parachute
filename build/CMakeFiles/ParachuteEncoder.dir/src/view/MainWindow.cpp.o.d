@@ -1122,6 +1122,11 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qrubberband.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qabstractitemmodel.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QDir \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QSplitter \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qsplitter.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/QScrollArea \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qscrollarea.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
   /Users/omar/Desktop/conception/Parachute/include/presenter/ParachutePresenter.h \
   /Users/omar/Desktop/conception/Parachute/include/presenter/../model/ParachuteModel.h \
   /Users/omar/Desktop/conception/Parachute/include/utils/LanguageManager.h \
