@@ -20,6 +20,7 @@
 #include <QHBoxLayout>
 #include <QComboBox>
 #include <QDir>
+#include <QTabWidget>
 
 // Inclusions depuis le dossier include
 #include "presenter/ParachutePresenter.h"
@@ -36,31 +37,79 @@ MainWindow::MainWindow(QWidget *parent)
     // Set English as the default language
     languageManager->switchLanguage("en");
 
-    // Créer et configurer la vue du parachute
-    parachuteView = new ParachuteView(this);
-    QVBoxLayout *parachuteLayout = new QVBoxLayout(ui->parachuteViewTab);
+    // Créer un widget central avec un layout horizontal pour les deux panneaux
+    QWidget *centralWidget = new QWidget(this);
+    QHBoxLayout *mainHorizontalLayout = new QHBoxLayout(centralWidget);
+    mainHorizontalLayout->setContentsMargins(10, 10, 10, 10);
+    mainHorizontalLayout->setSpacing(10);
+
+    // Créer le panneau principal pour la visualisation (70% de l'espace)
+    QWidget *mainPanel = new QWidget(centralWidget);
+    QVBoxLayout *mainPanelLayout = new QVBoxLayout(mainPanel);
+    mainPanel->setMinimumWidth(700);  // Définir une largeur minimale pour le panneau principal
+
+    // Créer le panneau latéral pour les contrôles (30% de l'espace)
+    QWidget *sidePanel = new QWidget(centralWidget);
+    QVBoxLayout *sidePanelLayout = new QVBoxLayout(sidePanel);
+    sidePanel->setMinimumWidth(300);  // Définir une largeur minimale pour le panneau latéral
+    sidePanel->setMaximumWidth(400);  // Définir une largeur maximale pour le panneau latéral
+
+    // Ajouter les panneaux au layout principal
+    mainHorizontalLayout->addWidget(mainPanel, 70);  // 70% de l'espace
+    mainHorizontalLayout->addWidget(sidePanel, 30);  // 30% de l'espace
+
+    // Configurer le champ de texte pour le message
+    QWidget *messageWidget = new QWidget(mainPanel);
+    QVBoxLayout *messageLayout = new QVBoxLayout(messageWidget);
+    QLabel *messageLabel = new QLabel(tr("Your message:"), messageWidget);
+    QLineEdit *messageInput = new QLineEdit(messageWidget);
+    messageInput->setText(ui->messageInput->text());  // Copier le texte existant
+    messageLayout->addWidget(messageLabel);
+    messageLayout->addWidget(messageInput);
+    mainPanelLayout->addWidget(messageWidget);
+
+    // Créer le TabWidget pour les différentes vues
+    QTabWidget *viewsTabWidget = new QTabWidget(mainPanel);
+    viewsTabWidget->setTabPosition(QTabWidget::North);
+    mainPanelLayout->addWidget(viewsTabWidget, 1);  // Donner plus d'espace à la visualisation
+
+    // Créer les onglets
+    QWidget *parachuteViewTab = new QWidget(viewsTabWidget);
+    QWidget *binaryViewTab = new QWidget(viewsTabWidget);
+    QWidget *hexViewTab = new QWidget(viewsTabWidget);
+
+    // Ajouter les onglets au TabWidget
+    viewsTabWidget->addTab(parachuteViewTab, tr("Parachute View"));
+    viewsTabWidget->addTab(binaryViewTab, tr("Binary View"));
+    viewsTabWidget->addTab(hexViewTab, tr("Hexadecimal View"));
+
+    // Configurer les layouts pour chaque onglet
+    QVBoxLayout *parachuteLayout = new QVBoxLayout(parachuteViewTab);
+    QVBoxLayout *binaryLayout = new QVBoxLayout(binaryViewTab);
+    QVBoxLayout *hexLayout = new QVBoxLayout(hexViewTab);
+
+    // Créer et configurer la vue du parachute avec une taille plus grande
+    parachuteView = new ParachuteView(parachuteViewTab);
+    parachuteView->setMinimumHeight(400);  // Augmenter la hauteur minimale
     parachuteLayout->addWidget(parachuteView);
 
     // Configurer la vue binaire
-    binaryWidget = new BinaryWidget(this);
-    QVBoxLayout *binaryLayout = qobject_cast<QVBoxLayout *>(ui->binaryViewTab->layout());
-    if (binaryLayout) {
-        binaryLayout->addWidget(binaryWidget);
-    }
+    binaryWidget = new BinaryWidget(binaryViewTab);
+    binaryLayout->addWidget(binaryWidget);
 
     // Configurer la vue hexadécimale
-    hexView = new HexView(this);
-    QVBoxLayout *hexLayout = new QVBoxLayout(ui->hexViewTab);
+    hexView = new HexView(hexViewTab);
     hexLayout->addWidget(hexView);
 
+    // Configurer les contrôles dans le panneau latéral
     // Groupe de personnalisation des couleurs
-    colorCustomizationGroup = new QGroupBox(tr("Color Customization"), ui->centralwidget);
+    colorCustomizationGroup = new QGroupBox(tr("Color Customization"), sidePanel);
     QVBoxLayout *colorLayout = new QVBoxLayout(colorCustomizationGroup);
     
     // Couleur d'arrière-plan
     QHBoxLayout *bgColorLayout = new QHBoxLayout();
     backgroundColorLabel = new QLabel(tr("Background Color:"), colorCustomizationGroup);
-    QPushButton *bgColorButton = ui->colorButton; // Utiliser le bouton existant
+    QPushButton *bgColorButton = new QPushButton(tr("Choose"), colorCustomizationGroup);
     bgColorLayout->addWidget(backgroundColorLabel);
     bgColorLayout->addWidget(bgColorButton);
     colorLayout->addLayout(bgColorLayout);
@@ -90,16 +139,17 @@ MainWindow::MainWindow(QWidget *parent)
     mode10CheckBox->setObjectName("mode10CheckBox");
     colorLayout->addWidget(mode10CheckBox);
     
-    // Ajouter les contrôles de couleur au layout principal
-    QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(ui->centralwidget->layout());
-    if (mainLayout) {
-        mainLayout->insertWidget(mainLayout->indexOf(ui->exportButton), colorCustomizationGroup);
-    }
+    // Ajouter le groupe de couleurs au panneau latéral
+    sidePanelLayout->addWidget(colorCustomizationGroup);
+    
+    // Contrôles pour les secteurs et pistes
+    QGroupBox *controlsGroup = new QGroupBox(tr("Controls"), sidePanel);
+    QVBoxLayout *controlsLayout = new QVBoxLayout(controlsGroup);
     
     // Préréglages de secteurs
     QHBoxLayout *sectorsPresetLayout = new QHBoxLayout();
-    sectorPresetsLabel = new QLabel(tr("Sector Presets:"), ui->centralwidget);
-    sectorsPresetComboBox = new QComboBox(ui->centralwidget);
+    sectorPresetsLabel = new QLabel(tr("Sector Presets:"), controlsGroup);
+    sectorsPresetComboBox = new QComboBox(controlsGroup);
     sectorsPresetComboBox->setObjectName("sectorsPresetComboBox");
     
     // Remplir avec des multiples de 7 par défaut (mode standard)
@@ -107,17 +157,26 @@ MainWindow::MainWindow(QWidget *parent)
     
     sectorsPresetLayout->addWidget(sectorPresetsLabel);
     sectorsPresetLayout->addWidget(sectorsPresetComboBox);
+    controlsLayout->addLayout(sectorsPresetLayout);
     
-    // Insérer le layout des préréglages de secteurs au-dessus des contrôles de secteurs existants
-    QVBoxLayout *sectorsControlsLayout = qobject_cast<QVBoxLayout*>(ui->sliderSectors->parentWidget()->layout());
-    if (sectorsControlsLayout) {
-        sectorsControlsLayout->insertLayout(0, sectorsPresetLayout);
-    }
+    // Slider pour les secteurs
+    QHBoxLayout *sectorsSliderLayout = new QHBoxLayout();
+    QLabel *sectorsLabel = new QLabel(tr("Sectors:"), controlsGroup);
+    QSlider *sliderSectors = new QSlider(Qt::Horizontal, controlsGroup);
+    QSpinBox *spinSectors = new QSpinBox(controlsGroup);
+    sliderSectors->setRange(7, 40);
+    spinSectors->setRange(7, 40);
+    spinSectors->setValue(7);
+    sliderSectors->setValue(7);
+    sectorsSliderLayout->addWidget(sectorsLabel);
+    sectorsSliderLayout->addWidget(sliderSectors);
+    sectorsSliderLayout->addWidget(spinSectors);
+    controlsLayout->addLayout(sectorsSliderLayout);
     
     // Préréglages de pistes (tracks)
     QHBoxLayout *tracksPresetLayout = new QHBoxLayout();
-    trackPresetsLabel = new QLabel(tr("Track Presets:"), ui->centralwidget);
-    tracksPresetComboBox = new QComboBox(ui->centralwidget);
+    trackPresetsLabel = new QLabel(tr("Track Presets:"), controlsGroup);
+    tracksPresetComboBox = new QComboBox(controlsGroup);
     tracksPresetComboBox->setObjectName("tracksPresetComboBox");
     
     // Remplir avec les options de pistes
@@ -125,15 +184,34 @@ MainWindow::MainWindow(QWidget *parent)
     
     tracksPresetLayout->addWidget(trackPresetsLabel);
     tracksPresetLayout->addWidget(tracksPresetComboBox);
+    controlsLayout->addLayout(tracksPresetLayout);
     
-    // Insérer le layout des préréglages de pistes au-dessus des contrôles de pistes existants
-    QVBoxLayout *tracksControlsLayout = qobject_cast<QVBoxLayout*>(ui->sliderTracks->parentWidget()->layout());
-    if (tracksControlsLayout) {
-        tracksControlsLayout->insertLayout(0, tracksPresetLayout);
-    }
+    // Slider pour les pistes
+    QHBoxLayout *tracksSliderLayout = new QHBoxLayout();
+    QLabel *tracksLabel = new QLabel(tr("Tracks:"), controlsGroup);
+    QSlider *sliderTracks = new QSlider(Qt::Horizontal, controlsGroup);
+    QSpinBox *spinTracks = new QSpinBox(controlsGroup);
+    sliderTracks->setRange(3, 10);
+    spinTracks->setRange(3, 10);
+    sliderTracks->setValue(3);
+    spinTracks->setValue(3);
+    tracksSliderLayout->addWidget(tracksLabel);
+    tracksSliderLayout->addWidget(sliderTracks);
+    tracksSliderLayout->addWidget(spinTracks);
+    controlsLayout->addLayout(tracksSliderLayout);
     
-    // Rendre l'exportButton accessible pour la traduction
-    exportButton = ui->exportButton;
+    // Ajouter le groupe de contrôles au panneau latéral
+    sidePanelLayout->addWidget(controlsGroup);
+    
+    // Bouton d'exportation
+    exportButton = new QPushButton(tr("Export Parachute Image"), sidePanel);
+    sidePanelLayout->addWidget(exportButton);
+    
+    // Ajouter un espace extensible à la fin du panneau latéral
+    sidePanelLayout->addStretch();
+    
+    // Définir le widget central
+    setCentralWidget(centralWidget);
     
     // Connecter les signaux des contrôles
     connect(parachuteButton, &QPushButton::clicked, this, &MainWindow::onParachuteColorChanged);
@@ -146,30 +224,20 @@ MainWindow::MainWindow(QWidget *parent)
             this, &MainWindow::onTracksPresetSelected);
     
     // Autres connexions
-    connect(ui->messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
-    connect(ui->colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
-    connect(ui->exportButton, &QPushButton::clicked, this, &MainWindow::onExportImage);
+    connect(messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
+    connect(bgColorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
+    connect(exportButton, &QPushButton::clicked, this, &MainWindow::onExportImage);
     connect(ui->saveAction, &QAction::triggered, this, &MainWindow::onSaveFile);
     connect(ui->openAction, &QAction::triggered, this, &MainWindow::onOpenFile);
     connect(ui->exitAction, &QAction::triggered, this, &MainWindow::onExit);
 
-    connect(ui->sliderSectors, &QSlider::valueChanged, ui->spinSectors, &QSpinBox::setValue);
-    connect(ui->spinSectors, QOverload<int>::of(&QSpinBox::valueChanged), ui->sliderSectors, &QSlider::setValue);
-    connect(ui->sliderSectors, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
+    connect(sliderSectors, &QSlider::valueChanged, spinSectors, &QSpinBox::setValue);
+    connect(spinSectors, QOverload<int>::of(&QSpinBox::valueChanged), sliderSectors, &QSlider::setValue);
+    connect(sliderSectors, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
 
-    connect(ui->sliderTracks, &QSlider::valueChanged, ui->spinTracks, &QSpinBox::setValue);
-    connect(ui->spinTracks, QOverload<int>::of(&QSpinBox::valueChanged), ui->sliderTracks, &QSlider::setValue);
-    connect(ui->sliderTracks, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
-
-    ui->sliderSectors->setRange(7, 40);
-    ui->spinSectors->setRange(7, 40);
-    ui->sliderTracks->setRange(3, 10);
-    ui->spinTracks->setRange(3, 10);
-
-    ui->sliderSectors->setValue(7);
-    ui->spinSectors->setValue(7);
-    ui->sliderTracks->setValue(3);
-    ui->spinTracks->setValue(3);
+    connect(sliderTracks, &QSlider::valueChanged, spinTracks, &QSpinBox::setValue);
+    connect(spinTracks, QOverload<int>::of(&QSpinBox::valueChanged), sliderTracks, &QSlider::setValue);
+    connect(sliderTracks, &QSlider::valueChanged, this, &MainWindow::onSectorsOrTracksChanged);
 
     // Connexions pour les changements de langue
     connect(ui->actionEnglish, &QAction::triggered, this, &MainWindow::onLanguageEnglish);

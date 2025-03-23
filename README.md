@@ -187,22 +187,7 @@ linguist resources/translations/ar.ts
 
 ---
 
-## Future Improvements
 
-1. **Advanced Encoding**:
-   - Support for different encoding schemes (e.g., UTF-8, Base64).
-
-2. **Customizable Colors**:
-   - Allow users to customize the colors of the parachute sectors.
-
-3. **Interactive Visualization**:
-   - Enable users to interact with the parachute visualization (e.g., click on sectors to toggle their state).
-
-4. **Additional Languages**:
-   - Add support for more languages beyond English, French, and Arabic.
-
-5. **Improved File Format**:
-   - Enhance the `.ep` file format to include metadata such as creation date and author.
 
 ---
 
