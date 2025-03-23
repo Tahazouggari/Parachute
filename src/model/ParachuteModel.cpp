@@ -1,10 +1,11 @@
 #include "ParachuteModel.h"
 #include <QRandomGenerator>
+#include <cmath>
 
 ParachuteModel::ParachuteModel(int sectors, int tracks)
-    : sectors(sectors), tracks(tracks), 
+    : sectors(sectors), tracks(tracks), originalSectors(sectors),
       backgroundColor(Qt::white), parachuteColor(Qt::red), sectorColor(Qt::white),
-      randomColorMode(false) {
+      randomColorMode(false), mode10(false) {
 }
 
 void ParachuteModel::setMessage(const std::vector<int> &message) {
@@ -15,7 +16,18 @@ void ParachuteModel::setMessage(const std::vector<int> &message) {
 }
 
 void ParachuteModel::setSectors(int s) {
-    sectors = s;
+    // Toujours stocker la valeur originale demandée
+    originalSectors = s;
+    
+    // En mode normal (7 bits), utiliser directement la valeur fournie
+    if (!mode10) {
+        sectors = s;
+    }
+    // En mode 10, ajuster à un multiple de 10
+    else {
+        sectors = adjustSectorsForMode10(s);
+    }
+    
     if (randomColorMode) {
         generateRandomColors();
     }
@@ -92,4 +104,34 @@ bool ParachuteModel::getRandomColorMode() const {
 
 QMap<int, QColor> ParachuteModel::getRandomColors() const {
     return randomColors;
+}
+
+void ParachuteModel::setMode10(bool enabled) {
+    bool oldMode = mode10;
+    mode10 = enabled;
+    
+    if (oldMode != mode10) {
+        // Passage au mode 10
+        if (mode10) {
+            // Ajuster le nombre de secteurs à un multiple de 10
+            sectors = adjustSectorsForMode10(sectors);
+        }
+        // Passage au mode 7
+        else {
+            // Restaurer le nombre original de secteurs
+            sectors = originalSectors;
+        }
+    }
+}
+
+bool ParachuteModel::getMode10() const {
+    return mode10;
+}
+
+int ParachuteModel::adjustSectorsForMode10(int requestedSectors) const {
+    // Si mode10 est actif, ajuster le nombre de secteurs au multiple de 10 supérieur ou égal
+    if (mode10) {
+        return (int)(std::ceil(requestedSectors / 10.0) * 10);
+    }
+    return requestedSectors;
 }

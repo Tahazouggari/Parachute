@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[17];
-    char stringdata0[268];
+    QByteArrayData data[24];
+    char stringdata0[377];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,25 +40,35 @@ QT_MOC_LITERAL(4, 54, 23), // "onParachuteColorChanged"
 QT_MOC_LITERAL(5, 78, 20), // "onSectorColorChanged"
 QT_MOC_LITERAL(6, 99, 24), // "onRandomColorModeToggled"
 QT_MOC_LITERAL(7, 124, 7), // "checked"
-QT_MOC_LITERAL(8, 132, 15), // "onSaveParachute"
-QT_MOC_LITERAL(9, 148, 10), // "onSaveFile"
-QT_MOC_LITERAL(10, 159, 10), // "onOpenFile"
-QT_MOC_LITERAL(11, 170, 6), // "onExit"
-QT_MOC_LITERAL(12, 177, 24), // "onSectorsOrTracksChanged"
-QT_MOC_LITERAL(13, 202, 17), // "onLanguageEnglish"
-QT_MOC_LITERAL(14, 220, 16), // "onLanguageFrench"
-QT_MOC_LITERAL(15, 237, 16), // "onLanguageArabic"
-QT_MOC_LITERAL(16, 254, 13) // "retranslateUi"
+QT_MOC_LITERAL(8, 132, 15), // "onMode10Toggled"
+QT_MOC_LITERAL(9, 148, 23), // "onSectorsPresetSelected"
+QT_MOC_LITERAL(10, 172, 5), // "index"
+QT_MOC_LITERAL(11, 178, 15), // "onSaveParachute"
+QT_MOC_LITERAL(12, 194, 10), // "onSaveFile"
+QT_MOC_LITERAL(13, 205, 10), // "onOpenFile"
+QT_MOC_LITERAL(14, 216, 6), // "onExit"
+QT_MOC_LITERAL(15, 223, 24), // "onSectorsOrTracksChanged"
+QT_MOC_LITERAL(16, 248, 17), // "onLanguageEnglish"
+QT_MOC_LITERAL(17, 266, 16), // "onLanguageFrench"
+QT_MOC_LITERAL(18, 283, 16), // "onLanguageArabic"
+QT_MOC_LITERAL(19, 300, 13), // "retranslateUi"
+QT_MOC_LITERAL(20, 314, 22), // "onTracksPresetSelected"
+QT_MOC_LITERAL(21, 337, 19), // "updateTracksPresets"
+QT_MOC_LITERAL(22, 357, 10), // "QComboBox*"
+QT_MOC_LITERAL(23, 368, 8) // "comboBox"
 
     },
     "MainWindow\0onMessageChanged\0\0"
     "onBackgroundColorChanged\0"
     "onParachuteColorChanged\0onSectorColorChanged\0"
     "onRandomColorModeToggled\0checked\0"
-    "onSaveParachute\0onSaveFile\0onOpenFile\0"
-    "onExit\0onSectorsOrTracksChanged\0"
+    "onMode10Toggled\0onSectorsPresetSelected\0"
+    "index\0onSaveParachute\0onSaveFile\0"
+    "onOpenFile\0onExit\0onSectorsOrTracksChanged\0"
     "onLanguageEnglish\0onLanguageFrench\0"
-    "onLanguageArabic\0retranslateUi"
+    "onLanguageArabic\0retranslateUi\0"
+    "onTracksPresetSelected\0updateTracksPresets\0"
+    "QComboBox*\0comboBox"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +78,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,20 +86,24 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   84,    2, 0x08 /* Private */,
-       3,    0,   85,    2, 0x08 /* Private */,
-       4,    0,   86,    2, 0x08 /* Private */,
-       5,    0,   87,    2, 0x08 /* Private */,
-       6,    1,   88,    2, 0x08 /* Private */,
-       8,    0,   91,    2, 0x08 /* Private */,
-       9,    0,   92,    2, 0x08 /* Private */,
-      10,    0,   93,    2, 0x08 /* Private */,
-      11,    0,   94,    2, 0x08 /* Private */,
-      12,    0,   95,    2, 0x08 /* Private */,
-      13,    0,   96,    2, 0x08 /* Private */,
-      14,    0,   97,    2, 0x08 /* Private */,
-      15,    0,   98,    2, 0x08 /* Private */,
-      16,    0,   99,    2, 0x08 /* Private */,
+       1,    0,  104,    2, 0x08 /* Private */,
+       3,    0,  105,    2, 0x08 /* Private */,
+       4,    0,  106,    2, 0x08 /* Private */,
+       5,    0,  107,    2, 0x08 /* Private */,
+       6,    1,  108,    2, 0x08 /* Private */,
+       8,    1,  111,    2, 0x08 /* Private */,
+       9,    1,  114,    2, 0x08 /* Private */,
+      11,    0,  117,    2, 0x08 /* Private */,
+      12,    0,  118,    2, 0x08 /* Private */,
+      13,    0,  119,    2, 0x08 /* Private */,
+      14,    0,  120,    2, 0x08 /* Private */,
+      15,    0,  121,    2, 0x08 /* Private */,
+      16,    0,  122,    2, 0x08 /* Private */,
+      17,    0,  123,    2, 0x08 /* Private */,
+      18,    0,  124,    2, 0x08 /* Private */,
+      19,    0,  125,    2, 0x08 /* Private */,
+      20,    1,  126,    2, 0x08 /* Private */,
+      21,    1,  129,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -97,6 +111,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    7,
+    QMetaType::Void, QMetaType::Bool,    7,
+    QMetaType::Void, QMetaType::Int,   10,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -106,6 +122,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, 0x80000000 | 22,   23,
 
        0        // eod
 };
@@ -121,15 +139,19 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->onParachuteColorChanged(); break;
         case 3: _t->onSectorColorChanged(); break;
         case 4: _t->onRandomColorModeToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 5: _t->onSaveParachute(); break;
-        case 6: _t->onSaveFile(); break;
-        case 7: _t->onOpenFile(); break;
-        case 8: _t->onExit(); break;
-        case 9: _t->onSectorsOrTracksChanged(); break;
-        case 10: _t->onLanguageEnglish(); break;
-        case 11: _t->onLanguageFrench(); break;
-        case 12: _t->onLanguageArabic(); break;
-        case 13: _t->retranslateUi(); break;
+        case 5: _t->onMode10Toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->onSectorsPresetSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->onSaveParachute(); break;
+        case 8: _t->onSaveFile(); break;
+        case 9: _t->onOpenFile(); break;
+        case 10: _t->onExit(); break;
+        case 11: _t->onSectorsOrTracksChanged(); break;
+        case 12: _t->onLanguageEnglish(); break;
+        case 13: _t->onLanguageFrench(); break;
+        case 14: _t->onLanguageArabic(); break;
+        case 15: _t->retranslateUi(); break;
+        case 16: _t->onTracksPresetSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->updateTracksPresets((*reinterpret_cast< QComboBox*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -164,13 +186,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 18;
     }
     return _id;
 }

@@ -6,7 +6,7 @@
 
 class MessageEncoder {
 public:
-    static std::vector<int> encodeMessage(const QString &message);
+    static std::vector<int> encodeMessage(const QString &message, bool mode10 = false);
 };
 
 #endif // MESSAGEENCODER_H

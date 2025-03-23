@@ -9,12 +9,14 @@ class ParachuteModel {
 private:
     int sectors;
     int tracks;
+    int originalSectors;      // Stocke le nombre original de secteurs
     std::vector<int> encodedMessage;
     QColor backgroundColor;
     QColor parachuteColor;     // Couleur des bits à 1
     QColor sectorColor;        // Couleur des bits à 0
     bool randomColorMode;      // Mode couleurs aléatoires
     QMap<int, QColor> randomColors; // Couleurs aléatoires
+    bool mode10;               // Mode 10 bits par caractère
 
 public:
     ParachuteModel(int sectors = 7, int tracks = 5);
@@ -37,6 +39,13 @@ public:
     QColor getSectorColor() const;
     bool getRandomColorMode() const;
     QMap<int, QColor> getRandomColors() const;
+    
+    // Méthodes pour le mode 10
+    void setMode10(bool enabled);
+    bool getMode10() const;
+    
+    // Méthode pour ajuster le nombre de secteurs à un multiple de 10 quand mode10 est activé
+    int adjustSectorsForMode10(int requestedSectors) const;
 };
 
 #endif // PARACHUTEMODEL_H

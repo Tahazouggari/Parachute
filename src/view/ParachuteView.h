@@ -13,12 +13,14 @@ class ParachuteView : public QWidget {
 private:
     int sectors;
     int tracks;
+    int originalSectors;      // Stocke le nombre original de secteurs avant mode 10
     std::vector<int> encodedMessage;
     QColor backgroundColor;
     QColor parachuteColor;
     QColor sectorColor;      // Couleur des secteurs (bits à 0)
     bool randomColorMode;    // Mode couleurs aléatoires pour les bits à 1
     QMap<int, QColor> randomColors; // Stocke des couleurs aléatoires pour chaque secteur actif
+    bool mode10;             // Mode 10 bits par caractère
 
 public:
     explicit ParachuteView(QWidget *parent = nullptr);
@@ -27,8 +29,12 @@ public:
     void setParachuteColor(QColor color);
     void setSectorColor(QColor color);  // Nouvelle méthode pour définir la couleur des secteurs (bits à 0)
     void setRandomColorMode(bool enabled); // Active/désactive le mode couleurs aléatoires
+    void setMode10(bool enabled);       // Active/désactive le mode 10 bits par caractère
     void generateRandomColors(); // Génère de nouvelles couleurs aléatoires
     void saveParachuteImage(const QString &filename);
+    
+    // Getters
+    int getOriginalSectors() const; // Renvoie le nombre original de secteurs
 
 protected:
     void paintEvent(QPaintEvent *event) override;

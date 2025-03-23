@@ -87,8 +87,8 @@ clean: CMakeFiles/ParachuteEncoder_autogen.dir/clean
 # Target rules for target CMakeFiles/ParachuteEncoder.dir
 
 # All Build rule for target.
-CMakeFiles/ParachuteEncoder.dir/all: CMakeFiles/ParachuteEncoder_autogen_timestamp_deps.dir/all
 CMakeFiles/ParachuteEncoder.dir/all: CMakeFiles/ParachuteEncoder_autogen.dir/all
+CMakeFiles/ParachuteEncoder.dir/all: CMakeFiles/ParachuteEncoder_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParachuteEncoder.dir/build.make CMakeFiles/ParachuteEncoder.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/omar/Desktop/conception/Parachute/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target ParachuteEncoder"
