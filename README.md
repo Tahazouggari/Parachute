@@ -10,7 +10,7 @@ ParachuteEncoder is a **Qt-based application** designed to encode messages into 
 
 
 <div align="center">
-    <img src="resources/Gif/persever.png" alt="Parachute Encoder Demo" width="600">
+    <img src="resources/icons/forreadme.png" alt="Parachute Encoder Demo" width="600">
 </div>
 
 The project follows the **Model-View-Presenter (MVP)** architectural pattern, ensuring a clear separation of concerns between the data (Model), user interface (View), and logic (Presenter).
@@ -39,6 +39,7 @@ The application is multilingual, supporting English, French, and Arabic, and pro
 2. **Parachute Visualization**:
    - Visualizes the binary message as a parachute design with customizable sectors and tracks.
    - Allows users to customize both background color and colors for bits (1 and 0).
+   - Supports using a custom image as background for creative designs.
    - Provides a random color mode for bits 1 for creative visualizations.
    - Offers preset selections for multiples of 7 (standard mode) or multiples of 10 (Mode 10).
 
@@ -186,8 +187,8 @@ PARACHUTE/
 2. Users can customize the number of sectors and tracks in the parachute:
    - Choose from preset sector counts (multiples of 7 in standard mode, multiples of 10 in Mode 10)
    - Select track count from presets ranging from 3 to 10
-3. Users can customize the colors:
-   - Background color
+3. Users can customize the colors and background:
+   - Background color or custom background image
    - Color for bits 1 (parachute segments)
    - Color for bits 0 (sector segments)
    - Enable random color mode for bits 1
@@ -201,8 +202,8 @@ PARACHUTE/
 
 ### Exporting and Saving
 1. Users can export the parachute visualization as a PNG image.
-2. Users can save the message, parachute parameters, and mode settings to a `.ep` file.
-3. Saved files can be loaded to restore the message, visualization, and mode settings.
+2. Users can save the message, parachute parameters, mode settings, and background image path to a `.ep` file.
+3. Saved files can be loaded to restore the message, visualization, mode settings, and background image.
 
 ---
 

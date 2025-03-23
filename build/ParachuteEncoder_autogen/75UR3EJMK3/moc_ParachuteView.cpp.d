@@ -917,6 +917,7 @@
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qvector.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Versions/5/Headers/qversiontagging.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/QColor \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/QPixmap \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qbrush.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qcolor.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Versions/5/Headers/qcursor.h \

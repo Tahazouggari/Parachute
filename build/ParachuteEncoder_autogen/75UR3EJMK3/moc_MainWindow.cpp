@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata0[375];
+    QByteArrayData data[26];
+    char stringdata0[421];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,19 +43,21 @@ QT_MOC_LITERAL(7, 124, 7), // "checked"
 QT_MOC_LITERAL(8, 132, 15), // "onMode10Toggled"
 QT_MOC_LITERAL(9, 148, 23), // "onSectorsPresetSelected"
 QT_MOC_LITERAL(10, 172, 5), // "index"
-QT_MOC_LITERAL(11, 178, 13), // "onExportImage"
-QT_MOC_LITERAL(12, 192, 10), // "onSaveFile"
-QT_MOC_LITERAL(13, 203, 10), // "onOpenFile"
-QT_MOC_LITERAL(14, 214, 6), // "onExit"
-QT_MOC_LITERAL(15, 221, 24), // "onSectorsOrTracksChanged"
-QT_MOC_LITERAL(16, 246, 17), // "onLanguageEnglish"
-QT_MOC_LITERAL(17, 264, 16), // "onLanguageFrench"
-QT_MOC_LITERAL(18, 281, 16), // "onLanguageArabic"
-QT_MOC_LITERAL(19, 298, 13), // "retranslateUi"
-QT_MOC_LITERAL(20, 312, 22), // "onTracksPresetSelected"
-QT_MOC_LITERAL(21, 335, 19), // "updateTracksPresets"
-QT_MOC_LITERAL(22, 355, 10), // "QComboBox*"
-QT_MOC_LITERAL(23, 366, 8) // "comboBox"
+QT_MOC_LITERAL(11, 178, 22), // "onTracksPresetSelected"
+QT_MOC_LITERAL(12, 201, 13), // "onExportImage"
+QT_MOC_LITERAL(13, 215, 10), // "onSaveFile"
+QT_MOC_LITERAL(14, 226, 10), // "onOpenFile"
+QT_MOC_LITERAL(15, 237, 6), // "onExit"
+QT_MOC_LITERAL(16, 244, 16), // "onSectorsChanged"
+QT_MOC_LITERAL(17, 261, 5), // "value"
+QT_MOC_LITERAL(18, 267, 15), // "onTracksChanged"
+QT_MOC_LITERAL(19, 283, 24), // "onSectorsOrTracksChanged"
+QT_MOC_LITERAL(20, 308, 17), // "onLanguageEnglish"
+QT_MOC_LITERAL(21, 326, 16), // "onLanguageFrench"
+QT_MOC_LITERAL(22, 343, 16), // "onLanguageArabic"
+QT_MOC_LITERAL(23, 360, 13), // "retranslateUi"
+QT_MOC_LITERAL(24, 374, 23), // "onBackgroundImageSelect"
+QT_MOC_LITERAL(25, 398, 22) // "onClearBackgroundImage"
 
     },
     "MainWindow\0onMessageChanged\0\0"
@@ -63,12 +65,13 @@ QT_MOC_LITERAL(23, 366, 8) // "comboBox"
     "onParachuteColorChanged\0onSectorColorChanged\0"
     "onRandomColorModeToggled\0checked\0"
     "onMode10Toggled\0onSectorsPresetSelected\0"
-    "index\0onExportImage\0onSaveFile\0"
-    "onOpenFile\0onExit\0onSectorsOrTracksChanged\0"
-    "onLanguageEnglish\0onLanguageFrench\0"
-    "onLanguageArabic\0retranslateUi\0"
-    "onTracksPresetSelected\0updateTracksPresets\0"
-    "QComboBox*\0comboBox"
+    "index\0onTracksPresetSelected\0onExportImage\0"
+    "onSaveFile\0onOpenFile\0onExit\0"
+    "onSectorsChanged\0value\0onTracksChanged\0"
+    "onSectorsOrTracksChanged\0onLanguageEnglish\0"
+    "onLanguageFrench\0onLanguageArabic\0"
+    "retranslateUi\0onBackgroundImageSelect\0"
+    "onClearBackgroundImage"
 };
 #undef QT_MOC_LITERAL
 
@@ -78,7 +81,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -86,24 +89,27 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x08 /* Private */,
-       3,    0,  105,    2, 0x08 /* Private */,
-       4,    0,  106,    2, 0x08 /* Private */,
-       5,    0,  107,    2, 0x08 /* Private */,
-       6,    1,  108,    2, 0x08 /* Private */,
-       8,    1,  111,    2, 0x08 /* Private */,
-       9,    1,  114,    2, 0x08 /* Private */,
-      11,    0,  117,    2, 0x08 /* Private */,
-      12,    0,  118,    2, 0x08 /* Private */,
-      13,    0,  119,    2, 0x08 /* Private */,
-      14,    0,  120,    2, 0x08 /* Private */,
-      15,    0,  121,    2, 0x08 /* Private */,
-      16,    0,  122,    2, 0x08 /* Private */,
-      17,    0,  123,    2, 0x08 /* Private */,
-      18,    0,  124,    2, 0x08 /* Private */,
-      19,    0,  125,    2, 0x08 /* Private */,
-      20,    1,  126,    2, 0x08 /* Private */,
-      21,    1,  129,    2, 0x08 /* Private */,
+       1,    0,  119,    2, 0x08 /* Private */,
+       3,    0,  120,    2, 0x08 /* Private */,
+       4,    0,  121,    2, 0x08 /* Private */,
+       5,    0,  122,    2, 0x08 /* Private */,
+       6,    1,  123,    2, 0x08 /* Private */,
+       8,    1,  126,    2, 0x08 /* Private */,
+       9,    1,  129,    2, 0x08 /* Private */,
+      11,    1,  132,    2, 0x08 /* Private */,
+      12,    0,  135,    2, 0x08 /* Private */,
+      13,    0,  136,    2, 0x08 /* Private */,
+      14,    0,  137,    2, 0x08 /* Private */,
+      15,    0,  138,    2, 0x08 /* Private */,
+      16,    1,  139,    2, 0x08 /* Private */,
+      18,    1,  142,    2, 0x08 /* Private */,
+      19,    0,  145,    2, 0x08 /* Private */,
+      20,    0,  146,    2, 0x08 /* Private */,
+      21,    0,  147,    2, 0x08 /* Private */,
+      22,    0,  148,    2, 0x08 /* Private */,
+      23,    0,  149,    2, 0x08 /* Private */,
+      24,    0,  150,    2, 0x08 /* Private */,
+      25,    0,  151,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -113,17 +119,20 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Bool,    7,
     QMetaType::Void, QMetaType::Bool,    7,
     QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Void, 0x80000000 | 22,   23,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   17,
+    QMetaType::Void, QMetaType::Int,   17,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -141,17 +150,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->onRandomColorModeToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 5: _t->onMode10Toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 6: _t->onSectorsPresetSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->onExportImage(); break;
-        case 8: _t->onSaveFile(); break;
-        case 9: _t->onOpenFile(); break;
-        case 10: _t->onExit(); break;
-        case 11: _t->onSectorsOrTracksChanged(); break;
-        case 12: _t->onLanguageEnglish(); break;
-        case 13: _t->onLanguageFrench(); break;
-        case 14: _t->onLanguageArabic(); break;
-        case 15: _t->retranslateUi(); break;
-        case 16: _t->onTracksPresetSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->updateTracksPresets((*reinterpret_cast< QComboBox*(*)>(_a[1]))); break;
+        case 7: _t->onTracksPresetSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->onExportImage(); break;
+        case 9: _t->onSaveFile(); break;
+        case 10: _t->onOpenFile(); break;
+        case 11: _t->onExit(); break;
+        case 12: _t->onSectorsChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->onTracksChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->onSectorsOrTracksChanged(); break;
+        case 15: _t->onLanguageEnglish(); break;
+        case 16: _t->onLanguageFrench(); break;
+        case 17: _t->onLanguageArabic(); break;
+        case 18: _t->retranslateUi(); break;
+        case 19: _t->onBackgroundImageSelect(); break;
+        case 20: _t->onClearBackgroundImage(); break;
         default: ;
         }
     }
@@ -186,13 +198,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 21;
     }
     return _id;
 }

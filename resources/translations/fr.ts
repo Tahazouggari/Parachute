@@ -248,5 +248,25 @@
         <source>Hexadecimal View</source>
         <translation>Vue hexadécimale</translation>
     </message>
+    <message>
+        <source>Background Image:</source>
+        <translation>Image d'arrière-plan :</translation>
+    </message>
+    <message>
+        <source>Select Image</source>
+        <translation>Sélectionner une image</translation>
+    </message>
+    <message>
+        <source>Clear Image</source>
+        <translation>Supprimer l'image</translation>
+    </message>
+    <message>
+        <source>Select Background Image</source>
+        <translation>Sélectionner une image d'arrière-plan</translation>
+    </message>
+    <message>
+        <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
+        <translation>Fichiers image (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
+    </message>
 </context>
 </TS>

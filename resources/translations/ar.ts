@@ -243,5 +243,25 @@
         <source>Hexadecimal View</source>
         <translation>عرض سداسي عشري</translation>
     </message>
+    <message>
+        <source>Background Image:</source>
+        <translation>صورة الخلفية:</translation>
+    </message>
+    <message>
+        <source>Select Image</source>
+        <translation>اختيار صورة</translation>
+    </message>
+    <message>
+        <source>Clear Image</source>
+        <translation>إزالة الصورة</translation>
+    </message>
+    <message>
+        <source>Select Background Image</source>
+        <translation>اختيار صورة الخلفية</translation>
+    </message>
+    <message>
+        <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
+        <translation>ملفات الصور (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
+    </message>
 </context>
 </TS>

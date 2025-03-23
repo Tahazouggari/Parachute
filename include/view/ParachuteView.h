@@ -6,6 +6,7 @@
 #include <QColor>
 #include <QMap>
 #include <QRandomGenerator>
+#include <QPixmap>
 
 class ParachuteView : public QWidget {
     Q_OBJECT
@@ -21,6 +22,9 @@ private:
     bool randomColorMode;    // Mode couleurs aléatoires pour les bits à 1
     QMap<int, QColor> randomColors; // Stocke des couleurs aléatoires pour chaque secteur actif
     bool mode10;             // Mode 10 bits par caractère
+    
+    QPixmap backgroundImage;  // Image d'arrière-plan
+    bool useBackgroundImage;  // Indique si l'image d'arrière-plan est utilisée
 
 public:
     explicit ParachuteView(QWidget *parent = nullptr);
@@ -32,6 +36,11 @@ public:
     void setMode10(bool enabled);       // Active/désactive le mode 10 bits par caractère
     void generateRandomColors(); // Génère de nouvelles couleurs aléatoires
     void saveParachuteImage(const QString &filename);
+    
+    // Méthodes pour l'image d'arrière-plan
+    void setBackgroundImage(const QString &imagePath);
+    void clearBackgroundImage();
+    bool hasBackgroundImage() const;
     
     // Getters
     int getOriginalSectors() const; // Renvoie le nombre original de secteurs

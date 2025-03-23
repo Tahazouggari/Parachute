@@ -119,5 +119,25 @@
         <source>Arabic</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Background Image:</source>
+        <translation>Background Image:</translation>
+    </message>
+    <message>
+        <source>Select Image</source>
+        <translation>Select Image</translation>
+    </message>
+    <message>
+        <source>Clear Image</source>
+        <translation>Clear Image</translation>
+    </message>
+    <message>
+        <source>Select Background Image</source>
+        <translation>Select Background Image</translation>
+    </message>
+    <message>
+        <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
+        <translation>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
+    </message>
 </context>
 </TS>

@@ -27,6 +27,7 @@ private:
     LanguageManager *languageManager; // Language manager
     HexView *hexView; // Hexadecimal visualization widget
     bool mode10Enabled; // Mode 10 (10 bits par caractère)
+    QString backgroundImagePath; // Chemin vers l'image d'arrière-plan
     
     // Boutons de couleur qui doivent être traduits
     QPushButton *parachuteColorButton;
@@ -46,9 +47,12 @@ private:
     QComboBox *sectorsPresetComboBox;
     QComboBox *tracksPresetComboBox;
     QPushButton *exportButton;
+    QPushButton *backgroundImageButton;
+    QPushButton *clearBackgroundImageButton;
     
     // Méthodes utilitaires
     void updateSectorsPresets(QComboBox* comboBox, bool mode10); // Met à jour les préréglages de secteurs
+    void updateTracksPresets(QComboBox* comboBox); // Met à jour les préréglages de pistes
     
 private slots:
     void onMessageChanged();
@@ -58,19 +62,20 @@ private slots:
     void onRandomColorModeToggled(bool checked);
     void onMode10Toggled(bool checked); // Slot pour le mode 10
     void onSectorsPresetSelected(int index); // Slot pour les préréglages de secteurs
+    void onTracksPresetSelected(int index); // Slot pour les préréglages de pistes
     void onExportImage();
     void onSaveFile();
     void onOpenFile();
     void onExit();
+    void onSectorsChanged(int value);
+    void onTracksChanged(int value);
     void onSectorsOrTracksChanged();
     void onLanguageEnglish();
     void onLanguageFrench();
     void onLanguageArabic();
-    void retranslateUi() ;
-
-    // Track presets methods
-    void onTracksPresetSelected(int index);
-    void updateTracksPresets(QComboBox* comboBox);
+    void retranslateUi();
+    void onBackgroundImageSelect(); // Slot pour sélectionner une image d'arrière-plan
+    void onClearBackgroundImage(); // Slot pour supprimer l'image d'arrière-plan
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

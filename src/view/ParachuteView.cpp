@@ -8,7 +8,7 @@
 ParachuteView::ParachuteView(QWidget *parent) 
     : QWidget(parent), sectors(7), tracks(5), originalSectors(7),
       backgroundColor(Qt::white), parachuteColor(Qt::red), sectorColor(Qt::white),
-      randomColorMode(false), mode10(false) {}
+      randomColorMode(false), mode10(false), useBackgroundImage(false) {}
 
 void ParachuteView::setParachuteData(int sectors, int tracks, const std::vector<int>& encodedMessage) {
     // En mode normal (7 bits), utiliser directement les valeurs fournies
@@ -92,6 +92,23 @@ void ParachuteView::setMode10(bool enabled) {
     update();
 }
 
+void ParachuteView::setBackgroundImage(const QString &imagePath) {
+    if (backgroundImage.load(imagePath)) {
+        useBackgroundImage = true;
+        update();
+    }
+}
+
+void ParachuteView::clearBackgroundImage() {
+    useBackgroundImage = false;
+    backgroundImage = QPixmap();
+    update();
+}
+
+bool ParachuteView::hasBackgroundImage() const {
+    return useBackgroundImage && !backgroundImage.isNull();
+}
+
 void ParachuteView::generateRandomColors() {
     randomColors.clear();
     QRandomGenerator *rng = QRandomGenerator::global();
@@ -111,8 +128,14 @@ void ParachuteView::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    // Set background color
-    painter.fillRect(rect(), backgroundColor);
+    // Set background
+    if (useBackgroundImage && !backgroundImage.isNull()) {
+        // Dessiner l'image d'arrière-plan mise à l'échelle pour remplir le widget
+        painter.drawPixmap(rect(), backgroundImage.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
+    } else {
+        // Utiliser la couleur d'arrière-plan standard
+        painter.fillRect(rect(), backgroundColor);
+    }
 
     int centerX = width() / 2;
     int centerY = height() / 2;

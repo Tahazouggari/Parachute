@@ -193,6 +193,18 @@ MainWindow::MainWindow(QWidget *parent)
     sectorColorLayout->addWidget(sectorButton);
     colorLayout->addLayout(sectorColorLayout);
     
+    // Contrôles pour l'image d'arrière-plan
+    QHBoxLayout *backgroundImageLayout = new QHBoxLayout();
+    QLabel *backgroundImageLabel = new QLabel(tr("Background Image:"));
+    backgroundImageButton = new QPushButton(tr("Select Image"));
+    clearBackgroundImageButton = new QPushButton(tr("Clear Image"));
+    clearBackgroundImageButton->setEnabled(false);
+    
+    backgroundImageLayout->addWidget(backgroundImageLabel);
+    backgroundImageLayout->addWidget(backgroundImageButton);
+    backgroundImageLayout->addWidget(clearBackgroundImageButton);
+    colorLayout->addLayout(backgroundImageLayout);
+    
     // Mode couleurs aléatoires
     randomColorModeCheckBox = new QCheckBox(tr("Random Color Mode"));
     colorLayout->addWidget(randomColorModeCheckBox);
@@ -259,6 +271,10 @@ MainWindow::MainWindow(QWidget *parent)
     
     // Définir une taille raisonnable pour la fenêtre
     resize(1200, 800);
+
+    // Ajouter les connexions pour les boutons d'image de fond après les autres connexions
+    connect(backgroundImageButton, &QPushButton::clicked, this, &MainWindow::onBackgroundImageSelect);
+    connect(clearBackgroundImageButton, &QPushButton::clicked, this, &MainWindow::onClearBackgroundImage);
 }
 
 MainWindow::~MainWindow() {
@@ -367,101 +383,86 @@ void MainWindow::onExportImage() {
 }
 
 void MainWindow::onSaveFile() {
-    QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Parachute Files (*.ep)"));
-    if (!filename.isEmpty()) {
-        if (!filename.endsWith(".ep")) {
-            filename += ".ep";
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Parachute"), QDir::homePath(), tr("Parachute Files (*.ep)"));
+    if (!fileName.isEmpty()) {
+        // S'assurer que le fichier a l'extension .ep
+        if (!fileName.endsWith(".ep", Qt::CaseInsensitive)) {
+            fileName += ".ep";
         }
-        QFile file(filename);
+        
+        QFile file(fileName);
         if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream out(&file);
-            out << "[Message]" << Qt::endl;
-            out << ui->messageInput->text() << Qt::endl;
-            out << "[Parameters]" << Qt::endl;
-            out << "Sectors=" << ui->spinSectors->value() << Qt::endl;
-            out << "Tracks=" << ui->spinTracks->value() << Qt::endl;
-            out << "Mode10=" << (mode10Enabled ? "true" : "false") << Qt::endl;
+            // Écrire le message
+            out << ui->messageInput->text() << "\n";
+            // Écrire le nombre de secteurs et de pistes
+            out << ui->spinSectors->value() << "\n";
+            out << ui->spinTracks->value() << "\n";
+            // Écrire l'état du mode 10
+            out << (mode10Enabled ? "1" : "0") << "\n";
+            // Écrire le chemin de l'image d'arrière-plan s'il existe
+            out << (backgroundImagePath.isEmpty() ? "no_image" : backgroundImagePath) << "\n";
             file.close();
-            QMessageBox::information(this, tr("Save File"), tr("File saved successfully."));
+            QMessageBox::information(this, tr("File Saved"), tr("Parachute parameters saved successfully."));
         } else {
-            QMessageBox::warning(this, tr("Save File"), tr("Unable to open file for writing."));
+            QMessageBox::warning(this, tr("Error"), tr("Unable to save file."));
         }
     }
 }
 
 void MainWindow::onOpenFile() {
-    QString filename = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Parachute Files (*.ep)"));
-    if (!filename.isEmpty()) {
-        QFile file(filename);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Parachute"), QDir::homePath(), tr("Parachute Files (*.ep)"));
+    if (!fileName.isEmpty()) {
+        QFile file(fileName);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream in(&file);
-            QString line;
-            QString message;
-            int sectors = 0;
-            int tracks = 0;
-            bool mode10 = false;
-            while (!in.atEnd()) {
-                line = in.readLine().trimmed();
-                if (line == "[Message]") {
-                    message = in.readLine().trimmed();
-                } else if (line == "[Parameters]") {
-                    while (!in.atEnd()) {
-                        line = in.readLine().trimmed();
-                        if (line.startsWith("Sectors=")) {
-                            sectors = line.mid(QString("Sectors=").length()).toInt();
-                        } else if (line.startsWith("Tracks=")) {
-                            tracks = line.mid(QString("Tracks=").length()).toInt();
-                        } else if (line.startsWith("Mode10=")) {
-                            QString mode10Str = line.mid(QString("Mode10=").length());
-                            mode10 = (mode10Str.toLower() == "true");
-                        }
-                    }
-                }
-            }
+            // Lire le message
+            QString message = in.readLine();
+            ui->messageInput->setText(message);
             
-            // Mettre à jour l'état du mode 10
-            mode10Enabled = mode10;
-            parachuteView->setMode10(mode10);
+            // Lire les paramètres du parachute
+            bool ok;
+            int sectors = in.readLine().toInt(&ok);
+            if (ok) ui->spinSectors->setValue(sectors);
             
-            if (mode10CheckBox) {
-                mode10CheckBox->setChecked(mode10);
-            }
+            int tracks = in.readLine().toInt(&ok);
+            if (ok) ui->spinTracks->setValue(tracks);
             
-            // Mettre à jour les préréglages de secteurs selon le mode
-            if (sectorsPresetComboBox) {
+            // Lire l'état du mode 10 s'il est présent dans le fichier
+            if (!in.atEnd()) {
+                QString mode10Str = in.readLine();
+                bool mode10 = (mode10Str == "1");
+                
+                // Mettre à jour l'état du mode 10
+                mode10Enabled = mode10;
+                findChild<QCheckBox*>("mode10CheckBox")->setChecked(mode10);
+                
+                // Mettre à jour la vue parachute avec le mode
+                parachuteView->setMode10(mode10);
+                
+                // Mettre à jour les préréglages disponibles
                 updateSectorsPresets(sectorsPresetComboBox, mode10);
             }
             
-            // Mettre à jour la sélection de pistes
-            if (tracksPresetComboBox) {
-                // Trouver l'index correspondant à la valeur de pistes chargée
-                int index = -1;
-                for (int i = 0; i < tracksPresetComboBox->count(); i++) {
-                    if (tracksPresetComboBox->itemData(i).toInt() == tracks) {
-                        index = i;
-                        break;
-                    }
+            // Lire le chemin de l'image d'arrière-plan s'il est présent
+            if (!in.atEnd()) {
+                QString imagePath = in.readLine().trimmed();
+                if (imagePath != "no_image") {
+                    backgroundImagePath = imagePath;
+                    parachuteView->setBackgroundImage(imagePath);
+                    clearBackgroundImageButton->setEnabled(true);
+                } else {
+                    backgroundImagePath = "";
+                    parachuteView->clearBackgroundImage();
+                    clearBackgroundImageButton->setEnabled(false);
                 }
-                if (index >= 0) {
-                    tracksPresetComboBox->setCurrentIndex(index);
-                }
-            }
-            
-            // Trouver les contrôles par nom
-            QSpinBox *spinSectors = findChild<QSpinBox*>("spinSectors");
-            QSpinBox *spinTracks = findChild<QSpinBox*>("spinTracks");
-            
-            if (spinSectors && spinTracks) {
-                ui->messageInput->setText(message);
-                spinSectors->setValue(sectors);
-                spinTracks->setValue(tracks);
-                onSectorsOrTracksChanged(); // Cela mettra aussi à jour la sélection dans le ComboBox
             }
             
             file.close();
-            QMessageBox::information(this, tr("Open File"), tr("File loaded successfully."));
+            onMessageChanged(); // Mettre à jour l'affichage
+            QMessageBox::information(this, tr("File Loaded"), tr("Parachute parameters loaded successfully."));
         } else {
-            QMessageBox::warning(this, tr("Open File"), tr("Unable to open file for reading."));
+            QMessageBox::warning(this, tr("Error"), tr("Unable to open file."));
         }
     }
 }
@@ -575,6 +576,10 @@ void MainWindow::retranslateUi() {
     parachuteButton->setText(tr("Choose"));
     sectorButton->setText(tr("Choose"));
     
+    // Boutons d'image d'arrière-plan
+    backgroundImageButton->setText(tr("Select Image"));
+    clearBackgroundImageButton->setText(tr("Clear Image"));
+    
     // CheckBoxes
     randomColorModeCheckBox->setText(tr("Random Color Mode"));
     mode10CheckBox->setText(tr("Mode 10 (10 bits per character)"));
@@ -681,5 +686,32 @@ void MainWindow::onTracksPresetSelected(int index) {
     ui->sliderTracks->setValue(selectedTracks);
     
     // Mettre à jour le parachute
+    onSectorsOrTracksChanged();
+}
+
+void MainWindow::onBackgroundImageSelect() {
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Background Image"), 
+                                                QDir::homePath(), 
+                                                tr("Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"));
+    if (!filePath.isEmpty()) {
+        backgroundImagePath = filePath;
+        parachuteView->setBackgroundImage(filePath);
+        clearBackgroundImageButton->setEnabled(true);
+    }
+}
+
+void MainWindow::onClearBackgroundImage() {
+    parachuteView->clearBackgroundImage();
+    backgroundImagePath = "";
+    clearBackgroundImageButton->setEnabled(false);
+}
+
+void MainWindow::onSectorsChanged(int value) {
+    // Update the parachute view when sectors changed
+    onSectorsOrTracksChanged();
+}
+
+void MainWindow::onTracksChanged(int value) {
+    // Update the parachute view when tracks changed
     onSectorsOrTracksChanged();
 }

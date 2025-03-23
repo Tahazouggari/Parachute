@@ -1030,6 +1030,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/ParachuteView.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QPixmap \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/QPainter \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qpainter.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtGui.framework/Headers/qtextoption.h \
