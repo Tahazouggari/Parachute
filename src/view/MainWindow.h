@@ -8,6 +8,10 @@
 #include "HexView.h"
 
 class QComboBox;
+class QPushButton;
+class QLabel;
+class QGroupBox;
+class QCheckBox;
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +28,25 @@ private:
     HexView *hexView; // Hexadecimal visualization widget
     bool mode10Enabled; // Mode 10 (10 bits par caractère)
     
+    // Boutons de couleur qui doivent être traduits
+    QPushButton *parachuteColorButton;
+    QPushButton *sectorColorButton;
+    
+    // Contrôles de l'interface à traduire
+    QGroupBox *colorCustomizationGroup;
+    QLabel *backgroundColorLabel;
+    QLabel *colorBits1Label;
+    QLabel *colorBits0Label;
+    QPushButton *parachuteButton;
+    QPushButton *sectorButton;
+    QLabel *trackPresetsLabel;
+    QLabel *sectorPresetsLabel;
+    QCheckBox *randomColorModeCheckBox;
+    QCheckBox *mode10CheckBox;
+    QComboBox *sectorsPresetComboBox;
+    QComboBox *tracksPresetComboBox;
+    QPushButton *exportButton;
+    
     // Méthodes utilitaires
     void updateSectorsPresets(QComboBox* comboBox, bool mode10); // Met à jour les préréglages de secteurs
     
@@ -35,7 +58,7 @@ private slots:
     void onRandomColorModeToggled(bool checked);
     void onMode10Toggled(bool checked); // Slot pour le mode 10
     void onSectorsPresetSelected(int index); // Slot pour les préréglages de secteurs
-    void onSaveParachute();
+    void onExportImage();
     void onSaveFile();
     void onOpenFile();
     void onExit();

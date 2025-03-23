@@ -1121,6 +1121,7 @@ CMakeFiles/ParachuteEncoder.dir/src/view/MainWindow.cpp.o: \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qtabbar.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtWidgets.framework/Headers/qrubberband.h \
   /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/qabstractitemmodel.h \
+  /opt/homebrew/Cellar/qt@5/5.15.16_1/lib/QtCore.framework/Headers/QDir \
   /Users/omar/Desktop/conception/Parachute/src/view/../presenter/ParachutePresenter.h \
   /Users/omar/Desktop/conception/Parachute/src/view/../presenter/../model/ParachuteModel.h \
   /Users/omar/Desktop/conception/Parachute/src/view/../model/MessageEncoder.h

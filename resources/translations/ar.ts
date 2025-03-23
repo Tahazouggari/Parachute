@@ -127,5 +127,121 @@
         <source>Arabic</source>
         <translation>عربي</translation>
     </message>
+    <message>
+        <source>Color Customization</source>
+        <translation>تخصيص الألوان</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation>لون الخلفية:</translation>
+    </message>
+    <message>
+        <source>Color for Bits 1:</source>
+        <translation>لون البتات 1:</translation>
+    </message>
+    <message>
+        <source>Color for Bits 0:</source>
+        <translation>لون البتات 0:</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>اختر</translation>
+    </message>
+    <message>
+        <source>Random Color Mode</source>
+        <translation>وضع الألوان العشوائية</translation>
+    </message>
+    <message>
+        <source>Mode 10 (10 bits per character)</source>
+        <translation>الوضع 10 (10 بتات لكل حرف)</translation>
+    </message>
+    <message>
+        <source>Track Presets:</source>
+        <translation>إعدادات المسارات:</translation>
+    </message>
+    <message>
+        <source>Sector Presets:</source>
+        <translation>إعدادات القطاعات:</translation>
+    </message>
+    <message>
+        <source>Choose Background Color</source>
+        <translation>اختر لون الخلفية</translation>
+    </message>
+    <message>
+        <source>Choose Color for Bits 1</source>
+        <translation>اختر لون البتات 1</translation>
+    </message>
+    <message>
+        <source>Choose Color for Bits 0</source>
+        <translation>اختر لون البتات 0</translation>
+    </message>
+    <message>
+        <source>3 tracks</source>
+        <translation>3 مسارات</translation>
+    </message>
+    <message>
+        <source>4 tracks</source>
+        <translation>4 مسارات</translation>
+    </message>
+    <message>
+        <source>5 tracks</source>
+        <translation>5 مسارات</translation>
+    </message>
+    <message>
+        <source>6 tracks</source>
+        <translation>6 مسارات</translation>
+    </message>
+    <message>
+        <source>7 tracks</source>
+        <translation>7 مسارات</translation>
+    </message>
+    <message>
+        <source>8 tracks</source>
+        <translation>8 مسارات</translation>
+    </message>
+    <message>
+        <source>9 tracks</source>
+        <translation>9 مسارات</translation>
+    </message>
+    <message>
+        <source>10 tracks</source>
+        <translation>10 مسارات</translation>
+    </message>
+    <message>
+        <source>7 sectors</source>
+        <translation>7 قطاعات</translation>
+    </message>
+    <message>
+        <source>14 sectors</source>
+        <translation>14 قطاعًا</translation>
+    </message>
+    <message>
+        <source>21 sectors</source>
+        <translation>21 قطاعًا</translation>
+    </message>
+    <message>
+        <source>28 sectors</source>
+        <translation>28 قطاعًا</translation>
+    </message>
+    <message>
+        <source>10 sectors</source>
+        <translation>10 قطاعات</translation>
+    </message>
+    <message>
+        <source>20 sectors</source>
+        <translation>20 قطاعًا</translation>
+    </message>
+    <message>
+        <source>30 sectors</source>
+        <translation>30 قطاعًا</translation>
+    </message>
+    <message>
+        <source>40 sectors</source>
+        <translation>40 قطاعًا</translation>
+    </message>
+    <message>
+        <source>Hexadecimal View</source>
+        <translation>عرض سداسي عشري</translation>
+    </message>
 </context>
 </TS>

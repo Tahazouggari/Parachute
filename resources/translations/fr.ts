@@ -26,7 +26,7 @@
         <location filename="../../src/view/MainWindow.ui" line="34"/>
         <location filename="../../src/view/ui_MainWindow.h" line="215"/>
         <source>Message</source>
-        <translation>Votre message :</translation>
+        <translation>Message</translation>
     </message>
     <message>
         <location filename="../../src/view/MainWindow.ui" line="40"/>
@@ -68,7 +68,7 @@
         <location filename="../../src/view/MainWindow.ui" line="117"/>
         <location filename="../../src/view/ui_MainWindow.h" line="222"/>
         <source>Choose Background Color</source>
-        <translation>Choisissez la couleur d&apos;arrière-plan</translation>
+        <translation>Choisir la couleur d&apos;arrière-plan</translation>
     </message>
     <message>
         <location filename="../../src/view/MainWindow.ui" line="124"/>
@@ -86,7 +86,7 @@
         <location filename="../../src/view/MainWindow.ui" line="184"/>
         <location filename="../../src/view/ui_MainWindow.h" line="211"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Français</translation>
     </message>
     <message>
         <source>Menu</source>
@@ -124,13 +124,129 @@
     </message>
     <message>
         <source>frensh</source>
-        <translation type="vanished">Fraçais</translation>
+        <translation type="vanished">Français</translation>
     </message>
     <message>
         <location filename="../../src/view/MainWindow.ui" line="189"/>
         <location filename="../../src/view/ui_MainWindow.h" line="212"/>
         <source>Arabic</source>
         <translation>Arabe</translation>
+    </message>
+    <message>
+        <source>Color Customization</source>
+        <translation>Personnalisation des couleurs</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation>Couleur d&apos;arrière-plan :</translation>
+    </message>
+    <message>
+        <source>Color for Bits 1:</source>
+        <translation>Couleur des bits à 1 :</translation>
+    </message>
+    <message>
+        <source>Color for Bits 0:</source>
+        <translation>Couleur des bits à 0 :</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Choisir</translation>
+    </message>
+    <message>
+        <source>Random Color Mode</source>
+        <translation>Mode couleurs aléatoires</translation>
+    </message>
+    <message>
+        <source>Mode 10 (10 bits per character)</source>
+        <translation>Mode 10 (10 bits par caractère)</translation>
+    </message>
+    <message>
+        <source>Track Presets:</source>
+        <translation>Préréglages de pistes :</translation>
+    </message>
+    <message>
+        <source>Sector Presets:</source>
+        <translation>Préréglages de secteurs :</translation>
+    </message>
+    <message>
+        <source>Choose Background Color</source>
+        <translation>Choisir la couleur d&apos;arrière-plan</translation>
+    </message>
+    <message>
+        <source>Choose Color for Bits 1</source>
+        <translation>Choisir la couleur des bits à 1</translation>
+    </message>
+    <message>
+        <source>Choose Color for Bits 0</source>
+        <translation>Choisir la couleur des bits à 0</translation>
+    </message>
+    <message>
+        <source>3 tracks</source>
+        <translation>3 pistes</translation>
+    </message>
+    <message>
+        <source>4 tracks</source>
+        <translation>4 pistes</translation>
+    </message>
+    <message>
+        <source>5 tracks</source>
+        <translation>5 pistes</translation>
+    </message>
+    <message>
+        <source>6 tracks</source>
+        <translation>6 pistes</translation>
+    </message>
+    <message>
+        <source>7 tracks</source>
+        <translation>7 pistes</translation>
+    </message>
+    <message>
+        <source>8 tracks</source>
+        <translation>8 pistes</translation>
+    </message>
+    <message>
+        <source>9 tracks</source>
+        <translation>9 pistes</translation>
+    </message>
+    <message>
+        <source>10 tracks</source>
+        <translation>10 pistes</translation>
+    </message>
+    <message>
+        <source>7 sectors</source>
+        <translation>7 secteurs</translation>
+    </message>
+    <message>
+        <source>14 sectors</source>
+        <translation>14 secteurs</translation>
+    </message>
+    <message>
+        <source>21 sectors</source>
+        <translation>21 secteurs</translation>
+    </message>
+    <message>
+        <source>28 sectors</source>
+        <translation>28 secteurs</translation>
+    </message>
+    <message>
+        <source>10 sectors</source>
+        <translation>10 secteurs</translation>
+    </message>
+    <message>
+        <source>20 sectors</source>
+        <translation>20 secteurs</translation>
+    </message>
+    <message>
+        <source>30 sectors</source>
+        <translation>30 secteurs</translation>
+    </message>
+    <message>
+        <source>40 sectors</source>
+        <translation>40 secteurs</translation>
+    </message>
+    <message>
+        <source>Hexadecimal View</source>
+        <translation>Vue hexadécimale</translation>
     </message>
 </context>
 </TS>

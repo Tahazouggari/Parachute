@@ -19,6 +19,7 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QComboBox>
+#include <QDir>
 
 // Chemins relatifs depuis le répertoire du projet
 #include "../presenter/ParachutePresenter.h"
@@ -35,73 +36,76 @@ MainWindow::MainWindow(QWidget *parent)
     // Set English as the default language
     languageManager->switchLanguage("en");
 
+    // Créer et configurer la vue du parachute
     parachuteView = new ParachuteView(this);
     QVBoxLayout *parachuteLayout = new QVBoxLayout(ui->parachuteViewTab);
     parachuteLayout->addWidget(parachuteView);
 
+    // Configurer la vue binaire
     binaryWidget = new BinaryWidget(this);
     QVBoxLayout *binaryLayout = qobject_cast<QVBoxLayout *>(ui->binaryViewTab->layout());
     if (binaryLayout) {
         binaryLayout->addWidget(binaryWidget);
     }
 
+    // Configurer la vue hexadécimale
     hexView = new HexView(this);
     QVBoxLayout *hexLayout = new QVBoxLayout(ui->hexViewTab);
     hexLayout->addWidget(hexView);
 
-    // Ajouter des boutons et contrôles pour les nouvelles fonctionnalités de couleur
-    QGroupBox *colorGroupBox = new QGroupBox(tr("Color Customization"), ui->centralwidget);
-    QVBoxLayout *colorLayout = new QVBoxLayout(colorGroupBox);
+    // Groupe de personnalisation des couleurs
+    colorCustomizationGroup = new QGroupBox(tr("Color Customization"), ui->centralwidget);
+    QVBoxLayout *colorLayout = new QVBoxLayout(colorCustomizationGroup);
     
     // Couleur d'arrière-plan
     QHBoxLayout *bgColorLayout = new QHBoxLayout();
-    QLabel *bgColorLabel = new QLabel(tr("Background Color:"), colorGroupBox);
+    backgroundColorLabel = new QLabel(tr("Background Color:"), colorCustomizationGroup);
     QPushButton *bgColorButton = ui->colorButton; // Utiliser le bouton existant
-    bgColorLayout->addWidget(bgColorLabel);
+    bgColorLayout->addWidget(backgroundColorLabel);
     bgColorLayout->addWidget(bgColorButton);
     colorLayout->addLayout(bgColorLayout);
     
     // Couleur des bits à 1 (parachute)
     QHBoxLayout *parachuteColorLayout = new QHBoxLayout();
-    QLabel *parachuteColorLabel = new QLabel(tr("Color for Bits 1:"), colorGroupBox);
-    QPushButton *parachuteColorButton = new QPushButton(tr("Choose"), colorGroupBox);
-    parachuteColorLayout->addWidget(parachuteColorLabel);
-    parachuteColorLayout->addWidget(parachuteColorButton);
+    colorBits1Label = new QLabel(tr("Color for Bits 1:"), colorCustomizationGroup);
+    parachuteButton = new QPushButton(tr("Choose"), colorCustomizationGroup);
+    parachuteColorLayout->addWidget(colorBits1Label);
+    parachuteColorLayout->addWidget(parachuteButton);
     colorLayout->addLayout(parachuteColorLayout);
     
     // Couleur des bits à 0 (secteurs)
     QHBoxLayout *sectorColorLayout = new QHBoxLayout();
-    QLabel *sectorColorLabel = new QLabel(tr("Color for Bits 0:"), colorGroupBox);
-    QPushButton *sectorColorButton = new QPushButton(tr("Choose"), colorGroupBox);
-    sectorColorLayout->addWidget(sectorColorLabel);
-    sectorColorLayout->addWidget(sectorColorButton);
+    colorBits0Label = new QLabel(tr("Color for Bits 0:"), colorCustomizationGroup);
+    sectorButton = new QPushButton(tr("Choose"), colorCustomizationGroup);
+    sectorColorLayout->addWidget(colorBits0Label);
+    sectorColorLayout->addWidget(sectorButton);
     colorLayout->addLayout(sectorColorLayout);
     
     // Mode couleurs aléatoires
-    QCheckBox *randomColorCheckBox = new QCheckBox(tr("Random Color Mode"), colorGroupBox);
-    colorLayout->addWidget(randomColorCheckBox);
+    randomColorModeCheckBox = new QCheckBox(tr("Random Color Mode"), colorCustomizationGroup);
+    colorLayout->addWidget(randomColorModeCheckBox);
     
-    // Ajouter le mode 10
-    QCheckBox *mode10CheckBox = new QCheckBox(tr("Mode 10 (10 bits per character)"), colorGroupBox);
+    // Mode 10 (10 bits par caractère)
+    mode10CheckBox = new QCheckBox(tr("Mode 10 (10 bits per character)"), colorCustomizationGroup);
     mode10CheckBox->setObjectName("mode10CheckBox");
     colorLayout->addWidget(mode10CheckBox);
     
     // Ajouter les contrôles de couleur au layout principal
     QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(ui->centralwidget->layout());
     if (mainLayout) {
-        mainLayout->insertWidget(mainLayout->indexOf(ui->exportButton), colorGroupBox);
+        mainLayout->insertWidget(mainLayout->indexOf(ui->exportButton), colorCustomizationGroup);
     }
-
-    // Ajouter un ComboBox pour sélectionner des multiples de 7 ou 10 selon le mode
+    
+    // Préréglages de secteurs
     QHBoxLayout *sectorsPresetLayout = new QHBoxLayout();
-    QLabel *sectorsPresetLabel = new QLabel(tr("Sector Presets:"), ui->centralwidget);
-    QComboBox *sectorsPresetComboBox = new QComboBox(ui->centralwidget);
+    sectorPresetsLabel = new QLabel(tr("Sector Presets:"), ui->centralwidget);
+    sectorsPresetComboBox = new QComboBox(ui->centralwidget);
     sectorsPresetComboBox->setObjectName("sectorsPresetComboBox");
     
     // Remplir avec des multiples de 7 par défaut (mode standard)
     updateSectorsPresets(sectorsPresetComboBox, false);
     
-    sectorsPresetLayout->addWidget(sectorsPresetLabel);
+    sectorsPresetLayout->addWidget(sectorPresetsLabel);
     sectorsPresetLayout->addWidget(sectorsPresetComboBox);
     
     // Insérer le layout des préréglages de secteurs au-dessus des contrôles de secteurs existants
@@ -110,16 +114,16 @@ MainWindow::MainWindow(QWidget *parent)
         sectorsControlsLayout->insertLayout(0, sectorsPresetLayout);
     }
     
-    // Ajouter un ComboBox pour les pistes (tracks)
+    // Préréglages de pistes (tracks)
     QHBoxLayout *tracksPresetLayout = new QHBoxLayout();
-    QLabel *tracksPresetLabel = new QLabel(tr("Track Presets:"), ui->centralwidget);
-    QComboBox *tracksPresetComboBox = new QComboBox(ui->centralwidget);
+    trackPresetsLabel = new QLabel(tr("Track Presets:"), ui->centralwidget);
+    tracksPresetComboBox = new QComboBox(ui->centralwidget);
     tracksPresetComboBox->setObjectName("tracksPresetComboBox");
     
     // Remplir avec les options de pistes
     updateTracksPresets(tracksPresetComboBox);
     
-    tracksPresetLayout->addWidget(tracksPresetLabel);
+    tracksPresetLayout->addWidget(trackPresetsLabel);
     tracksPresetLayout->addWidget(tracksPresetComboBox);
     
     // Insérer le layout des préréglages de pistes au-dessus des contrôles de pistes existants
@@ -128,20 +132,23 @@ MainWindow::MainWindow(QWidget *parent)
         tracksControlsLayout->insertLayout(0, tracksPresetLayout);
     }
     
-    // Connecter les signaux des nouveaux contrôles
-    connect(parachuteColorButton, &QPushButton::clicked, this, &MainWindow::onParachuteColorChanged);
-    connect(sectorColorButton, &QPushButton::clicked, this, &MainWindow::onSectorColorChanged);
-    connect(randomColorCheckBox, &QCheckBox::toggled, this, &MainWindow::onRandomColorModeToggled);
+    // Rendre l'exportButton accessible pour la traduction
+    exportButton = ui->exportButton;
+    
+    // Connecter les signaux des contrôles
+    connect(parachuteButton, &QPushButton::clicked, this, &MainWindow::onParachuteColorChanged);
+    connect(sectorButton, &QPushButton::clicked, this, &MainWindow::onSectorColorChanged);
+    connect(randomColorModeCheckBox, &QCheckBox::toggled, this, &MainWindow::onRandomColorModeToggled);
     connect(mode10CheckBox, &QCheckBox::toggled, this, &MainWindow::onMode10Toggled);
     connect(sectorsPresetComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), 
             this, &MainWindow::onSectorsPresetSelected);
     connect(tracksPresetComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), 
             this, &MainWindow::onTracksPresetSelected);
     
-    // Autres connexions existantes
+    // Autres connexions
     connect(ui->messageInput, &QLineEdit::textChanged, this, &MainWindow::onMessageChanged);
     connect(ui->colorButton, &QPushButton::clicked, this, &MainWindow::onBackgroundColorChanged);
-    connect(ui->exportButton, &QPushButton::clicked, this, &MainWindow::onSaveParachute);
+    connect(ui->exportButton, &QPushButton::clicked, this, &MainWindow::onExportImage);
     connect(ui->saveAction, &QAction::triggered, this, &MainWindow::onSaveFile);
     connect(ui->openAction, &QAction::triggered, this, &MainWindow::onOpenFile);
     connect(ui->exitAction, &QAction::triggered, this, &MainWindow::onExit);
@@ -164,6 +171,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sliderTracks->setValue(3);
     ui->spinTracks->setValue(3);
 
+    // Connexions pour les changements de langue
     connect(ui->actionEnglish, &QAction::triggered, this, &MainWindow::onLanguageEnglish);
     connect(ui->actionfrensh, &QAction::triggered, this, &MainWindow::onLanguageFrench);
     connect(ui->actionArabic, &QAction::triggered, this, &MainWindow::onLanguageArabic);
@@ -195,8 +203,10 @@ void MainWindow::onMessageChanged() {
 }
 
 void MainWindow::onBackgroundColorChanged() {
-    QColor color = QColorDialog::getColor(Qt::white, this, "Choose Background Color");
-    if (color.isValid()) {
+    QColorDialog dialog(Qt::white, this);
+    dialog.setWindowTitle(tr("Choose Background Color"));
+    if (dialog.exec() == QDialog::Accepted) {
+        QColor color = dialog.selectedColor();
         parachuteView->setBackgroundColor(color);
         binaryWidget->setBackgroundColor(color);
         hexView->setBackgroundColor(color);
@@ -204,16 +214,20 @@ void MainWindow::onBackgroundColorChanged() {
 }
 
 void MainWindow::onParachuteColorChanged() {
-    QColor color = QColorDialog::getColor(Qt::red, this, "Choose Color for Bits 1");
-    if (color.isValid()) {
+    QColorDialog dialog(Qt::red, this);
+    dialog.setWindowTitle(tr("Choose Color for Bits 1"));
+    if (dialog.exec() == QDialog::Accepted) {
+        QColor color = dialog.selectedColor();
         parachuteView->setParachuteColor(color);
         binaryWidget->setBitOnColor(color);
     }
 }
 
 void MainWindow::onSectorColorChanged() {
-    QColor color = QColorDialog::getColor(Qt::white, this, "Choose Color for Bits 0");
-    if (color.isValid()) {
+    QColorDialog dialog(Qt::white, this);
+    dialog.setWindowTitle(tr("Choose Color for Bits 0"));
+    if (dialog.exec() == QDialog::Accepted) {
+        QColor color = dialog.selectedColor();
         parachuteView->setSectorColor(color);
         binaryWidget->setBitOffColor(color);
     }
@@ -254,28 +268,17 @@ void MainWindow::onMode10Toggled(bool checked) {
     onMessageChanged();
 }
 
-void MainWindow::onSaveParachute() {
-    QString filename = QFileDialog::getSaveFileName(this, "Save Image", "", "PNG Image (*.png)");
-    if (!filename.isEmpty()) {
-        if (!filename.endsWith(".png")) {
-            filename += ".png";
-        }
-        QSize parachuteSize = parachuteView->size();
-        QPixmap parachutePixmap(parachuteSize);
-        parachutePixmap.fill(Qt::white);
-        QPainter painter(&parachutePixmap);
-        parachuteView->render(&painter);
-        painter.end();
-        if (parachutePixmap.save(filename)) {
-            QMessageBox::information(this, "Export Image", "Parachute image saved successfully.");
-        } else {
-            QMessageBox::warning(this, "Export Image", "Failed to save the parachute image.");
-        }
+void MainWindow::onExportImage() {
+    QString defaultPath = QDir::homePath() + "/parachute.png";
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Export Image"), defaultPath, tr("Images (*.png *.jpg *.bmp)"));
+    if (!fileName.isEmpty()) {
+        parachuteView->saveParachuteImage(fileName);
+        QMessageBox::information(this, tr("Export Image"), tr("Parachute image saved successfully."));
     }
 }
 
 void MainWindow::onSaveFile() {
-    QString filename = QFileDialog::getSaveFileName(this, "Save File", "", "Parachute Files (*.ep)");
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Parachute Files (*.ep)"));
     if (!filename.isEmpty()) {
         if (!filename.endsWith(".ep")) {
             filename += ".ep";
@@ -290,15 +293,15 @@ void MainWindow::onSaveFile() {
             out << "Tracks=" << ui->spinTracks->value() << Qt::endl;
             out << "Mode10=" << (mode10Enabled ? "true" : "false") << Qt::endl;
             file.close();
-            QMessageBox::information(this, "Save File", "File saved successfully.");
+            QMessageBox::information(this, tr("Save File"), tr("File saved successfully."));
         } else {
-            QMessageBox::warning(this, "Save File", "Unable to open file for writing.");
+            QMessageBox::warning(this, tr("Save File"), tr("Unable to open file for writing."));
         }
     }
 }
 
 void MainWindow::onOpenFile() {
-    QString filename = QFileDialog::getOpenFileName(this, "Open File", "", "Parachute Files (*.ep)");
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Parachute Files (*.ep)"));
     if (!filename.isEmpty()) {
         QFile file(filename);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -363,9 +366,9 @@ void MainWindow::onOpenFile() {
             ui->spinTracks->setValue(tracks);
             onSectorsOrTracksChanged(); // Cela mettra aussi à jour la sélection dans le ComboBox
             file.close();
-            QMessageBox::information(this, "Open File", "File loaded successfully.");
+            QMessageBox::information(this, tr("Open File"), tr("File loaded successfully."));
         } else {
-            QMessageBox::warning(this, "Open File", "Unable to open file for reading.");
+            QMessageBox::warning(this, tr("Open File"), tr("Unable to open file for reading."));
         }
     }
 }
@@ -432,8 +435,56 @@ void MainWindow::onLanguageArabic() {
 }
 
 void MainWindow::retranslateUi() {
+    // Mettre à jour l'UI générée par Qt Designer
     ui->retranslateUi(this);
-    qDebug() << "UI retranslated to language:" << languageManager->getCurrentLanguage();
+    
+    // Groupe de personnalisation des couleurs
+    colorCustomizationGroup->setTitle(tr("Color Customization"));
+    backgroundColorLabel->setText(tr("Background Color:"));
+    colorBits1Label->setText(tr("Color for Bits 1:"));
+    colorBits0Label->setText(tr("Color for Bits 0:"));
+    
+    // Boutons de couleur
+    parachuteButton->setText(tr("Choose"));
+    sectorButton->setText(tr("Choose"));
+    
+    // CheckBoxes
+    randomColorModeCheckBox->setText(tr("Random Color Mode"));
+    mode10CheckBox->setText(tr("Mode 10 (10 bits per character)"));
+    
+    // Préréglages
+    trackPresetsLabel->setText(tr("Track Presets:"));
+    sectorPresetsLabel->setText(tr("Sector Presets:"));
+    
+    // Mettre à jour les textes dans les ComboBox avec blocage des signaux
+    int currentSectors = ui->spinSectors->value();
+    sectorsPresetComboBox->blockSignals(true);
+    updateSectorsPresets(sectorsPresetComboBox, mode10Enabled);
+    // Restaurer la sélection
+    for (int i = 0; i < sectorsPresetComboBox->count(); i++) {
+        if (sectorsPresetComboBox->itemData(i).toInt() == currentSectors) {
+            sectorsPresetComboBox->setCurrentIndex(i);
+            break;
+        }
+    }
+    sectorsPresetComboBox->blockSignals(false);
+    
+    int currentTracks = ui->spinTracks->value();
+    tracksPresetComboBox->blockSignals(true);
+    updateTracksPresets(tracksPresetComboBox);
+    // Restaurer la sélection
+    for (int i = 0; i < tracksPresetComboBox->count(); i++) {
+        if (tracksPresetComboBox->itemData(i).toInt() == currentTracks) {
+            tracksPresetComboBox->setCurrentIndex(i);
+            break;
+        }
+    }
+    tracksPresetComboBox->blockSignals(false);
+    
+    // Bouton d'exportation
+    exportButton->setText(tr("Export Parachute Image"));
+    
+    qDebug() << "UI completely retranslated to language:" << languageManager->getCurrentLanguage();
 }
 
 // Méthode utilitaire pour mettre à jour les préréglages dans le ComboBox
