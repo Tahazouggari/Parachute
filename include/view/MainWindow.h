@@ -12,6 +12,7 @@ class QPushButton;
 class QLabel;
 class QGroupBox;
 class QCheckBox;
+class QLineEdit;
 
 namespace Ui {
 class MainWindow;
@@ -50,6 +51,10 @@ private:
     QPushButton *backgroundImageButton;
     QPushButton *clearBackgroundImageButton;
     
+    // Contrôles pour le caractère de référence
+    QLabel *referenceCharLabel;
+    QLineEdit *referenceCharInput;
+    QPushButton *referenceCharButton;
     
     void updateSectorsPresets(QComboBox* comboBox, bool mode10); 
     void updateTracksPresets(QComboBox* comboBox); 
@@ -76,6 +81,7 @@ private slots:
     void retranslateUi();
     void onBackgroundImageSelect(); 
     void onClearBackgroundImage(); 
+    void onReferenceCharChanged();
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

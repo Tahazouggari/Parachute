@@ -35,6 +35,7 @@ The application is multilingual, supporting English, French, and Arabic, and pro
    - Converts user-provided text into a binary format using ASCII encoding.
    - Displays the binary representation in a grid format.
    - Supports two encoding modes: standard (7 bits) and Mode 10 (10 bits per character, 7 bits + 3 blancs).
+   - Allows users to customize the reference character (the character considered as zero, '@' by default).
 
 2. **Parachute Visualization**:
    - Visualizes the binary message as a parachute design with customizable sectors and tracks.
@@ -100,6 +101,7 @@ All required features have been successfully implemented:
    - Color customization for bits 0 and 1.
    - Random color mode for bits with value 1.
    - Support for Mode 10 (7 bits + 3 blanks) as in the original parachute.
+   - Reference character customization allowing users to select which character is considered as zero.
    - Modernized two-panel interface for a better user experience.
 
 ---
@@ -180,7 +182,8 @@ PARACHUTE/
 1. Users input a message in the text box.
 2. The message is encoded into binary using ASCII encoding.
 3. Users can choose between standard 7-bit encoding or Mode 10 (10 bits per character).
-4. The binary representation is displayed in a grid format in the **Binary View**.
+4. Users can customize the reference character (by default '@' is used as zero in the encoding).
+5. The binary representation is displayed in a grid format in the **Binary View**.
 
 ### Parachute Visualization
 1. The binary message is mapped onto a parachute design.
