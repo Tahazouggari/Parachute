@@ -57,7 +57,7 @@ The application is multilingual, supporting English, French, and Arabic, and pro
    - Loads previously saved `.ep` files to restore the message, visualization, and mode settings.
 
 6. **Multilingual Support**:
-   - Supports English, French, and Arabic languages.
+   - Supports English and French languages.
    - Users can switch languages dynamically through the menu.
 
 7. **Enhanced User Interface**:
@@ -68,41 +68,83 @@ The application is multilingual, supporting English, French, and Arabic, and pro
 
 ## Implemented Requirements
 
-All required features have been successfully implemented:
+All strongly suggested features have been successfully implemented:
 
-1. **Message Model**:
-   - A model class manages the message and provides access to the k-th bit of the message.
-   - Complete implementation following the MVP (Model-View-Presenter) pattern.
+1. **Message Management via Model Class**:
+   - The message is managed by a model class that provides access to individual bits of the message.
+   - Follows the Model-View-Presenter (MVP) pattern for clean architecture.
 
-2. **Parachute Parameters**:
-   - Adjustment of the number of sectors via a slider and a spinbox.
-   - Adjustment of the number of concentric circles (tracks) via a slider and a spinbox.
-   - Quick selection through presets for multiples of 7 or 10 depending on the mode.
+2. **Adjustable Parachute Parameters**:
+   - The number of sectors can be adjusted using both a slider and a spinbox.
+   - The number of concentric circles ("tracks") can be adjusted using both a slider and a spinbox.
+   - Preset options available for quick configuration.
 
 3. **Multiple Views**:
-   - Main "parachute" view with circular visualization.
-   - "Binary" view with grid representation.
-   - "Hexadecimal" view for compact representation.
+   - "Parachute View" with circular visualization of the encoded message.
+   - "Binary View" showing the grid representation of the binary message.
+   - "Hexadecimal View" for a compact representation of the message.
 
-4. **Standard Interface**:
-   - Standard menus and actions (File, Edit, View, etc.).
-   - Keyboard shortcuts for common operations.
-   - Intuitive interface with logically organized controls.
+4. **Standard Interface Elements**:
+   - Complete with standard menus, actions, and keyboard shortcuts.
+   - Intuitive user interface with logically organized controls.
 
-5. **Multilingualism**:
-   - Complete support for three languages: English, French, and Arabic.
-   - Dynamic translation of the interface without restarting.
+5. **Multilingual Support**:
+   - Interface translation available in multiple languages (English, French).
+   - Language can be changed dynamically through the menu.
 
-6. **Save and Load**:
-   - Saving of text and parachute parameters in a custom file format (.ep).
-   - Loading of saved files with restoration of all parameters.
+6. **File Operations**:
+   - Save functionality for text and parachute parameters in a custom file format (.ep).
+   - Load functionality to restore saved parameters and message.
+   - Export parachute visualization as an image.
 
-7. **Additional Features**:
-   - Color customization for bits 0 and 1.
-   - Random color mode for bits with value 1.
-   - Support for Mode 10 (7 bits + 3 blanks) as in the original parachute.
-   - Reference character customization allowing users to select which character is considered as zero.
-   - Modernized two-panel interface for a better user experience.
+7. **Additional Enhancements**:
+   - Custom reference character selection, allowing users to define which character is considered as zero (default is '@').
+   - Color customization for bits 0 and 1, with user-selectable colors for both elements.
+   - Random color mode for bits with value 1, creating visually dynamic parachute designs.
+   - Mode 10 support (7 bits + 3 blanks) as implemented in the original Perseverance rover parachute.
+   - Sector selection among multiples of 7 (standard mode) or multiples of 10 (Mode 10) for easier configuration.
+   - Background image support for creative designs and customization.
+   - Modernized two-panel interface for improved user experience.
+   - Additional visual improvements enhancing the overall application functionality.
+
+## Additional Implemented Features
+
+Beyond the strongly suggested features, several additional enhancements have been successfully implemented:
+
+1. **Reference Character Customization**:
+   - Users can change the reference character (the character considered as zero in the encoding).
+   - By default, '@' is used as the reference, but any character can be selected.
+   - The reference character change is dynamically applied to the visualization.
+
+2. **Color Customization**:
+   - Full control over the two colors used in the parachute visualization (for bits 0 and 1).
+   - Color picker interface for intuitive selection.
+   - Live preview of color changes.
+
+3. **Random Color Mode**:
+   - Optional random color mode for bits with value 1.
+   - Creates visually interesting and unique parachute designs.
+   - Can be toggled on/off at any time.
+
+4. **Mode 10 Support**:
+   - Implementation of the 10-segment blocks (7 bits + 3 blanks) as in the original Perseverance parachute.
+   - Switch between standard mode and Mode 10 with a simple checkbox.
+   - Automatic adjustment of sector presets based on the selected mode.
+
+5. **Intelligent Sector Presets**:
+   - Quick selection of sector counts from multiples of 7 (standard mode) or multiples of 10 (Mode 10).
+   - Preset dropdown menu adapts based on the current encoding mode.
+   - Simplifies configuration for optimal visualization.
+
+6. **Background Customization**:
+   - Option to use a custom background image instead of a solid color.
+   - Support for various image formats (PNG, JPG, BMP).
+   - Image scaling and positioning to fit the parachute view.
+
+7. **Modern UI Design**:
+   - Responsive two-panel layout with adjustable split.
+   - Tab-based navigation between different visualization modes.
+   - Organized controls grouped by function for intuitive use.
 
 ---
 
