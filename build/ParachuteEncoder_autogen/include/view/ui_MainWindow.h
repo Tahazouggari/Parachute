@@ -36,7 +36,6 @@ public:
     QAction *exitAction;
     QAction *actionEnglish;
     QAction *actionfrensh;
-    QAction *actionArabic;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *titleLabel;
@@ -79,8 +78,6 @@ public:
         actionEnglish->setObjectName(QString::fromUtf8("actionEnglish"));
         actionfrensh = new QAction(MainWindow);
         actionfrensh->setObjectName(QString::fromUtf8("actionfrensh"));
-        actionArabic = new QAction(MainWindow);
-        actionArabic->setObjectName(QString::fromUtf8("actionArabic"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -195,7 +192,6 @@ public:
         fileMenu->addAction(exitAction);
         languageMenu->addAction(actionEnglish);
         languageMenu->addAction(actionfrensh);
-        languageMenu->addAction(actionArabic);
 
         retranslateUi(MainWindow);
 
@@ -213,7 +209,6 @@ public:
         exitAction->setText(QCoreApplication::translate("MainWindow", "E&xit", nullptr));
         actionEnglish->setText(QCoreApplication::translate("MainWindow", "English", nullptr));
         actionfrensh->setText(QCoreApplication::translate("MainWindow", "French", nullptr));
-        actionArabic->setText(QCoreApplication::translate("MainWindow", "Arabic", nullptr));
         titleLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "font-size: 18px; font-weight: bold;", nullptr));
         titleLabel->setText(QCoreApplication::translate("MainWindow", "Parachute Encoder", nullptr));
         messageBox->setTitle(QCoreApplication::translate("MainWindow", "Message", nullptr));

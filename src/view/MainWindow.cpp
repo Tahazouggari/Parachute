@@ -277,7 +277,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Connexions pour les changements de langue
     connect(ui->actionEnglish, &QAction::triggered, this, &MainWindow::onLanguageEnglish);
     connect(ui->actionfrensh, &QAction::triggered, this, &MainWindow::onLanguageFrench);
-    connect(ui->actionArabic, &QAction::triggered, this, &MainWindow::onLanguageArabic);
+    // Suppression de la connexion pour l'arabe
+    // connect(ui->actionArabic, &QAction::triggered, this, &MainWindow::onLanguageArabic);
 
     connect(languageManager, &LanguageManager::languageChanged, this, &MainWindow::retranslateUi);
     
@@ -585,67 +586,164 @@ void MainWindow::onLanguageFrench() {
     languageManager->switchLanguage("fr");
 }
 
-void MainWindow::onLanguageArabic() {
-    languageManager->switchLanguage("ar");
-}
-
 void MainWindow::retranslateUi() {
-    // pour mettre à jour l'UI générée par Qt Designer
+    // Réinitialiser complètement l'UI avec les traductions actuelles
     ui->retranslateUi(this);
     
-    // Groupe de personnalisation des couleurs
-    colorCustomizationGroup->setTitle(tr("Color Customization"));
-    backgroundColorLabel->setText(tr("Background Color:"));
-    colorBits1Label->setText(tr("Color for Bits 1:"));
-    colorBits0Label->setText(tr("Color for Bits 0:"));
+    // Mettre à jour le titre de la fenêtre principale
+    this->setWindowTitle(tr("Parachute Encoder"));
     
-    // Boutons de couleur
-    parachuteButton->setText(tr("Choose"));
-    sectorButton->setText(tr("Choose"));
-    
-    // Boutons d'image d'arrière-plan
-    backgroundImageButton->setText(tr("Select Image"));
-    clearBackgroundImageButton->setText(tr("Clear Image"));
-    
-    // CheckBoxes
-    randomColorModeCheckBox->setText(tr("Random Color Mode"));
-    mode10CheckBox->setText(tr("Mode 10 (10 bits per character)"));
-    
-    // Préréglages
-    trackPresetsLabel->setText(tr("Track Presets:"));
-    sectorPresetsLabel->setText(tr("Sector Presets:"));
-    
-    // pour mettre à jour les textes dans les ComboBox avec blocage des signaux
-    int currentSectors = sectorsPresetComboBox->currentData().toInt();
-    sectorsPresetComboBox->blockSignals(true);
-    updateSectorsPresets(sectorsPresetComboBox, mode10Enabled);
-    // Restaurer la sélection
-    for (int i = 0; i < sectorsPresetComboBox->count(); i++) {
-        if (sectorsPresetComboBox->itemData(i).toInt() == currentSectors) {
-            sectorsPresetComboBox->setCurrentIndex(i);
-            break;
+    // Forcer la mise à jour des onglets
+    QTabWidget* viewTabs = findChild<QTabWidget*>();
+    if (viewTabs) {
+        for (int i = 0; i < viewTabs->count(); i++) {
+            if (i == 0) viewTabs->setTabText(i, tr("Parachute View"));
+            else if (i == 1) viewTabs->setTabText(i, tr("Binary View"));  
+            else if (i == 2) viewTabs->setTabText(i, tr("Hexadecimal View"));
         }
     }
-    sectorsPresetComboBox->blockSignals(false);
     
-    int currentTracks = tracksPresetComboBox->currentData().toInt();
-    tracksPresetComboBox->blockSignals(true);
-    updateTracksPresets(tracksPresetComboBox);
-    // Restaurer la sélection
-    for (int i = 0; i < tracksPresetComboBox->count(); i++) {
-        if (tracksPresetComboBox->itemData(i).toInt() == currentTracks) {
-            tracksPresetComboBox->setCurrentIndex(i);
-            break;
+    // Mettre à jour tous les groupes
+    foreach (QGroupBox* group, findChildren<QGroupBox*>()) {
+        // Comparer le contenu plutôt que le texte exact pour éviter les problèmes de langue
+        QString title = group->title().toLower();
+        
+        if (title.contains("message")) {
+            group->setTitle(tr("Message"));
+        } 
+        else if (title.contains("control") || title.contains("contrôle")) {
+            group->setTitle(tr("Controls"));
+        }
+        else if (title.contains("color") || title.contains("couleur")) {
+            group->setTitle(tr("Color Customization"));
         }
     }
-    tracksPresetComboBox->blockSignals(false);
     
-    // Bouton d'exportation
-    exportButton->setText(tr("Export Parachute Image"));
+    // Mettre à jour tous les labels - utiliser la position/contexte plutôt que le texte
+    foreach (QLabel* label, findChildren<QLabel*>()) {
+        QString text = label->text();
+        
+        // Labels pour les contrôles principaux
+        if (text.contains("Sector") || text.contains("Secteur")) {
+            if (text.contains("Preset") || text.contains("Préréglage")) {
+                label->setText(tr("Sector Presets:"));
+            } else {
+                label->setText(tr("Sectors:"));
+            }
+        }
+        else if (text.contains("Track") || text.contains("Piste")) {
+            if (text.contains("Preset") || text.contains("Préréglage")) {
+                label->setText(tr("Track Presets:"));
+            } else {
+                label->setText(tr("Tracks:"));
+            }
+        }
+        else if (text.contains("message") || text.contains("Message")) {
+            label->setText(tr("Your message:"));
+        }
+        else if ((text.contains("Background") || text.contains("Arrière")) && text.contains("Color")) {
+            label->setText(tr("Background Color:"));
+        }
+        else if ((text.contains("Background") || text.contains("Arrière")) && text.contains("Image")) {
+            label->setText(tr("Background Image:"));
+        }
+        else if (text.contains("Bits 1")) {
+            label->setText(tr("Color for Bits 1:"));
+        }
+        else if (text.contains("Bits 0")) {
+            label->setText(tr("Color for Bits 0:"));
+        }
+        else if (text.contains("Reference") || text.contains("référence")) {
+            label->setText(tr("Reference Character:"));
+        }
+    }
     
-    // Éléments du caractère de référence
-    referenceCharLabel->setText(tr("Reference Character:"));
-    referenceCharButton->setText(tr("Apply"));
+    // Mettre à jour tous les boutons
+    foreach (QPushButton* button, findChildren<QPushButton*>()) {
+        QString text = button->text();
+        
+        if (text.contains("Choose") || text.contains("Choisir")) {
+            if (text.contains("Background") || text.contains("Arrière")) {
+                button->setText(tr("Choose Background Color"));
+            } else {
+                button->setText(tr("Choose"));
+            }
+        }
+        else if (text.contains("Select") || text.contains("Sélectionner")) {
+            button->setText(tr("Select Image"));
+        }
+        else if (text.contains("Clear") || text.contains("Effacer") || text.contains("Supprimer")) {
+            button->setText(tr("Clear Image"));
+        }
+        else if (text.contains("Apply") || text.contains("Appliquer")) {
+            button->setText(tr("Apply"));
+        }
+        else if (text.contains("Export") || text.contains("Exporter")) {
+            button->setText(tr("Export Parachute Image"));
+        }
+    }
+    
+    // Mettre à jour toutes les checkbox
+    foreach (QCheckBox* checkBox, findChildren<QCheckBox*>()) {
+        QString text = checkBox->text();
+        
+        if (text.contains("Random") || text.contains("Aléatoire")) {
+            checkBox->setText(tr("Random Color Mode"));
+        }
+        else if (text.contains("Mode 10")) {
+            checkBox->setText(tr("Mode 10 (10 bits per character)"));
+        }
+    }
+    
+    // Mettre à jour les combobox avec les préréglages
+    if (sectorsPresetComboBox) {
+        int currentSectors = sectorsPresetComboBox->currentData().toInt();
+        sectorsPresetComboBox->blockSignals(true);
+        sectorsPresetComboBox->clear();
+        updateSectorsPresets(sectorsPresetComboBox, mode10Enabled);
+        
+        // Restaurer la sélection
+        for (int i = 0; i < sectorsPresetComboBox->count(); i++) {
+            if (sectorsPresetComboBox->itemData(i).toInt() == currentSectors) {
+                sectorsPresetComboBox->setCurrentIndex(i);
+                break;
+            }
+        }
+        sectorsPresetComboBox->blockSignals(false);
+    }
+    
+    if (tracksPresetComboBox) {
+        int currentTracks = tracksPresetComboBox->currentData().toInt();
+        tracksPresetComboBox->blockSignals(true);
+        tracksPresetComboBox->clear();
+        updateTracksPresets(tracksPresetComboBox);
+        
+        // Restaurer la sélection
+        for (int i = 0; i < tracksPresetComboBox->count(); i++) {
+            if (tracksPresetComboBox->itemData(i).toInt() == currentTracks) {
+                tracksPresetComboBox->setCurrentIndex(i);
+                break;
+            }
+        }
+        tracksPresetComboBox->blockSignals(false);
+    }
+    
+    // Mise à jour directe des éléments membres
+    if (colorCustomizationGroup) colorCustomizationGroup->setTitle(tr("Color Customization"));
+    if (backgroundColorLabel) backgroundColorLabel->setText(tr("Background Color:"));
+    if (colorBits1Label) colorBits1Label->setText(tr("Color for Bits 1:"));
+    if (colorBits0Label) colorBits0Label->setText(tr("Color for Bits 0:"));
+    if (parachuteButton) parachuteButton->setText(tr("Choose"));
+    if (sectorButton) sectorButton->setText(tr("Choose"));
+    if (backgroundImageButton) backgroundImageButton->setText(tr("Select Image"));
+    if (clearBackgroundImageButton) clearBackgroundImageButton->setText(tr("Clear Image"));
+    if (randomColorModeCheckBox) randomColorModeCheckBox->setText(tr("Random Color Mode"));
+    if (mode10CheckBox) mode10CheckBox->setText(tr("Mode 10 (10 bits per character)"));
+    if (trackPresetsLabel) trackPresetsLabel->setText(tr("Track Presets:"));
+    if (sectorPresetsLabel) sectorPresetsLabel->setText(tr("Sector Presets:"));
+    if (exportButton) exportButton->setText(tr("Export Parachute Image"));
+    if (referenceCharLabel) referenceCharLabel->setText(tr("Reference Character:"));
+    if (referenceCharButton) referenceCharButton->setText(tr("Apply"));
     
     qDebug() << "UI completely retranslated to language:" << languageManager->getCurrentLanguage();
 }

@@ -195,7 +195,6 @@ public:
         fileMenu->addAction(exitAction);
         languageMenu->addAction(actionEnglish);
         languageMenu->addAction(actionfrensh);
-        languageMenu->addAction(actionArabic);
 
         retranslateUi(MainWindow);
 
@@ -213,7 +212,6 @@ public:
         exitAction->setText(QCoreApplication::translate("MainWindow", "E&xit", nullptr));
         actionEnglish->setText(QCoreApplication::translate("MainWindow", "English", nullptr));
         actionfrensh->setText(QCoreApplication::translate("MainWindow", "French", nullptr));
-        actionArabic->setText(QCoreApplication::translate("MainWindow", "Arabic", nullptr));
         titleLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "font-size: 18px; font-weight: bold;", nullptr));
         titleLabel->setText(QCoreApplication::translate("MainWindow", "Parachute Encoder", nullptr));
         messageBox->setTitle(QCoreApplication::translate("MainWindow", "Message", nullptr));

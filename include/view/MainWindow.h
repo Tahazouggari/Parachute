@@ -77,7 +77,6 @@ private slots:
     void onSectorsOrTracksChanged();
     void onLanguageEnglish();
     void onLanguageFrench();
-    void onLanguageArabic();
     void retranslateUi();
     void onBackgroundImageSelect(); 
     void onClearBackgroundImage(); 
