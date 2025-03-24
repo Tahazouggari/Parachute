@@ -57,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *mainPanelLayout = new QVBoxLayout(mainPanel);
     
     // Titre et message en haut du panneau principal
-    QLabel *titleLabel = new QLabel(tr("Parachute Encoder"));
+    QLabel *titleLabel = new QLabel(tr("Perseverance Rover"));
     titleLabel->setStyleSheet("font-size: 18px; font-weight: bold;");
     titleLabel->setAlignment(Qt::AlignCenter);
     mainPanelLayout->addWidget(titleLabel);
@@ -591,7 +591,7 @@ void MainWindow::retranslateUi() {
     ui->retranslateUi(this);
     
     // Mettre à jour le titre de la fenêtre principale
-    this->setWindowTitle(tr("Parachute Encoder"));
+    this->setWindowTitle(tr("Perseverance Rover"));
     
     // Forcer la mise à jour des onglets
     QTabWidget* viewTabs = findChild<QTabWidget*>();

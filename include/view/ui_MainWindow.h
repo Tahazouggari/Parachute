@@ -206,14 +206,14 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Parachute Encoder", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Perseverance Rover", nullptr));
         saveAction->setText(QCoreApplication::translate("MainWindow", "&Save", nullptr));
         openAction->setText(QCoreApplication::translate("MainWindow", "&Open", nullptr));
         exitAction->setText(QCoreApplication::translate("MainWindow", "E&xit", nullptr));
         actionEnglish->setText(QCoreApplication::translate("MainWindow", "English", nullptr));
         actionfrensh->setText(QCoreApplication::translate("MainWindow", "French", nullptr));
         titleLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "font-size: 18px; font-weight: bold;", nullptr));
-        titleLabel->setText(QCoreApplication::translate("MainWindow", "Parachute Encoder", nullptr));
+        titleLabel->setText(QCoreApplication::translate("MainWindow", "Perseverance Rover", nullptr));
         messageBox->setTitle(QCoreApplication::translate("MainWindow", "Message", nullptr));
         labelMessage->setText(QCoreApplication::translate("MainWindow", "Your message:", nullptr));
         viewTabs->setTabText(viewTabs->indexOf(parachuteViewTab), QCoreApplication::translate("MainWindow", "Parachute View", nullptr));
