@@ -213,6 +213,19 @@ MainWindow::MainWindow(QWidget *parent)
     mode10CheckBox->setObjectName("mode10CheckBox");
     colorLayout->addWidget(mode10CheckBox);
     
+    // Contrôles pour le caractère de référence
+    QHBoxLayout *referenceCharLayout = new QHBoxLayout();
+    referenceCharLabel = new QLabel(tr("Reference Character:"));
+    referenceCharInput = new QLineEdit("@");
+    referenceCharInput->setMaxLength(1);
+    referenceCharInput->setFixedWidth(40);
+    referenceCharButton = new QPushButton(tr("Apply"));
+    
+    referenceCharLayout->addWidget(referenceCharLabel);
+    referenceCharLayout->addWidget(referenceCharInput);
+    referenceCharLayout->addWidget(referenceCharButton);
+    colorLayout->addLayout(referenceCharLayout);
+    
     scrollLayout->addWidget(colorCustomizationGroup);
     scrollArea->setWidget(scrollContent);
     controlPanelLayout->addWidget(scrollArea);
@@ -274,6 +287,9 @@ MainWindow::MainWindow(QWidget *parent)
     // utile pour ajouter les connexions pour les boutons d'image de fond après les autres connexions
     connect(backgroundImageButton, &QPushButton::clicked, this, &MainWindow::onBackgroundImageSelect);
     connect(clearBackgroundImageButton, &QPushButton::clicked, this, &MainWindow::onClearBackgroundImage);
+
+    // Ajouter les connexions pour le caractère de référence
+    connect(referenceCharButton, &QPushButton::clicked, this, &MainWindow::onReferenceCharChanged);
 }
 
 MainWindow::~MainWindow() {
@@ -401,6 +417,8 @@ void MainWindow::onSaveFile() {
             out << (mode10Enabled ? "1" : "0") << "\n";
             // pour écrire le chemin de l'image d'arrière-plan s'il existe
             out << (backgroundImagePath.isEmpty() ? "no_image" : backgroundImagePath) << "\n";
+            // pour écrire le caractère de référence
+            out << MessageEncoder::getReferenceCharacter().unicode() << "\n";
             file.close();
             QMessageBox::information(this, tr("File Saved"), tr("Parachute parameters saved successfully."));
         } else {
@@ -443,7 +461,7 @@ void MainWindow::onOpenFile() {
                 updateSectorsPresets(sectorsPresetComboBox, mode10);
             }
             
-            // Lire le chemin de l'image d'arrière-plan s'il est présent
+            // pour lire le chemin de l'image d'arrière-plan s'il est présent
             if (!in.atEnd()) {
                 QString imagePath = in.readLine().trimmed();
                 if (imagePath != "no_image") {
@@ -454,6 +472,16 @@ void MainWindow::onOpenFile() {
                     backgroundImagePath = "";
                     parachuteView->clearBackgroundImage();
                     clearBackgroundImageButton->setEnabled(false);
+                }
+            }
+            
+            // pour lire le caractère de référence s'il est présent
+            if (!in.atEnd()) {
+                int refCharCode = in.readLine().toInt(&ok);
+                if (ok) {
+                    QChar refChar(refCharCode);
+                    MessageEncoder::setReferenceCharacter(refChar);
+                    referenceCharInput->setText(refChar);
                 }
             }
             
@@ -615,6 +643,10 @@ void MainWindow::retranslateUi() {
     // Bouton d'exportation
     exportButton->setText(tr("Export Parachute Image"));
     
+    // Éléments du caractère de référence
+    referenceCharLabel->setText(tr("Reference Character:"));
+    referenceCharButton->setText(tr("Apply"));
+    
     qDebug() << "UI completely retranslated to language:" << languageManager->getCurrentLanguage();
 }
 
@@ -711,4 +743,26 @@ void MainWindow::onSectorsChanged(int value) {
 
 void MainWindow::onTracksChanged(int value) {
     onSectorsOrTracksChanged();
+}
+
+void MainWindow::onReferenceCharChanged() {
+    QString input = referenceCharInput->text();
+    if (!input.isEmpty()) {
+        QChar refChar = input.at(0);
+        MessageEncoder::setReferenceCharacter(refChar);
+        QMessageBox::information(this, tr("Reference Character"), 
+                               tr("Reference character set to '%1' (ASCII: %2).")
+                               .arg(refChar)
+                               .arg(refChar.unicode()));
+    } else {
+        // Si le champ est vide, utiliser '@' comme caractère par défaut
+        QChar defaultChar('@');
+        MessageEncoder::setReferenceCharacter(defaultChar);
+        referenceCharInput->setText("@");
+        QMessageBox::information(this, tr("Reference Character"), 
+                               tr("Empty input. Reference character reset to default '@' (ASCII: 64)."));
+    }
+    
+    // Mettre à jour l'affichage avec le nouveau caractère de référence
+    onMessageChanged();
 }

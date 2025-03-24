@@ -263,5 +263,29 @@
         <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
         <translation>ملفات الصور (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
     </message>
+    <message>
+        <source>Reference Character:</source>
+        <translation>حرف المرجع:</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>تطبيق</translation>
+    </message>
+    <message>
+        <source>Reference Character</source>
+        <translation>حرف المرجع</translation>
+    </message>
+    <message>
+        <source>Reference character set to '%1' (ASCII: %2).</source>
+        <translation>تم تعيين حرف المرجع إلى '%1' (رمز ASCII: %2).</translation>
+    </message>
+    <message>
+        <source>Please enter a character.</source>
+        <translation>الرجاء إدخال حرف.</translation>
+    </message>
+    <message>
+        <source>Empty input. Reference character reset to default '@' (ASCII: 64).</source>
+        <translation>إدخال فارغ. تمت إعادة تعيين حرف المرجع إلى القيمة الافتراضية '@' (ASCII: 64).</translation>
+    </message>
 </context>
 </TS>

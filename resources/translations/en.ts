@@ -139,5 +139,29 @@
         <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
         <translation>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
     </message>
+    <message>
+        <source>Reference Character:</source>
+        <translation>Reference Character:</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Apply</translation>
+    </message>
+    <message>
+        <source>Reference Character</source>
+        <translation>Reference Character</translation>
+    </message>
+    <message>
+        <source>Reference character set to '%1' (ASCII: %2).</source>
+        <translation>Reference character set to '%1' (ASCII: %2).</translation>
+    </message>
+    <message>
+        <source>Please enter a character.</source>
+        <translation>Please enter a character.</translation>
+    </message>
+    <message>
+        <source>Empty input. Reference character reset to default '@' (ASCII: 64).</source>
+        <translation>Empty input. Reference character reset to default '@' (ASCII: 64).</translation>
+    </message>
 </context>
 </TS>

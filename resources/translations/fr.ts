@@ -268,5 +268,29 @@
         <source>Image Files (*.png *.jpg *.jpeg *.bmp *.gif)</source>
         <translation>Fichiers image (*.png *.jpg *.jpeg *.bmp *.gif)</translation>
     </message>
+    <message>
+        <source>Reference Character:</source>
+        <translation>Caractère de référence :</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Appliquer</translation>
+    </message>
+    <message>
+        <source>Reference Character</source>
+        <translation>Caractère de référence</translation>
+    </message>
+    <message>
+        <source>Reference character set to '%1' (ASCII: %2).</source>
+        <translation>Caractère de référence défini sur '%1' (ASCII : %2).</translation>
+    </message>
+    <message>
+        <source>Please enter a character.</source>
+        <translation>Veuillez saisir un caractère.</translation>
+    </message>
+    <message>
+        <source>Empty input. Reference character reset to default '@' (ASCII: 64).</source>
+        <translation>Champ vide. Caractère de référence réinitialisé à la valeur par défaut '@' (ASCII : 64).</translation>
+    </message>
 </context>
 </TS>
