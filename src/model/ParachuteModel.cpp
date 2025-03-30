@@ -19,11 +19,11 @@ void ParachuteModel::setSectors(int s) {
     
     originalSectors = s;
     
-    // En mode normal (7 bits), on utilise directement la valeur fournie
+    
     if (!mode10) {
         sectors = s;
     }
-    // En mode 10, on ajuste à un multiple de 10
+    
     else {
         sectors = adjustSectorsForMode10(s);
     }
@@ -75,7 +75,7 @@ void ParachuteModel::generateRandomColors() {
     randomColors.clear();
     QRandomGenerator *rng = QRandomGenerator::global();
     
-    // on génére une couleur aléatoire pour chaque indice potentiel
+    
     for (int i = 0; i < sectors * tracks; i++) {
         if (i < encodedMessage.size() && encodedMessage[i]) {
             

@@ -7,7 +7,7 @@ HexView::HexView(QWidget *parent)
 
 void HexView::setHexData(const QString &data) {
     hexData = data;
-    update(); // Trigger a repaint
+    update();
 }
 
 void HexView::setBackgroundColor(const QColor &color) {

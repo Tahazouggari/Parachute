@@ -1,19 +1,21 @@
 # Qt-ParachuteEncoder
 
-
-
----
-
 ## Project Overview
 
 ParachuteEncoder is a **Qt-based application** designed to encode messages into a visual representation inspired by the parachute used during the landing of the Perseverance rover on Mars. The parachute's design contained a hidden binary message, and this project replicates that concept by allowing users to encode their own messages into a parachute-like visualization.
-
 
 <div align="center">
     <img src="resources/icons/forreadme.png" alt="Parachute Encoder Demo" width="600">
 </div>
 
 The project follows the **Model-View-Presenter (MVP)** architectural pattern, ensuring a clear separation of concerns between the data (Model), user interface (View), and logic (Presenter).
+
+---
+
+## Repository
+
+The project is hosted on GitHub. You can find the source code and contribute to the project at:
+[Parachute Encoder Repository](https://github.com/Tahazouggari/Parachute/tree/master?tab=readme-ov-file)
 
 ---
 
@@ -25,7 +27,13 @@ The idea for this project is inspired by the **Perseverance rover's parachute**,
 - Export the parachute visualization as an image.
 - Save and load encoded messages and parachute parameters.
 
-The application is multilingual, supporting English, French, and Arabic, and provides an intuitive graphical interface for users to interact with.
+The application is multilingual, supporting English and French, and provides an intuitive graphical interface for users to interact with.
+
+---
+
+## Implementation Status
+
+All features, both mandatory and additional, have been successfully implemented in this project. The following sections detail the complete set of features available in the application, demonstrating our commitment to delivering a fully functional and feature-rich solution.
 
 ---
 
@@ -66,91 +74,42 @@ The application is multilingual, supporting English, French, and Arabic, and pro
    - Scrollable control panel for better usability on smaller screens.
    - Tab-based visualization selection between parachute, binary, and hexadecimal views.
 
-## Implemented Requirements
-
-All strongly suggested features have been successfully implemented:
-
-1. **Message Management via Model Class**:
-   - The message is managed by a model class that provides access to individual bits of the message.
-   - Follows the Model-View-Presenter (MVP) pattern for clean architecture.
-
-2. **Adjustable Parachute Parameters**:
-   - The number of sectors can be adjusted using both a slider and a spinbox.
-   - The number of concentric circles ("tracks") can be adjusted using both a slider and a spinbox.
-   - Preset options available for quick configuration.
-
-3. **Multiple Views**:
-   - "Parachute View" with circular visualization of the encoded message.
-   - "Binary View" showing the grid representation of the binary message.
-   - "Hexadecimal View" for a compact representation of the message.
-
-4. **Standard Interface Elements**:
-   - Complete with standard menus, actions, and keyboard shortcuts.
-   - Intuitive user interface with logically organized controls.
-
-5. **Multilingual Support**:
-   - Interface translation available in multiple languages (English, French).
-   - Language can be changed dynamically through the menu.
-
-6. **File Operations**:
-   - Save functionality for text and parachute parameters in a custom file format (.ep).
-   - Load functionality to restore saved parameters and message.
-   - Export parachute visualization as an image.
-
-7. **Additional Enhancements**:
-   - Custom reference character selection, allowing users to define which character is considered as zero (default is '@').
-   - Color customization for bits 0 and 1, with user-selectable colors for both elements.
-   - Random color mode for bits with value 1, creating visually dynamic parachute designs.
-   - Mode 10 support (7 bits + 3 blanks) as implemented in the original Perseverance rover parachute.
-   - Sector selection among multiples of 7 (standard mode) or multiples of 10 (Mode 10) for easier configuration.
-   - Background image support for creative designs and customization.
-   - Modernized two-panel interface for improved user experience.
-   - Additional visual improvements enhancing the overall application functionality.
-
-## Additional Implemented Features
-
-Beyond the strongly suggested features, several additional enhancements have been successfully implemented:
-
-1. **Reference Character Customization**:
+8. **Reference Character Customization**:
    - Users can change the reference character (the character considered as zero in the encoding).
    - By default, '@' is used as the reference, but any character can be selected.
    - The reference character change is dynamically applied to the visualization.
 
-2. **Color Customization**:
+9. **Color Customization**:
    - Full control over the two colors used in the parachute visualization (for bits 0 and 1).
    - Color picker interface for intuitive selection.
    - Live preview of color changes.
 
-3. **Random Color Mode**:
-   - Optional random color mode for bits with value 1.
-   - Creates visually interesting and unique parachute designs.
-   - Can be toggled on/off at any time.
+10. **Random Color Mode**:
+    - Optional random color mode for bits with value 1.
+    - Creates visually interesting and unique parachute designs.
+    - Can be toggled on/off at any time.
 
-4. **Mode 10 Support**:
-   - Implementation of the 10-segment blocks (7 bits + 3 blanks) as in the original Perseverance parachute.
-   - Switch between standard mode and Mode 10 with a simple checkbox.
-   - Automatic adjustment of sector presets based on the selected mode.
+11. **Mode 10 Support**:
+    - Implementation of the 10-segment blocks (7 bits + 3 blanks) as in the original Perseverance parachute.
+    - Switch between standard mode and Mode 10 with a simple checkbox.
+    - Automatic adjustment of sector presets based on the selected mode.
 
-5. **Intelligent Sector Presets**:
-   - Quick selection of sector counts from multiples of 7 (standard mode) or multiples of 10 (Mode 10).
-   - Preset dropdown menu adapts based on the current encoding mode.
-   - Simplifies configuration for optimal visualization.
+12. **Intelligent Sector Presets**:
+    - Quick selection of sector counts from multiples of 7 (standard mode) or multiples of 10 (Mode 10).
+    - Preset dropdown menu adapts based on the current encoding mode.
+    - Simplifies configuration for optimal visualization.
 
-6. **Background Customization**:
-   - Option to use a custom background image instead of a solid color.
-   - Support for various image formats (PNG, JPG, BMP).
-   - Image scaling and positioning to fit the parachute view.
+13. **Background Customization**:
+    - Option to use a custom background image instead of a solid color.
+    - Support for various image formats (PNG, JPG, BMP).
+    - Image scaling and positioning to fit the parachute view.
 
-7. **Modern UI Design**:
-   - Responsive two-panel layout with adjustable split.
-   - Tab-based navigation between different visualization modes.
-   - Organized controls grouped by function for intuitive use.
-
----
+14. **Modern UI Design**:
+    - Responsive two-panel layout with adjustable split.
+    - Tab-based navigation between different visualization modes.
+    - Organized controls grouped by function for intuitive use.
 
 ## Project Structure
-
-The project is organized following the MVP architecture with an enhanced UI layout:
 
 ```
 PARACHUTE/
@@ -182,41 +141,10 @@ PARACHUTE/
 │       ├── MainWindow.cpp
 │       ├── MainWindow.ui
 │       └── ParachuteView.cpp
-├── resources/
-│   ├── Gif/
-│   │   └── parachute.gif
-│   ├── icons/
-│   │   ├── arabic.png
-│   │   ├── binary.png
-│   │   ├── color.png
-│   │   ├── dark_mode.png
-│   │   ├── down-arrow-white.png
-│   │   ├── down-arrow.png
-│   │   ├── english.png
-│   │   ├── exit.png
-│   │   ├── export.png
-│   │   ├── french.png
-│   │   ├── hex.png
-│   │   ├── language.png
-│   │   ├── light_mode.png
-│   │   ├── open.png
-│   │   ├── parachute.png
-│   │   ├── save.png
-│   │   └── settings.png
-│   ├── translations/
-│   │   ├── ar.qm
-│   │   ├── ar.ts
-│   │   ├── en.qm
-│   │   ├── en.ts
-│   │   ├── fr.qm
-│   │   └── fr.ts
-│   └── resources.qrc
-├── CMakeLists.txt
-├── main.cpp
-└── README.md
+├── CMakeLists.txt       # Configuration CMake
+├── main.cpp             # Point d'entrée de l'application
+└── README.md            # Documentation
 ```
-
----
 
 ## How It Works
 
@@ -280,8 +208,8 @@ Users can adjust the relative size of these panels using the splitter between th
 To generate the `.qm` translation files, run the following commands:
 
 ```bash
-lrelease resources/translations/en.ts resources/translations/fr.ts resources/translations/ar.ts
-lupdate . -ts resources/translations/en.ts resources/translations/fr.ts resources/translations/ar.ts
+lrelease resources/translations/en.ts resources/translations/fr.ts
+lupdate . -ts resources/translations/en.ts resources/translations/fr.ts
 ```
 
 ### Editing Translations
@@ -291,7 +219,6 @@ To edit the translations, open the `.ts` files in Qt Linguist:
 ```bash
 linguist resources/translations/en.ts
 linguist resources/translations/fr.ts
-linguist resources/translations/ar.ts
 ```
 
 ---
@@ -310,19 +237,20 @@ linguist resources/translations/ar.ts
    ```
 
 2. Build the project:
-   ```bash
-   rm -rf build
-   mkdir build && cd build
-   cmake ..
-   make
-   ```
+```bash
+rm -rf build
+mkdir build && cd build
+cmake ..
+make
+```
 
 3. Run the application:
-   ```bash
-   ./ParachuteEncoder
-   ```
+```bash
+./ParachuteEncoder
+```
 
 ---
+
 ### Professor
 - **Karim-Eric Ziad**: karim-eric.ziad-forest@ensicaen.fr
 
