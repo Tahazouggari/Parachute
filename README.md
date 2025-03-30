@@ -249,6 +249,17 @@ make
 ./ParachuteEncoder
 ```
 
+### Quick Launch Script
+For convenience, you can use this one-line command to build and run the application:
+```bash
+rm -rf build && mkdir build && cd build && cmake .. && make && ./ParachuteEncoder
+```
+
+### Troubleshooting
+- If you encounter any build errors, make sure all Qt5 dependencies are properly installed
+- Ensure you have the necessary permissions to create and modify files in the project directory
+- If the application fails to start, check the console output for any error messages
+
 ---
 
 ### Professor
