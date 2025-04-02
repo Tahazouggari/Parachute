@@ -1,5 +1,18 @@
 # Qt-ParachuteEncoder
 
+---
+
+### Professor
+- **Karim-Eric Ziad**: karim-eric.ziad-forest@ensicaen.fr
+
+## Contributors
+
+
+### Students
+- **ZOUGGARI Taha**: taha.zouggari@ensicaen.fr
+- **KHALI Omar**: omar.khali@ensicaen.fr
+
+---
 ## Project Overview
 
 ParachuteEncoder is a **Qt-based application** designed to encode messages into a visual representation inspired by the parachute used during the landing of the Perseverance rover on Mars. The parachute's design contained a hidden binary message, and this project replicates that concept by allowing users to encode their own messages into a parachute-like visualization.
@@ -260,19 +273,6 @@ rm -rf build && mkdir build && cd build && cmake .. && make && ./ParachuteEncode
 - Ensure you have the necessary permissions to create and modify files in the project directory
 - If the application fails to start, check the console output for any error messages
 
----
-
-### Professor
-- **Karim-Eric Ziad**: karim-eric.ziad-forest@ensicaen.fr
-
-## Contributors
-
-
-### Students
-- **ZOUGGARI Taha**: taha.zouggari@ensicaen.fr
-- **KHALI Omar**: omar.khali@ensicaen.fr
-
----
 
 ## License
 
